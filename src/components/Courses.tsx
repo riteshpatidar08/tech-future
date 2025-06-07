@@ -45,6 +45,7 @@ const Courses = () => {
 
   const courses = [
     {
+      id: "fullstack",
       title: "Full Stack Development",
       description: "Master modern web development with React, Node.js, and databases. Build complete web applications from frontend to backend.",
       duration: "6 months",
@@ -61,6 +62,7 @@ const Courses = () => {
       ]
     },
     {
+      id: "python-ds",
       title: "Python Data Science",
       description: "Dive deep into data science with Python. Learn pandas, NumPy, and advanced statistical analysis techniques.",
       duration: "4 months",
@@ -77,6 +79,7 @@ const Courses = () => {
       ]
     },
     {
+      id: "machine-learning",
       title: "Machine Learning",
       description: "Build intelligent systems with ML algorithms. From supervised learning to deep neural networks.",
       duration: "5 months",
@@ -93,6 +96,7 @@ const Courses = () => {
       ]
     },
     {
+      id: "data-analytics",
       title: "Data Analytics",
       description: "Transform raw data into actionable insights. Master visualization tools and business intelligence.",
       duration: "3 months",
@@ -117,7 +121,7 @@ const Courses = () => {
           <h2 className="courses-header text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4">
             Our Training Programs
           </h2>
-          <p className="courses-header text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="courses-header text-xl text-gray-200 max-w-3xl mx-auto">
             Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
           </p>
         </div>
@@ -125,7 +129,7 @@ const Courses = () => {
         <div className="courses-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {courses.map((course, index) => (
             <div key={index} className="course-card">
-              <CourseCard {...course} />
+              <CourseCard {...course} courseId={course.id} />
             </div>
           ))}
         </div>

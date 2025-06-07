@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -119,12 +118,14 @@ const Courses = () => {
       <section className="pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div ref={headerRef} className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-              Our Training Programs
-            </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
-            </p>
+            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-6 drop-shadow-lg">
+                Our Training Programs
+              </h1>
+              <p className="text-xl text-gray-100 max-w-3xl mx-auto drop-shadow-md">
+                Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
+              </p>
+            </div>
           </div>
           
           <div ref={coursesRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">

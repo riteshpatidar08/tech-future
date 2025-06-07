@@ -17,9 +17,9 @@ interface CourseCardProps {
 
 const CourseCard = ({ title, description, duration, students, rating, icon, features, gradient, courseId }: CourseCardProps) => {
   return (
-    <div className="group relative bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-purple-500/30 hover:border-purple-500/50">
+    <div className="group relative bg-black/60 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/20 hover:border-white/40">
       {/* Gradient Background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
       
       {/* Content */}
       <div className="relative p-6">
@@ -28,35 +28,37 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
             {icon}
           </div>
           <div className="ml-4">
-            <div className="flex items-center space-x-2 text-sm text-gray-200">
+            <div className="flex items-center space-x-2 text-sm text-gray-100">
               <Star className="h-4 w-4 text-yellow-400" />
-              <span className="text-white font-medium">{rating}</span>
+              <span className="text-white font-medium drop-shadow-md">{rating}</span>
               <Users className="h-4 w-4 ml-2" />
-              <span className="text-white font-medium">{students}</span>
+              <span className="text-white font-medium drop-shadow-md">{students}</span>
             </div>
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300">
+        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300 drop-shadow-lg">
           {title}
         </h3>
         
-        <p className="text-gray-200 mb-4 leading-relaxed">
-          {description}
-        </p>
+        <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 mb-4 border border-white/10">
+          <p className="text-gray-100 leading-relaxed drop-shadow-md">
+            {description}
+          </p>
+        </div>
         
-        <div className="flex items-center mb-4 text-sm text-gray-200">
-          <Clock className="h-4 w-4 mr-2 text-purple-400" />
-          <span className="text-white font-medium">{duration}</span>
+        <div className="flex items-center mb-4 text-sm text-gray-100 bg-white/5 p-3 rounded-lg">
+          <Clock className="h-4 w-4 mr-2 text-purple-300" />
+          <span className="text-white font-medium drop-shadow-md">{duration}</span>
         </div>
         
         <div className="mb-6">
-          <h4 className="font-semibold text-white mb-2">What you'll learn:</h4>
+          <h4 className="font-semibold text-white mb-2 drop-shadow-md">What you'll learn:</h4>
           <ul className="space-y-1">
             {features.map((feature, index) => (
-              <li key={index} className="text-sm text-gray-200 flex items-center">
+              <li key={index} className="text-sm text-gray-100 flex items-center bg-white/5 p-2 rounded-md">
                 <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></div>
-                {feature}
+                <span className="drop-shadow-md">{feature}</span>
               </li>
             ))}
           </ul>
@@ -68,7 +70,7 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
               View Details
             </Button>
           </Link>
-          <Button className="w-full bg-white/10 border border-purple-400/50 text-white hover:bg-white/20 transition-all duration-300 font-semibold py-3 rounded-xl">
+          <Button className="w-full bg-black/50 border border-white/30 text-white hover:bg-black/70 transition-all duration-300 font-semibold py-3 rounded-xl backdrop-blur-sm">
             Enroll Now
           </Button>
         </div>

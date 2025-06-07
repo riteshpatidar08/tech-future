@@ -1,4 +1,3 @@
-
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -196,8 +195,8 @@ const CourseDetails = () => {
       <div className="min-h-screen text-white flex items-center justify-center">
         <AnimatedBackground />
         <Navigation />
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Course Not Found</h1>
+        <div className="text-center bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+          <h1 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Course Not Found</h1>
           <Link to="/courses">
             <Button className="bg-purple-600 hover:bg-purple-700">
               Back to Courses
@@ -217,39 +216,41 @@ const CourseDetails = () => {
       <section className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div ref={headerRef} className="max-w-4xl mx-auto">
-            <Link to="/courses" className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-6 transition-colors">
+            <Link to="/courses" className="inline-flex items-center text-purple-300 hover:text-purple-200 mb-6 transition-colors bg-black/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Courses
             </Link>
             
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 bg-black/60 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className={`p-4 rounded-2xl bg-gradient-to-br ${course.gradient} text-white shadow-lg mr-6`}>
                 {course.icon}
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-2 drop-shadow-lg">
                   {course.title}
                 </h1>
-                <div className="flex items-center space-x-4 text-gray-200">
+                <div className="flex items-center space-x-4 text-gray-100">
                   <div className="flex items-center">
                     <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                    <span className="text-white font-medium">{course.rating}</span>
+                    <span className="text-white font-medium drop-shadow-md">{course.rating}</span>
                   </div>
                   <div className="flex items-center">
-                    <Users className="h-4 w-4 text-purple-400 mr-1" />
-                    <span className="text-white font-medium">{course.students}</span>
+                    <Users className="h-4 w-4 text-purple-300 mr-1" />
+                    <span className="text-white font-medium drop-shadow-md">{course.students}</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 text-cyan-400 mr-1" />
-                    <span className="text-white font-medium">{course.duration}</span>
+                    <Clock className="h-4 w-4 text-cyan-300 mr-1" />
+                    <span className="text-white font-medium drop-shadow-md">{course.duration}</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <p className="text-xl text-gray-200 leading-relaxed">
-              {course.description}
-            </p>
+            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <p className="text-xl text-gray-100 leading-relaxed drop-shadow-md">
+                {course.description}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -263,61 +264,61 @@ const CourseDetails = () => {
             <div className="lg:col-span-2 space-y-8">
               
               {/* Overview */}
-              <div className="detail-section bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-                  <BookOpen className="h-6 w-6 mr-3 text-purple-400" />
+              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-white mb-4 flex items-center drop-shadow-lg">
+                  <BookOpen className="h-6 w-6 mr-3 text-purple-300" />
                   Course Overview
                 </h2>
-                <p className="text-gray-200 leading-relaxed">
+                <p className="text-gray-100 leading-relaxed drop-shadow-md">
                   {course.overview}
                 </p>
               </div>
 
               {/* What You'll Learn */}
-              <div className="detail-section bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-400" />
+              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center drop-shadow-lg">
+                  <CheckCircle className="h-6 w-6 mr-3 text-green-300" />
                   What You'll Learn
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {course.features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-gray-200">
+                    <div key={index} className="flex items-center text-gray-100 bg-white/5 p-3 rounded-lg">
                       <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                      {feature}
+                      <span className="drop-shadow-md">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Course Modules */}
-              <div className="detail-section bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center drop-shadow-lg">
                   <Trophy className="h-6 w-6 mr-3 text-yellow-400" />
                   Course Modules
                 </h2>
                 <div className="space-y-4">
                   {course.modules.map((module, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-purple-500/20">
+                    <div key={index} className="flex items-center justify-between p-4 bg-black/50 rounded-xl border border-white/10 backdrop-blur-sm">
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
                           {index + 1}
                         </div>
-                        <span className="text-white font-medium">{module.title}</span>
+                        <span className="text-white font-medium drop-shadow-md">{module.title}</span>
                       </div>
-                      <span className="text-gray-200 text-sm">{module.duration}</span>
+                      <span className="text-gray-200 text-sm drop-shadow-md">{module.duration}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Requirements */}
-              <div className="detail-section bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
-                <h2 className="text-2xl font-bold text-white mb-6">Requirements</h2>
+              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-white mb-6 drop-shadow-lg">Requirements</h2>
                 <ul className="space-y-3">
                   {course.requirements.map((req, index) => (
-                    <li key={index} className="flex items-center text-gray-200">
+                    <li key={index} className="flex items-center text-gray-100 bg-white/5 p-3 rounded-lg">
                       <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
-                      {req}
+                      <span className="drop-shadow-md">{req}</span>
                     </li>
                   ))}
                 </ul>
@@ -326,38 +327,38 @@ const CourseDetails = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="detail-section bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30 sticky top-24">
+              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20 sticky top-24">
                 <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-white mb-2">{course.price}</div>
-                  <div className="text-gray-300">One-time payment</div>
+                  <div className="text-3xl font-bold text-white mb-2 drop-shadow-lg">{course.price}</div>
+                  <div className="text-gray-200 drop-shadow-md">One-time payment</div>
                 </div>
                 
                 <div className="space-y-4 mb-6">
                   <Button className={`w-full bg-gradient-to-r ${course.gradient} hover:shadow-lg transition-all duration-300 text-white font-semibold py-3 rounded-xl`}>
                     Enroll Now
                   </Button>
-                  <Button variant="outline" className="w-full border-purple-400/50 text-white hover:bg-white/10 transition-all duration-300">
+                  <Button variant="outline" className="w-full border-white/30 text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                     <Download className="h-4 w-4 mr-2" />
                     Download Syllabus
                   </Button>
                 </div>
 
                 <div className="space-y-4 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-300">Duration:</span>
-                    <span className="text-white font-medium">{course.duration}</span>
+                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
+                    <span className="text-gray-200 drop-shadow-md">Duration:</span>
+                    <span className="text-white font-medium drop-shadow-md">{course.duration}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-300">Students:</span>
-                    <span className="text-white font-medium">{course.students}</span>
+                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
+                    <span className="text-gray-200 drop-shadow-md">Students:</span>
+                    <span className="text-white font-medium drop-shadow-md">{course.students}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-300">Rating:</span>
-                    <span className="text-white font-medium">{course.rating}/5</span>
+                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
+                    <span className="text-gray-200 drop-shadow-md">Rating:</span>
+                    <span className="text-white font-medium drop-shadow-md">{course.rating}/5</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-300">Certificate:</span>
-                    <span className="text-white font-medium">Yes</span>
+                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
+                    <span className="text-gray-200 drop-shadow-md">Certificate:</span>
+                    <span className="text-white font-medium drop-shadow-md">Yes</span>
                   </div>
                 </div>
               </div>

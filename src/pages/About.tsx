@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -98,33 +97,37 @@ const About = () => {
         <div className="container mx-auto px-4">
           {/* Header */}
           <div ref={headerRef} className="text-center mb-20">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-              About TechInstitute
-            </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              We're committed to transforming careers through comprehensive, practical training programs. 
-              Our institute combines cutting-edge curriculum with personalized mentorship to ensure your success 
-              in the rapidly evolving tech industry.
-            </p>
+            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-5xl mx-auto">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-6 drop-shadow-lg">
+                About TechInstitute
+              </h1>
+              <p className="text-xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
+                We're committed to transforming careers through comprehensive, practical training programs. 
+                Our institute combines cutting-edge curriculum with personalized mentorship to ensure your success 
+                in the rapidly evolving tech industry.
+              </p>
+            </div>
           </div>
 
           {/* Values Section */}
           <div ref={valuesRef} className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-              Why Choose Us?
-            </h2>
+            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-center text-white drop-shadow-lg">
+                Why Choose Us?
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {values.map((value, index) => (
-                <div key={index} className="value-card p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group">
+                <div key={index} className="value-card p-8 bg-black/60 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
                   <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${value.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <div className="text-white">
                       {value.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors drop-shadow-md">
                     {value.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-100 leading-relaxed drop-shadow-md">
                     {value.description}
                   </p>
                 </div>
@@ -134,19 +137,21 @@ const About = () => {
 
           {/* Stats Section */}
           <div ref={statsRef} className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
-              Our Impact
-            </h2>
+            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+                Our Impact
+              </h2>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="stat-item p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group">
-                  <div className="text-purple-400 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                <div key={index} className="stat-item p-6 bg-black/60 rounded-xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
+                  <div className="text-purple-300 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                  <div className="text-3xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors drop-shadow-lg">
                     {stat.number}
                   </div>
-                  <div className="text-gray-400 text-sm">
+                  <div className="text-gray-100 text-sm drop-shadow-md">
                     {stat.label}
                   </div>
                 </div>

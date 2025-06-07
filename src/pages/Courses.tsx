@@ -2,42 +2,39 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CourseCard from "./CourseCard";
+import CourseCard from "@/components/CourseCard";
+import Navigation from "@/components/Navigation";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import Footer from "@/components/Footer";
 import { Code, Database, Brain, BarChart3 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Courses = () => {
+  const headerRef = useRef<HTMLDivElement>(null);
   const coursesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.fromTo('.courses-header',
+    // Header animation
+    gsap.fromTo(headerRef.current?.children,
       { y: 60, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: coursesRef.current,
-          start: 'top 80%',
-        }
-      }
+      { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 0.3 }
     );
 
+    // Course cards animation on scroll
     gsap.fromTo('.course-card',
-      { y: 80, opacity: 0, scale: 0.8 },
+      { y: 100, opacity: 0, scale: 0.8 },
       {
         y: 0,
         opacity: 1,
         scale: 1,
         duration: 1,
-        stagger: 0.15,
+        stagger: 0.2,
         ease: 'back.out(1.7)',
         scrollTrigger: {
-          trigger: '.courses-grid',
+          trigger: coursesRef.current,
           start: 'top 80%',
+          end: 'bottom 20%',
         }
       }
     );
@@ -111,26 +108,33 @@ const Courses = () => {
   ];
 
   return (
-    <section ref={coursesRef} className="py-20 bg-transparent">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="courses-header text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-            Our Training Programs
-          </h2>
-          <p className="courses-header text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
-          </p>
+    <div className="min-h-screen text-white">
+      <AnimatedBackground />
+      <Navigation />
+      
+      <section className="pt-24 pb-20">
+        <div className="container mx-auto px-4">
+          <div ref={headerRef} className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+              Our Training Programs
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
+            </p>
+          </div>
+          
+          <div ref={coursesRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {courses.map((course, index) => (
+              <div key={index} className="course-card">
+                <CourseCard {...course} />
+              </div>
+            ))}
+          </div>
         </div>
-        
-        <div className="courses-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {courses.map((course, index) => (
-            <div key={index} className="course-card">
-              <CourseCard {...course} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      
+      <Footer />
+    </div>
   );
 };
 

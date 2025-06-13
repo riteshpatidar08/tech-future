@@ -1,8 +1,11 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: theme(colors.background);
+  color: theme(colors.foreground);
 }
 
 .logo {
@@ -11,9 +14,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em oklch(0.58 0.22 25));
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -35,8 +40,11 @@
 
 .card {
   padding: 2em;
+  background-color: theme(colors.card);
+  color: theme(colors.card-foreground);
+  border: 1px solid theme(colors.border);
 }
 
 .read-the-docs {
-  color: #888;
+  color: theme(colors.muted-foreground);
 }

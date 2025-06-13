@@ -1,52 +1,8 @@
 
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Color palette */
-  --color-background: oklch(0.03 0 0);
-  --color-foreground: oklch(0.98 0 0);
-  --color-card: oklch(0.05 0 0);
-  --color-card-foreground: oklch(0.98 0 0);
-  --color-popover: oklch(0.05 0 0);
-  --color-popover-foreground: oklch(0.98 0 0);
-  --color-primary: oklch(0.58 0.22 25);
-  --color-primary-foreground: oklch(0.98 0 0);
-  --color-secondary: oklch(0.10 0 0);
-  --color-secondary-foreground: oklch(0.98 0 0);
-  --color-muted: oklch(0.10 0 0);
-  --color-muted-foreground: oklch(0.65 0 0);
-  --color-accent: oklch(0.58 0.22 25);
-  --color-accent-foreground: oklch(0.98 0 0);
-  --color-destructive: oklch(0.60 0.20 0);
-  --color-destructive-foreground: oklch(0.98 0 0);
-  --color-border: oklch(0.15 0 0);
-  --color-input: oklch(0.15 0 0);
-  --color-ring: oklch(0.58 0.22 25);
-  
-  /* Sidebar colors */
-  --color-sidebar-background: oklch(0.03 0 0);
-  --color-sidebar-foreground: oklch(0.98 0 0);
-  --color-sidebar-primary: oklch(0.58 0.22 25);
-  --color-sidebar-primary-foreground: oklch(0.98 0 0);
-  --color-sidebar-accent: oklch(0.10 0 0);
-  --color-sidebar-accent-foreground: oklch(0.98 0 0);
-  --color-sidebar-border: oklch(0.15 0 0);
-  --color-sidebar-ring: oklch(0.58 0.22 25);
-  
-  /* Custom cafe colors */
-  --color-cafe-gold: oklch(0.76 0.15 43);
-  --color-cafe-brown: oklch(0.30 0.08 25);
-  --color-cafe-cream: oklch(0.90 0.03 43);
-  
-  /* Border radius */
-  --radius: 0.5rem;
-  
-  /* Animations */
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-glow: glow 3s ease-in-out infinite;
-}
-
-/* Legacy CSS variables for backward compatibility */
 @layer base {
   :root {
     --background: 8.7 0% 3%;
@@ -90,12 +46,12 @@
   }
 
   * {
-    border-color: theme(colors.border);
+    border-color: hsl(var(--border));
   }
 
   body {
-    background-color: theme(colors.background);
-    color: theme(colors.foreground);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -121,11 +77,11 @@
 /* Custom utility classes */
 @layer utilities {
   .animate-float {
-    animation: theme(--animate-float);
+    animation: float 6s ease-in-out infinite;
   }
   
   .animate-glow {
-    animation: theme(--animate-glow);
+    animation: glow 3s ease-in-out infinite;
   }
   
   /* Glass morphism effect */

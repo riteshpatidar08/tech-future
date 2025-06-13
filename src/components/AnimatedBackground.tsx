@@ -9,11 +9,11 @@ const AnimatedBackground = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Enhanced particle system
+    // Enhanced particle system with blue theme
     const createParticle = () => {
       const particle = document.createElement('div');
       const size = Math.random() * 3 + 1;
-      const colors = ['purple-400/40', 'cyan-400/30', 'blue-400/35', 'violet-400/25', 'indigo-400/30'];
+      const colors = ['blue-400/40', 'cyan-400/30', 'indigo-400/35', 'sky-400/25', 'slate-400/30'];
       const color = colors[Math.floor(Math.random() * colors.length)];
       
       particle.className = `absolute bg-${color} rounded-full`;
@@ -41,13 +41,13 @@ const AnimatedBackground = () => {
       });
     };
 
-    // Create shooting stars
+    // Create shooting stars with blue theme
     const createShootingStar = () => {
       const star = document.createElement('div');
       star.className = 'absolute w-1 h-1 bg-gradient-to-r from-white to-transparent rounded-full';
       star.style.left = '0%';
       star.style.top = Math.random() * 50 + '%';
-      star.style.boxShadow = '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(147,51,234,0.6)';
+      star.style.boxShadow = '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(59,130,246,0.6)';
       container.appendChild(star);
 
       gsap.to(star, {
@@ -63,14 +63,14 @@ const AnimatedBackground = () => {
       });
     };
 
-    // Create floating orbs
+    // Create floating orbs with blue theme
     const createFloatingOrb = () => {
       const orb = document.createElement('div');
       const size = Math.random() * 100 + 50;
       orb.className = 'absolute rounded-full opacity-20 blur-2xl';
       orb.style.width = size + 'px';
       orb.style.height = size + 'px';
-      orb.style.background = 'linear-gradient(45deg, rgba(147,51,234,0.3), rgba(6,182,212,0.3))';
+      orb.style.background = 'linear-gradient(45deg, rgba(59,130,246,0.3), rgba(6,182,212,0.3))';
       orb.style.left = Math.random() * 100 + '%';
       orb.style.top = Math.random() * 100 + '%';
       container.appendChild(orb);
@@ -151,24 +151,24 @@ const AnimatedBackground = () => {
 
   return (
     <div ref={containerRef} className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Enhanced Gradient Background with more depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/30 via-blue-900/20 to-gray-900"></div>
+      {/* Enhanced Gradient Background with bluish and dark black theme */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-900/30 via-slate-900/20 to-black"></div>
       
       {/* Multiple layered gradient backgrounds for depth */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-purple-900/10 to-cyan-900/20"></div>
-      <div className="absolute inset-0 bg-gradient-to-bl from-blue-900/10 via-transparent to-purple-900/15"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-900/10 to-cyan-900/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-bl from-indigo-900/10 via-transparent to-blue-900/15"></div>
       
-      {/* Enhanced Animated Gradient Orbs with better positioning */}
-      <div className="gradient-orb-1 absolute top-1/6 left-1/5 w-96 h-96 bg-gradient-to-br from-purple-600/30 to-cyan-600/30 rounded-full blur-3xl"></div>
-      <div className="gradient-orb-2 absolute top-2/3 right-1/5 w-80 h-80 bg-gradient-to-br from-blue-600/25 to-purple-600/25 rounded-full blur-3xl"></div>
-      <div className="gradient-orb-3 absolute top-1/2 left-2/3 w-72 h-72 bg-gradient-to-br from-cyan-600/20 to-violet-600/20 rounded-full blur-3xl"></div>
+      {/* Enhanced Animated Gradient Orbs with blue theme */}
+      <div className="gradient-orb-1 absolute top-1/6 left-1/5 w-96 h-96 bg-gradient-to-br from-blue-600/30 to-cyan-600/30 rounded-full blur-3xl"></div>
+      <div className="gradient-orb-2 absolute top-2/3 right-1/5 w-80 h-80 bg-gradient-to-br from-indigo-600/25 to-blue-600/25 rounded-full blur-3xl"></div>
+      <div className="gradient-orb-3 absolute top-1/2 left-2/3 w-72 h-72 bg-gradient-to-br from-cyan-600/20 to-sky-600/20 rounded-full blur-3xl"></div>
       
       {/* Additional smaller orbs for more dynamic feel */}
-      <div className="absolute top-1/4 right-1/3 w-48 h-48 bg-gradient-to-br from-indigo-600/15 to-purple-600/15 rounded-full blur-2xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-gradient-to-br from-cyan-600/15 to-blue-600/15 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute top-1/4 right-1/3 w-48 h-48 bg-gradient-to-br from-slate-600/15 to-blue-600/15 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-gradient-to-br from-cyan-600/15 to-indigo-600/15 rounded-full blur-2xl animate-pulse"></div>
       
-      {/* Enhanced Grid Pattern with subtle animation */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(147,51,234,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(147,51,234,0.08)_1px,transparent_1px)] bg-[size:60px_60px] animate-pulse"></div>
+      {/* Enhanced Grid Pattern with blue theme */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.08)_1px,transparent_1px)] bg-[size:60px_60px] animate-pulse"></div>
       
       {/* Secondary grid for depth */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:120px_120px]"></div>
@@ -181,8 +181,8 @@ const AnimatedBackground = () => {
         }}
       ></div>
 
-      {/* Radial gradient overlay for vignette effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-gray-900/50"></div>
+      {/* Radial gradient overlay for vignette effect with dark black */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/50"></div>
     </div>
   );
 };

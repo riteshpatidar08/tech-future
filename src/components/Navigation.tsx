@@ -20,6 +20,9 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'Courses', path: '/courses' },
     { name: 'About', path: '/about' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Resources', path: '/resources' },
+    { name: 'Student Portal', path: '/student-portal' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -36,7 +39,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -58,7 +61,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white hover:text-purple-400 transition-colors"
+            className="lg:hidden text-white hover:text-purple-400 transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -66,7 +69,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 bg-gray-900/95 backdrop-blur-lg">
+          <div className="lg:hidden py-4 bg-gray-900/95 backdrop-blur-lg">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

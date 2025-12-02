@@ -91,15 +91,40 @@ const Contact = () => {
             <div ref={infoRef}>
               <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Contact Information</h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
-                  <div className="p-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group"
+                     style={{ 
+                       background: 'linear-gradient(135deg, rgba(127,109,255,0.08) 0%, rgba(255,111,97,0.05) 100%)',
+                       borderColor: 'rgba(127,109,255,0.2)',
+                       transform: 'rotate(1deg)'
+                     }}>
+                  <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
+                       style={{ background: 'linear-gradient(135deg, #7F6DFF, #FF6F61)' }}>
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Visit Our Campus</h4>
+                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Visit Our Campus - Bangalore</h4>
                     <p className="text-slate-600">
                       123 Tech Street, Innovation District<br />
                       Bangalore, Karnataka 560001
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group"
+                     style={{ 
+                       background: 'linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(97,218,251,0.05) 100%)',
+                       borderColor: 'rgba(0,212,170,0.2)',
+                       transform: 'rotate(-0.5deg)'
+                     }}>
+                  <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
+                       style={{ background: 'linear-gradient(135deg, #00D4AA, #61DAFB)' }}>
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Visit Our Campus - Bhopal</h4>
+                    <p className="text-slate-600">
+                      456 Education Hub, Tech Park<br />
+                      Bhopal, Madhya Pradesh 462001
                     </p>
                   </div>
                 </div>

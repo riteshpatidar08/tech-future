@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, Users, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import HandDrawnArrow from "./HandDrawnArrow";
+import CourseTechIllustration from "./CourseTechIllustration";
 
 interface CourseCardProps {
   title: string;
@@ -32,7 +33,7 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
         return { bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.2)', icon: '#3B82F6' };
     }
   };
-  
+
   const colors = getLogoColors(courseId);
   
   return (
@@ -42,13 +43,18 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
       <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-20 opacity-10" 
            style={{ background: `linear-gradient(135deg, ${colors.bg}, transparent)` }}></div>
       
+      {/* Course-specific tech illustration - positioned in the middle */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none z-0">
+        <CourseTechIllustration courseId={courseId} size={240} />
+      </div>
+      
       {/* Hand-drawn arrow on hover */}
       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <HandDrawnArrow direction="diagonal" color={colors.icon} className="w-10 h-10" />
       </div>
       
       {/* Content */}
-      <div className="relative p-6">
+      <div className="relative p-6 z-10">
         <div className="flex items-center mb-4">
           <div className="p-3 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform"
                style={{ background: `linear-gradient(135deg, ${colors.icon}, ${colors.icon}dd)` }}>

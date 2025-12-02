@@ -89,6 +89,12 @@ const Hero = () => {
       <div className="absolute top-1/2 right-10 opacity-10 hidden xl:block transform rotate-12">
         <EducationIllustration type="lightbulb" size={100} />
       </div>
+      <div className="absolute bottom-40 right-20 opacity-12 hidden xl:block transform -rotate-12">
+        <EducationIllustration type="certificate" size={110} />
+      </div>
+      <div className="absolute top-1/3 left-5 opacity-10 hidden lg:block transform rotate-45">
+        <EducationIllustration type="rocket" size={90} />
+      </div>
       
       {/* Hand-drawn arrows pointing to key elements - more funky */}
       <div className="absolute top-1/3 right-10 hidden xl:block animate-float transform rotate-12">

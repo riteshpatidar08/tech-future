@@ -128,6 +128,12 @@ const About = () => {
       <div className="absolute bottom-20 left-10 opacity-10 hidden lg:block">
         <EducationIllustration type="laptop" size={150} />
       </div>
+      <div className="absolute top-1/2 left-5 opacity-10 hidden xl:block transform rotate-12">
+        <EducationIllustration type="teamwork" size={140} />
+      </div>
+      <div className="absolute bottom-1/3 right-5 opacity-10 hidden xl:block transform -rotate-6">
+        <EducationIllustration type="brain" size={120} />
+      </div>
       
       {/* Hand-drawn arrows */}
       <div className="absolute top-1/4 left-5 hidden xl:block animate-float">

@@ -19,6 +19,8 @@ import {
   Trophy,
   Download
 } from "lucide-react";
+import HandDrawnArrow from "@/components/HandDrawnArrow";
+import EducationIllustration from "@/components/EducationIllustration";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
@@ -45,7 +47,7 @@ const CourseDetails = () => {
       students: "200+ students",
       rating: "4.9",
       price: "$2,999",
-      icon: <Code className="h-8 w-8" />,
+      icon: () => <Code className="h-8 w-8" />,
       gradient: "from-purple-600 to-cyan-600",
       overview: "This comprehensive Full Stack Development course will transform you into a professional web developer. You'll learn to build modern, scalable web applications using cutting-edge technologies like React, Node.js, and cloud platforms.",
       features: [
@@ -82,7 +84,7 @@ const CourseDetails = () => {
       students: "150+ students",
       rating: "4.8",
       price: "$2,499",
-      icon: <Database className="h-8 w-8" />,
+      icon: () => <Database className="h-8 w-8" />,
       gradient: "from-cyan-600 to-blue-600",
       overview: "Master the art of data science with Python. This course covers everything from data manipulation and visualization to advanced statistical analysis and machine learning fundamentals.",
       features: [
@@ -119,7 +121,7 @@ const CourseDetails = () => {
       students: "100+ students",
       rating: "4.9",
       price: "$3,499",
-      icon: <Brain className="h-8 w-8" />,
+      icon: () => <Brain className="h-8 w-8" />,
       gradient: "from-blue-600 to-purple-600",
       overview: "Dive into the world of artificial intelligence and machine learning. Learn to build intelligent systems that can learn from data and make predictions.",
       features: [
@@ -156,7 +158,7 @@ const CourseDetails = () => {
       students: "120+ students",
       rating: "4.7",
       price: "$1,999",
-      icon: <BarChart3 className="h-8 w-8" />,
+      icon: () => <BarChart3 className="h-8 w-8" />,
       gradient: "from-orange-600 to-red-600",
       overview: "Learn to analyze and visualize data to drive business decisions. Master industry-standard tools and techniques for data analysis and reporting.",
       features: [
@@ -192,13 +194,16 @@ const CourseDetails = () => {
 
   if (!course) {
     return (
-      <div className="min-h-screen text-white flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <AnimatedBackground />
         <Navigation />
-        <div className="text-center bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-          <h1 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Course Not Found</h1>
+        <div className="text-center bg-white rounded-2xl p-8 border border-gray-200 shadow-md">
+          <h1 className="text-4xl font-bold mb-4 text-slate-900"
+              style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+            Course Not Found
+          </h1>
           <Link to="/courses">
-            <Button className="bg-purple-600 hover:bg-purple-700">
+            <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
               Back to Courses
             </Button>
           </Link>
@@ -208,46 +213,64 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen bg-white">
       <AnimatedBackground />
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
+      <section className="pt-24 pb-16 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-5 opacity-10 hidden lg:block transform rotate-12">
+          <EducationIllustration type="book" size={120} />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-10 hidden lg:block transform -rotate-6">
+          <EducationIllustration type="laptop" size={100} />
+        </div>
+        
+        {/* Hand-drawn arrow */}
+        <div className="absolute top-1/3 right-5 hidden xl:block animate-float transform rotate-12">
+          <HandDrawnArrow direction="left" color="#3776AB" className="w-20 h-20" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div ref={headerRef} className="max-w-4xl mx-auto">
-            <Link to="/courses" className="inline-flex items-center text-purple-300 hover:text-purple-200 mb-6 transition-colors bg-black/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
+            <Link to="/courses" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6 transition-colors bg-white px-4 py-2 rounded-xl border border-gray-200 shadow-sm hover:shadow-md">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Courses
             </Link>
             
-            <div className="flex items-center mb-6 bg-black/60 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="flex items-center mb-6 bg-white rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
+                 style={{ transform: 'rotate(-0.5deg)' }}>
               <div className={`p-4 rounded-2xl bg-gradient-to-br ${course.gradient} text-white shadow-lg mr-6`}>
-                {course.icon}
+                {course.icon()}
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-2 drop-shadow-lg">
+                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-2"
+                    style={{ 
+                      fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                      letterSpacing: '0.02em'
+                    }}>
                   {course.title}
                 </h1>
-                <div className="flex items-center space-x-4 text-gray-100">
+                <div className="flex items-center space-x-4 text-slate-600">
                   <div className="flex items-center">
-                    <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                    <span className="text-white font-medium drop-shadow-md">{course.rating}</span>
+                    <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mr-1" />
+                    <span className="text-slate-700 font-medium">{course.rating}</span>
                   </div>
                   <div className="flex items-center">
-                    <Users className="h-4 w-4 text-purple-300 mr-1" />
-                    <span className="text-white font-medium drop-shadow-md">{course.students}</span>
+                    <Users className="h-4 w-4 text-blue-600 mr-1" />
+                    <span className="text-slate-700 font-medium">{course.students}</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 text-cyan-300 mr-1" />
-                    <span className="text-white font-medium drop-shadow-md">{course.duration}</span>
+                    <Clock className="h-4 w-4 text-cyan-600 mr-1" />
+                    <span className="text-slate-700 font-medium">{course.duration}</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <p className="text-xl text-gray-100 leading-relaxed drop-shadow-md">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md">
+              <p className="text-xl text-slate-600 leading-relaxed">
                 {course.description}
               </p>
             </div>
@@ -256,69 +279,84 @@ const CourseDetails = () => {
       </section>
 
       {/* Course Content */}
-      <section ref={contentRef} className="pb-20">
-        <div className="container mx-auto px-4">
+      <section ref={contentRef} className="pb-20 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-10 left-5 opacity-10 hidden lg:block">
+          <EducationIllustration type="book" size={100} />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
               
               {/* Overview */}
-              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center drop-shadow-lg">
-                  <BookOpen className="h-6 w-6 mr-3 text-purple-300" />
+              <div className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
+                   style={{ transform: 'rotate(0.5deg)' }}>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center"
+                    style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                  <BookOpen className="h-6 w-6 mr-3" style={{ color: '#7F6DFF' }} />
                   Course Overview
                 </h2>
-                <p className="text-gray-100 leading-relaxed drop-shadow-md">
+                <p className="text-slate-600 leading-relaxed">
                   {course.overview}
                 </p>
               </div>
 
               {/* What You'll Learn */}
-              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center drop-shadow-lg">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-300" />
+              <div className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
+                   style={{ transform: 'rotate(-0.5deg)' }}>
+                <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center"
+                    style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                  <CheckCircle className="h-6 w-6 mr-3" style={{ color: '#00D4AA' }} />
                   What You'll Learn
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {course.features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-gray-100 bg-white/5 p-3 rounded-lg">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                      <span className="drop-shadow-md">{feature}</span>
+                    <div key={index} className="flex items-center text-slate-600 bg-slate-50 p-3 rounded-lg border border-gray-200">
+                      <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#7F6DFF' }}></div>
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Course Modules */}
-              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center drop-shadow-lg">
-                  <Trophy className="h-6 w-6 mr-3 text-yellow-400" />
+              <div className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
+                   style={{ transform: 'rotate(0.3deg)' }}>
+                <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center"
+                    style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                  <Trophy className="h-6 w-6 mr-3" style={{ color: '#F89820' }} />
                   Course Modules
                 </h2>
                 <div className="space-y-4">
                   {course.modules.map((module, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-black/50 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <div key={index} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-gray-200 hover:border-blue-200 transition-all duration-300">
                       <div className="flex items-center">
-                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
                           {index + 1}
                         </div>
-                        <span className="text-white font-medium drop-shadow-md">{module.title}</span>
+                        <span className="text-slate-900 font-medium">{module.title}</span>
                       </div>
-                      <span className="text-gray-200 text-sm drop-shadow-md">{module.duration}</span>
+                      <span className="text-slate-600 text-sm">{module.duration}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Requirements */}
-              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <h2 className="text-2xl font-bold text-white mb-6 drop-shadow-lg">Requirements</h2>
+              <div className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
+                   style={{ transform: 'rotate(-0.3deg)' }}>
+                <h2 className="text-2xl font-bold text-slate-900 mb-6"
+                    style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                  Requirements
+                </h2>
                 <ul className="space-y-3">
                   {course.requirements.map((req, index) => (
-                    <li key={index} className="flex items-center text-gray-100 bg-white/5 p-3 rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
-                      <span className="drop-shadow-md">{req}</span>
+                    <li key={index} className="flex items-center text-slate-600 bg-slate-50 p-3 rounded-lg border border-gray-200">
+                      <CheckCircle className="h-5 w-5 mr-3" style={{ color: '#00D4AA' }} />
+                      <span>{req}</span>
                     </li>
                   ))}
                 </ul>
@@ -327,38 +365,40 @@ const CourseDetails = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="detail-section bg-black/70 backdrop-blur-md rounded-2xl p-8 border border-white/20 sticky top-24">
+              <div className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 sticky top-24"
+                   style={{ transform: 'rotate(1deg)' }}>
                 <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-white mb-2 drop-shadow-lg">{course.price}</div>
-                  <div className="text-gray-200 drop-shadow-md">One-time payment</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2">{course.price}</div>
+                  <div className="text-slate-600">One-time payment</div>
                 </div>
                 
                 <div className="space-y-4 mb-6">
-                  <Button className={`w-full bg-gradient-to-r ${course.gradient} hover:shadow-lg transition-all duration-300 text-white font-semibold py-3 rounded-xl`}>
+                  <Button className={`w-full bg-gradient-to-r ${course.gradient} hover:shadow-lg transition-all duration-300 text-white font-semibold py-3 rounded-3xl transform hover:scale-105`}
+                          style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '1.1em' }}>
                     Enroll Now
                   </Button>
-                  <Button variant="outline" className="w-full border-white/30 text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                  <Button variant="outline" className="w-full border-2 border-gray-300 text-slate-700 hover:bg-slate-50 hover:border-blue-600 transition-all duration-300">
                     <Download className="h-4 w-4 mr-2" />
                     Download Syllabus
                   </Button>
                 </div>
 
                 <div className="space-y-4 text-sm">
-                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
-                    <span className="text-gray-200 drop-shadow-md">Duration:</span>
-                    <span className="text-white font-medium drop-shadow-md">{course.duration}</span>
+                  <div className="flex justify-between bg-slate-50 p-3 rounded-lg border border-gray-200">
+                    <span className="text-slate-600">Duration:</span>
+                    <span className="text-slate-900 font-medium">{course.duration}</span>
                   </div>
-                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
-                    <span className="text-gray-200 drop-shadow-md">Students:</span>
-                    <span className="text-white font-medium drop-shadow-md">{course.students}</span>
+                  <div className="flex justify-between bg-slate-50 p-3 rounded-lg border border-gray-200">
+                    <span className="text-slate-600">Students:</span>
+                    <span className="text-slate-900 font-medium">{course.students}</span>
                   </div>
-                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
-                    <span className="text-gray-200 drop-shadow-md">Rating:</span>
-                    <span className="text-white font-medium drop-shadow-md">{course.rating}/5</span>
+                  <div className="flex justify-between bg-slate-50 p-3 rounded-lg border border-gray-200">
+                    <span className="text-slate-600">Rating:</span>
+                    <span className="text-slate-900 font-medium">{course.rating}/5</span>
                   </div>
-                  <div className="flex justify-between bg-white/5 p-3 rounded-lg">
-                    <span className="text-gray-200 drop-shadow-md">Certificate:</span>
-                    <span className="text-white font-medium drop-shadow-md">Yes</span>
+                  <div className="flex justify-between bg-slate-50 p-3 rounded-lg border border-gray-200">
+                    <span className="text-slate-600">Certificate:</span>
+                    <span className="text-slate-900 font-medium">Yes</span>
                   </div>
                 </div>
               </div>

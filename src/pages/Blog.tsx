@@ -7,6 +7,8 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import Footer from "@/components/Footer";
 import { Calendar, User, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import HandDrawnArrow from "@/components/HandDrawnArrow";
+import EducationIllustration from "@/components/EducationIllustration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,18 +103,51 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen bg-white">
       <AnimatedBackground />
       <Navigation />
       
-      <section className="pt-24 pb-20">
-        <div className="container mx-auto px-4">
-          <div ref={headerRef} className="text-center mb-16">
-            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-6 drop-shadow-lg">
+      <section className="pt-24 pb-20 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-5 opacity-10 hidden lg:block transform rotate-12">
+          <EducationIllustration type="book" size={120} />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-10 hidden lg:block transform -rotate-6">
+          <EducationIllustration type="laptop" size={100} />
+        </div>
+        <div className="absolute top-1/2 right-5 opacity-10 hidden xl:block transform rotate-12">
+          <EducationIllustration type="brain" size={110} />
+        </div>
+        <div className="absolute bottom-1/4 left-10 opacity-10 hidden xl:block transform -rotate-6">
+          <EducationIllustration type="lightbulb" size={100} />
+        </div>
+        
+        {/* Hand-drawn arrows */}
+        <div className="absolute top-1/3 right-5 hidden xl:block animate-float transform rotate-12">
+          <HandDrawnArrow direction="left" color="#3776AB" className="w-20 h-20" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div ref={headerRef} className="text-center mb-16 relative">
+            {/* Tech icons behind header */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="absolute -left-20 top-0 opacity-15">
+                <svg width="100" height="100" viewBox="0 0 200 200">
+                  <circle cx="100" cy="100" r="70" fill="#3776AB"/>
+                  <circle cx="150" cy="100" r="70" fill="#FFDE57"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-4xl mx-auto relative z-10">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-6"
+                  style={{ 
+                    fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                    letterSpacing: '0.02em'
+                  }}>
                 Tech Insights & Articles
               </h1>
-              <p className="text-xl text-gray-100 max-w-3xl mx-auto drop-shadow-md">
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 Stay updated with the latest trends, tutorials, and insights from the world of technology
               </p>
             </div>
@@ -120,26 +155,30 @@ const Blog = () => {
 
           <div ref={postsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {blogPosts.map((post, index) => (
-              <article key={post.id} className="blog-post bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-300 group">
-                <div className="relative h-48 bg-gradient-to-br from-purple-600/20 to-cyan-600/20">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <article key={post.id} className="blog-post bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group"
+                       style={{ transform: `rotate(${(index % 3) * 0.5 - 0.5}deg)` }}>
+                <div className="relative h-48 bg-gradient-to-br from-blue-50 to-cyan-50">
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-purple-600/80 text-white text-sm rounded-full backdrop-blur-sm">
+                    <span className="px-3 py-1 rounded-full text-sm font-medium"
+                          style={{ 
+                            background: 'linear-gradient(135deg, rgba(127,109,255,0.2), rgba(255,111,97,0.2))',
+                            color: '#7F6DFF'
+                          }}>
                       {post.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-300 mb-4 line-clamp-3">
+                  <p className="text-slate-600 mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                  <div className="flex items-center justify-between text-sm text-slate-500 mb-4">
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center">
                         <User className="h-4 w-4 mr-1" />
@@ -153,14 +192,14 @@ const Blog = () => {
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-400">
+                    <div className="flex items-center text-sm text-slate-500">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{post.date}</span>
                     </div>
                     
                     <Link 
                       to={`/blog/${post.id}`}
-                      className="flex items-center text-purple-400 hover:text-purple-300 transition-colors font-medium"
+                      className="flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium"
                     >
                       Read More
                       <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />

@@ -141,7 +141,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 ref={titleRef} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight relative z-10"
+          <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight relative z-10"
               style={{ 
                 fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                 letterSpacing: '0.02em'
@@ -155,7 +155,7 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p ref={subtitleRef} className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-600 mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed font-normal px-4 relative z-10">
+          <p ref={subtitleRef} className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed font-normal px-4 relative z-10">
             India's Trusted & Affordable Tech Education Platform
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold">Unlock your potential</span> by signing up with Codex - The most affordable learning solution
@@ -168,15 +168,15 @@ const Hero = () => {
             </div>
             
             <Link to="/contact" className="transform hover:scale-105 transition-transform duration-300">
-              <Button size="lg" className="hero-button bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:rotate-1 group border-0 tracking-tight"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '1.1em' }}>
+              <Button size="lg" className="hero-button bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:rotate-1 group border-0 tracking-tight"
+                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '0.95em' }}>
                 Start Your Journey
-                <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
             </Link>
             <Link to="/about" className="transform hover:scale-105 transition-transform duration-300">
-              <Button variant="outline" size="lg" className="hero-button border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-3xl transition-all duration-500 hover:-rotate-1 hover:shadow-lg tracking-tight"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '1.1em' }}>
+              <Button variant="outline" size="lg" className="hero-button border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-3xl transition-all duration-500 hover:-rotate-1 hover:shadow-lg tracking-tight"
+                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '0.95em' }}>
                 Learn More
               </Button>
             </Link>
@@ -195,9 +195,9 @@ const Hero = () => {
                    borderColor: 'rgba(55,118,171,0.25)',
                    transform: 'rotate(-2deg)'
                  }}>
-              <Users className="h-10 w-10 mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#3776AB' }} />
-              <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 tracking-tight">10K+</div>
-              <div className="text-slate-600 text-sm sm:text-base font-medium">Happy Students</div>
+              <Users className="h-8 w-8 mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#3776AB' }} />
+              <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1 tracking-tight">10K+</div>
+              <div className="text-slate-600 text-xs sm:text-sm font-medium">Happy Students</div>
             </div>
             
             {/* Card 2 - Tilted right */}
@@ -207,9 +207,9 @@ const Hero = () => {
                    borderColor: 'rgba(0,212,170,0.25)',
                    transform: 'rotate(2deg)'
                  }}>
-              <Award className="h-10 w-10 mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#00D4AA' }} />
-              <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 tracking-tight">500+</div>
-              <div className="text-slate-600 text-sm sm:text-base font-medium">Live Classes</div>
+              <Award className="h-8 w-8 mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#00D4AA' }} />
+              <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1 tracking-tight">500+</div>
+              <div className="text-slate-600 text-xs sm:text-sm font-medium">Live Classes</div>
             </div>
             
             {/* Card 3 - Tilted left */}
@@ -219,9 +219,9 @@ const Hero = () => {
                    borderColor: 'rgba(248,152,32,0.25)',
                    transform: 'rotate(-1.5deg)'
                  }}>
-              <Rocket className="h-10 w-10 mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#F89820' }} />
-              <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 tracking-tight">24x7</div>
-              <div className="text-slate-600 text-sm sm:text-base font-medium">Doubt Solving</div>
+              <Rocket className="h-8 w-8 mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#F89820' }} />
+              <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1 tracking-tight">24x7</div>
+              <div className="text-slate-600 text-xs sm:text-sm font-medium">Doubt Solving</div>
             </div>
 
             {/* Card 4 - Tilted right */}
@@ -231,9 +231,9 @@ const Hero = () => {
                    borderColor: 'rgba(127,109,255,0.25)',
                    transform: 'rotate(2.5deg)'
                  }}>
-              <TrendingUp className="h-10 w-10 mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#7F6DFF' }} />
-              <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 tracking-tight">100+</div>
-              <div className="text-slate-600 text-sm sm:text-base font-medium">Expert Mentors</div>
+              <TrendingUp className="h-8 w-8 mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" style={{ color: '#7F6DFF' }} />
+              <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1 tracking-tight">100+</div>
+              <div className="text-slate-600 text-xs sm:text-sm font-medium">Expert Mentors</div>
             </div>
           </div>
         </div>

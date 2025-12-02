@@ -30,10 +30,10 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="nav-item flex items-center transition-opacity duration-300 hover:opacity-80">
-            <Logo className="h-12 w-auto" />
+            <Logo className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,14 +45,14 @@ const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`nav-item relative px-4 py-2 text-base font-bold transition-all duration-300 tracking-tight flex items-center gap-2 group ${
+                  className={`nav-item relative px-3 py-2 text-sm font-bold transition-all duration-300 tracking-tight flex items-center gap-1.5 group ${
                     isActive
                       ? 'text-blue-600'
                       : 'text-slate-700 hover:text-blue-600'
                   }`}
                 >
                   <Icon 
-                    size={20} 
+                    size={18} 
                     className={`transition-all duration-300 ${
                       isActive 
                         ? 'text-blue-600 scale-110' 
@@ -88,14 +88,14 @@ const Navigation = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 text-base font-bold transition-all duration-300 tracking-tight rounded-lg mx-2 ${
+                  className={`flex items-center gap-2.5 px-4 py-2.5 text-sm font-bold transition-all duration-300 tracking-tight rounded-lg mx-2 ${
                     isActive
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                   }`}
                 >
                   <Icon 
-                    size={22} 
+                    size={18} 
                     className={isActive ? 'text-blue-600' : 'text-slate-600'}
                   />
                   <span>{link.name}</span>

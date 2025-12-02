@@ -148,16 +148,16 @@ const About = () => {
               <HandDrawnArrow direction="right" color="#00D4AA" className="w-14 h-14" />
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 md:mb-8 leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-tight tracking-tight">
               Why Choose
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"> Codex</span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-6 md:mb-8 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-4 md:mb-6 leading-relaxed font-normal">
               Codex is where students learn with 
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-semibold"> passion </span>
               and grow with guidance.
             </p>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed">
               We successfully provide students with intensive courses by India's qualified & experienced faculties. 
               Codex strives to make the learning experience comprehensive and accessible for students of all sections. 
               Our main focus is to create accessible learning experiences for students all over India.

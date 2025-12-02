@@ -70,12 +70,12 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
           {title}
         </h3>
         
-        <div className="bg-slate-50 rounded-lg p-4 mb-4 border border-gray-100">
-          <p className="text-slate-600 leading-relaxed">
+        <div className="bg-slate-50 rounded-lg p-3 mb-3 border border-gray-100">
+          <p className="text-slate-600 text-sm leading-relaxed">
             {description}
           </p>
         </div>
@@ -86,11 +86,11 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
           <span className="text-slate-700 font-medium">{duration}</span>
         </div>
         
-        <div className="mb-6">
-          <h4 className="font-semibold text-slate-900 mb-2">What you'll learn:</h4>
+        <div className="mb-4">
+          <h4 className="font-semibold text-slate-900 mb-2 text-sm">What you'll learn:</h4>
           <ul className="space-y-1">
             {features.map((feature, index) => (
-              <li key={index} className="text-sm text-slate-600 flex items-center bg-slate-50 p-2 rounded-md">
+              <li key={index} className="text-xs text-slate-600 flex items-center bg-slate-50 p-1.5 rounded-md">
                 <div className="w-1.5 h-1.5 rounded-full mr-2" style={{ backgroundColor: colors.icon }}></div>
                 <span>{feature}</span>
               </li>

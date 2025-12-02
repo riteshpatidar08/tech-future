@@ -133,10 +133,10 @@ const Courses = () => {
             <HandDrawnArrow direction="right" color="#0DB7ED" className="w-20 h-20" />
           </div>
           
-          <h2 className="courses-header text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
+          <h2 className="courses-header text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
             Our Training Programs
           </h2>
-          <p className="courses-header text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="courses-header text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Codex is preparing students for tech careers. Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
           </p>
         </div>

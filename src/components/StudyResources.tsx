@@ -102,7 +102,7 @@ const StudyResources = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6"
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4"
               style={{ 
                 fontFamily: "'Dancing Script', 'Pacifico', cursive",
                 background: 'linear-gradient(to right, #1e40af, #06b6d4)',
@@ -112,7 +112,7 @@ const StudyResources = () => {
               }}>
             Study Resources
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
             A diverse array of learning materials to enhance your educational journey.
           </p>
         </div>
@@ -138,7 +138,7 @@ const StudyResources = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-center"
+                  <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 text-center"
                       style={{ 
                         fontFamily: "'Dancing Script', 'Pacifico', cursive"
                       }}>
@@ -146,7 +146,7 @@ const StudyResources = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-600 text-base md:text-lg leading-relaxed text-center">
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed text-center">
                     {resource.description}
                   </p>
 

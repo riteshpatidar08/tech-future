@@ -63,7 +63,7 @@ const AppDownload = () => {
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4"
                 style={{ 
                   fontFamily: "'Dancing Script', 'Pacifico', cursive",
                   background: 'linear-gradient(to right, #1e40af, #06b6d4)',
@@ -75,13 +75,13 @@ const AppDownload = () => {
             </h2>
 
             {/* Features list */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-3 mb-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 mt-1">
-                    <Check className="h-5 w-5 text-white" />
+                <div key={index} className="flex items-start gap-2.5">
+                  <div className="p-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 mt-0.5">
+                    <Check className="h-4 w-4 text-white" />
                   </div>
-                  <p className="text-lg text-slate-700">{feature}</p>
+                  <p className="text-sm text-slate-700">{feature}</p>
                 </div>
               ))}
             </div>

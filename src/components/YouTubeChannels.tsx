@@ -110,7 +110,7 @@ const YouTubeChannels = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6"
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4"
               style={{ 
                 fontFamily: "'Dancing Script', 'Pacifico', cursive",
                 background: 'linear-gradient(to right, #1e40af, #06b6d4)',
@@ -120,7 +120,7 @@ const YouTubeChannels = () => {
               }}>
             Join The Codex Family, Today!
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
             Explore our YouTube Channels and subscribe to get access to quality education for free.
           </p>
         </div>
@@ -150,22 +150,22 @@ const YouTubeChannels = () => {
                 </div>
 
                 {/* Channel name */}
-                <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors"
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors"
                     style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
                   {channel.name}
                 </h3>
 
                 {/* Subscribers */}
                 <div className="mb-3">
-                  <div className="text-3xl font-bold mb-1" style={{ color: channel.iconColor }}>
+                  <div className="text-2xl font-bold mb-1" style={{ color: channel.iconColor }}>
                     {channel.subscribers}
                   </div>
-                  <div className="text-sm text-slate-600">Subscribers</div>
+                  <div className="text-xs text-slate-600">Subscribers</div>
                 </div>
 
                 {/* Description */}
                 {channel.description && (
-                  <p className="text-slate-600 text-sm mb-4">
+                  <p className="text-slate-600 text-xs mb-4">
                     {channel.description}
                   </p>
                 )}

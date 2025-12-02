@@ -105,14 +105,14 @@ const Contact = () => {
             </div>
           </div>
           
-          <h2 className="contact-header text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-4 leading-tight tracking-tight relative z-10"
+          <h2 className="contact-header text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-4 leading-tight tracking-tight relative z-10"
               style={{ 
                 fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                 letterSpacing: '0.02em'
               }}>
             Ready to Start Your Journey?
           </h2>
-          <p className="contact-header text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 relative z-10">
+          <p className="contact-header text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 relative z-10">
             Get in touch with us today for a free consultation and take the first step toward your tech career
           </p>
         </div>

@@ -35,18 +35,18 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen bg-white">
       <AnimatedBackground />
       <Navigation />
       
       <section className="pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div ref={headerRef} className="text-center mb-16">
-            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-6 drop-shadow-lg">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-4xl mx-auto">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-6">
                 Get In Touch
               </h1>
-              <p className="text-xl text-gray-100 max-w-2xl mx-auto drop-shadow-md">
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                 Ready to start your journey? Contact us today for a free consultation and take the first step toward your tech career
               </p>
             </div>
@@ -54,34 +54,34 @@ const Contact = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div ref={formRef} className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-lg">Send us a Message</h3>
+            <div ref={formRef} className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300">
+              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Send us a Message</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input 
                     placeholder="First Name" 
-                    className="bg-black/50 border-white/30 text-white placeholder:text-gray-300 focus:border-purple-400 transition-colors backdrop-blur-sm"
+                    className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors"
                   />
                   <Input 
                     placeholder="Last Name" 
-                    className="bg-black/50 border-white/30 text-white placeholder:text-gray-300 focus:border-purple-400 transition-colors backdrop-blur-sm"
+                    className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors"
                   />
                 </div>
                 <Input 
                   type="email" 
                   placeholder="Email Address" 
-                  className="bg-black/50 border-white/30 text-white placeholder:text-gray-300 focus:border-purple-400 transition-colors backdrop-blur-sm"
+                  className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors"
                 />
                 <Input 
                   placeholder="Phone Number" 
-                  className="bg-black/50 border-white/30 text-white placeholder:text-gray-300 focus:border-purple-400 transition-colors backdrop-blur-sm"
+                  className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors"
                 />
                 <Textarea 
                   placeholder="Which course are you interested in? Any questions?" 
                   rows={4}
-                  className="bg-black/50 border-white/30 text-white placeholder:text-gray-300 focus:border-purple-400 transition-colors resize-none backdrop-blur-sm"
+                  className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors resize-none"
                 />
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-105">
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-105">
                   Send Message
                 </Button>
               </form>
@@ -89,54 +89,54 @@ const Contact = () => {
             
             {/* Contact Information */}
             <div ref={infoRef}>
-              <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-lg">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Contact Information</h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-6 bg-black/60 rounded-xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
-                  <div className="p-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
+                  <div className="p-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:scale-110 transition-transform">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-white mb-2 drop-shadow-md">Visit Our Campus</h4>
-                    <p className="text-gray-100 drop-shadow-md">
+                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Visit Our Campus</h4>
+                    <p className="text-slate-600">
                       123 Tech Street, Innovation District<br />
                       Bangalore, Karnataka 560001
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4 p-6 bg-black/60 rounded-xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
                   <div className="p-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg group-hover:scale-110 transition-transform">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-white mb-2 drop-shadow-md">Call Us</h4>
-                    <p className="text-gray-100 drop-shadow-md">
+                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Call Us</h4>
+                    <p className="text-slate-600">
                       +91 98765 43210<br />
                       +91 87654 32109
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4 p-6 bg-black/60 rounded-xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
-                  <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
+                  <div className="p-3 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg group-hover:scale-110 transition-transform">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-white mb-2 drop-shadow-md">Email Us</h4>
-                    <p className="text-gray-100 drop-shadow-md">
-                      info@techinstitute.com<br />
-                      admissions@techinstitute.com
+                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Email Us</h4>
+                    <p className="text-slate-600">
+                      info@codex.com<br />
+                      admissions@codex.com
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4 p-6 bg-black/60 rounded-xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
-                  <div className="p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
+                  <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg group-hover:scale-110 transition-transform">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-white mb-2 drop-shadow-md">Office Hours</h4>
-                    <p className="text-gray-100 drop-shadow-md">
+                    <h4 className="font-semibold text-lg text-slate-900 mb-2">Office Hours</h4>
+                    <p className="text-slate-600">
                       Monday - Friday: 9:00 AM - 7:00 PM<br />
                       Saturday: 10:00 AM - 4:00 PM
                     </p>

@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Target, Lightbulb, Trophy, Rocket, Zap, Globe, Shield, Heart } from "lucide-react";
+import HandDrawnArrow from "./HandDrawnArrow";
+import EducationIllustration from "./EducationIllustration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,105 +73,140 @@ const About = () => {
       icon: <Zap className="h-10 w-10" />,
       title: "Daily Live Classes",
       description: "Interactive classes with expert instructors to help you learn effectively",
-      gradient: "from-yellow-400 to-orange-500"
+      color: "#FFB300" // Data Science Yellow
     },
     {
       icon: <Globe className="h-10 w-10" />,
       title: "10 Million+ Resources",
       description: "Tests, sample papers, notes, and study materials to enhance your preparation",
-      gradient: "from-blue-400 to-cyan-500"
+      color: "#0DB7ED" // Docker Cyan
     },
     {
       icon: <Shield className="h-10 w-10" />,
       title: "24x7 Support",
       description: "Round-the-clock doubt solving sessions to help you whenever you need",
-      gradient: "from-green-400 to-emerald-500"
+      color: "#00D4AA" // React Teal
     },
     {
       icon: <Heart className="h-10 w-10" />,
       title: "Student First",
       description: "Every decision we make is driven by creating exceptional learning experiences",
-      gradient: "from-pink-400 to-rose-500"
+      color: "#FF6F61" // Data Science Red
     },
     {
       icon: <Target className="h-10 w-10" />,
       title: "Expert Mentors",
       description: "Learn from India's best faculty with years of teaching experience",
-      gradient: "from-purple-400 to-violet-500"
+      color: "#7F6DFF" // Data Science Purple
     },
     {
       icon: <Lightbulb className="h-10 w-10" />,
       title: "Innovative Learning",
       description: "Cutting-edge teaching methods and technology to make learning engaging",
-      gradient: "from-amber-400 to-yellow-500"
+      color: "#FFDE57" // Python Yellow
     },
     {
       icon: <Trophy className="h-10 w-10" />,
       title: "Proven Results",
       description: "Thousands of successful students placed in top tech companies",
-      gradient: "from-indigo-400 to-purple-500"
+      color: "#3776AB" // Python Blue
     },
     {
       icon: <Rocket className="h-10 w-10" />,
       title: "Career Growth",
       description: "Comprehensive programs designed to accelerate your career in tech",
-      gradient: "from-cyan-400 to-blue-500"
+      color: "#F89820" // Java Orange
     }
   ];
 
   return (
-    <section ref={aboutRef} className="py-32 bg-transparent relative overflow-hidden">
-      {/* Enhanced background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-600/10 to-transparent rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-cyan-600/10 to-transparent rounded-full blur-xl"></div>
+    <section ref={aboutRef} className="py-32 bg-white relative overflow-hidden">
+      {/* Decorative illustrations */}
+      <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
+        <EducationIllustration type="student" size={180} />
       </div>
-
+      <div className="absolute bottom-20 left-10 opacity-10 hidden lg:block">
+        <EducationIllustration type="laptop" size={150} />
+      </div>
+      
+      {/* Hand-drawn arrows */}
+      <div className="absolute top-1/4 left-5 hidden xl:block animate-float">
+        <HandDrawnArrow direction="right" color="#3776AB" className="w-16 h-16" />
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
-          <div className="about-content">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight tracking-tight">
+          <div className="about-content relative">
+            {/* Arrow pointing to heading */}
+            <div className="absolute -left-12 top-0 hidden xl:block animate-float" style={{ animationDelay: '0.5s' }}>
+              <HandDrawnArrow direction="right" color="#00D4AA" className="w-14 h-14" />
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 md:mb-8 leading-tight tracking-tight">
               Why Choose
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"> Codex</span>
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"> Codex</span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 leading-relaxed font-normal">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-6 md:mb-8 leading-relaxed font-normal">
               Codex is where students learn with 
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold"> passion </span>
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-semibold"> passion </span>
               and grow with guidance.
             </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
               We successfully provide students with intensive courses by India's qualified & experienced faculties. 
               Codex strives to make the learning experience comprehensive and accessible for students of all sections. 
               Our main focus is to create accessible learning experiences for students all over India.
             </p>
           </div>
           
-          <div className="about-content flex justify-center">
+          <div className="about-content flex justify-center relative">
+            {/* Arrow pointing to stat */}
+            <div className="absolute -right-12 top-1/2 hidden xl:block animate-float" style={{ animationDelay: '1s' }}>
+              <HandDrawnArrow direction="left" color="#7F6DFF" className="w-16 h-16" />
+            </div>
+            
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-full blur-3xl absolute -inset-10"></div>
-              <div className="w-64 h-64 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl backdrop-blur-sm border border-purple-500/30 flex items-center justify-center relative overflow-hidden">
-                <div className="text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <div className="w-80 h-80 rounded-full blur-3xl absolute -inset-10"
+                   style={{ background: 'radial-gradient(circle, rgba(0,212,170,0.15) 0%, rgba(97,218,251,0.1) 100%)' }}></div>
+              <div className="w-64 h-64 rounded-2xl border flex items-center justify-center relative overflow-hidden shadow-lg"
+                   style={{ 
+                     background: 'linear-gradient(135deg, rgba(0,212,170,0.1) 0%, rgba(97,218,251,0.05) 100%)',
+                     borderColor: 'rgba(0,212,170,0.2)'
+                   }}>
+                <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                   10K+
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 animate-pulse"></div>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="values-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="values-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Arrow pointing to values */}
+          <div className="absolute -left-12 top-1/2 hidden xl:block animate-float" style={{ animationDelay: '1.5s' }}>
+            <HandDrawnArrow direction="right" color="#F89820" className="w-12 h-12" />
+          </div>
+          
           {values.map((value, index) => (
-            <div key={index} className={`value-card p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 hover:shadow-2xl transition-all duration-500 group hover:scale-105 cursor-pointer`}>
-              <div className={`value-icon text-transparent bg-gradient-to-r ${value.gradient} bg-clip-text mb-6 group-hover:scale-125 transition-all duration-500 flex justify-center`}>
+            <div key={index} className="value-card p-8 rounded-2xl border shadow-md hover:shadow-lg transition-all duration-500 group hover:scale-105 cursor-pointer relative"
+                 style={{ 
+                   background: `linear-gradient(135deg, ${value.color}15, ${value.color}08)`,
+                   borderColor: `${value.color}30`
+                 }}>
+              {/* Small arrow on hover */}
+              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <HandDrawnArrow direction="diagonal" color={value.color} className="w-8 h-8" />
+              </div>
+              
+              <div className="value-icon mb-6 group-hover:scale-125 transition-all duration-500 flex justify-center"
+                   style={{ color: value.color }}>
                 {value.icon}
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-300 leading-snug tracking-tight">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:opacity-80 transition-all duration-300 leading-snug tracking-tight">
                 {value.title}
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                 {value.description}
               </p>
-              <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
             </div>
           ))}
         </div>
@@ -179,3 +216,4 @@ const About = () => {
 };
 
 export default About;
+

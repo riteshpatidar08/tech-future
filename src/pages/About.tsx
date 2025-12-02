@@ -59,7 +59,7 @@ const About = () => {
       icon: <Target className="h-8 w-8" />,
       title: "Practical Learning",
       description: "Hands-on projects and real-world applications to ensure job-ready skills",
-      color: "from-purple-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
@@ -71,13 +71,13 @@ const About = () => {
       icon: <Trophy className="h-8 w-8" />,
       title: "Proven Results",
       description: "95% job placement rate with top tech companies",
-      color: "from-blue-500 to-purple-500"
+      color: "from-indigo-500 to-blue-500"
     },
     {
       icon: <Rocket className="h-8 w-8" />,
       title: "Career Support",
       description: "Resume building, interview prep, and job placement assistance",
-      color: "from-purple-500 to-pink-500"
+      color: "from-blue-500 to-purple-500"
     }
   ];
 
@@ -89,7 +89,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen bg-white">
       <AnimatedBackground />
       <Navigation />
       
@@ -97,11 +97,11 @@ const About = () => {
         <div className="container mx-auto px-4">
           {/* Header */}
           <div ref={headerRef} className="text-center mb-20">
-            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-5xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent mb-6 drop-shadow-lg">
-                About TechInstitute
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-5xl mx-auto">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-6">
+                About Codex
               </h1>
-              <p className="text-xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
+              <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 We're committed to transforming careers through comprehensive, practical training programs. 
                 Our institute combines cutting-edge curriculum with personalized mentorship to ensure your success 
                 in the rapidly evolving tech industry.
@@ -111,23 +111,23 @@ const About = () => {
 
           {/* Values Section */}
           <div ref={valuesRef} className="mb-20">
-            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-center text-white drop-shadow-lg">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900">
                 Why Choose Us?
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {values.map((value, index) => (
-                <div key={index} className="value-card p-8 bg-black/60 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
+                <div key={index} className="value-card p-8 bg-white rounded-2xl border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
                   <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${value.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <div className="text-white">
                       {value.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors drop-shadow-md">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                     {value.title}
                   </h3>
-                  <p className="text-gray-100 leading-relaxed drop-shadow-md">
+                  <p className="text-slate-600 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -137,21 +137,21 @@ const About = () => {
 
           {/* Stats Section */}
           <div ref={statsRef} className="text-center">
-            <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                 Our Impact
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="stat-item p-6 bg-black/60 rounded-xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 group">
-                  <div className="text-purple-300 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                <div key={index} className="stat-item p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-blue-100 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 group">
+                  <div className="text-blue-600 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors drop-shadow-lg">
+                  <div className="text-3xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                     {stat.number}
                   </div>
-                  <div className="text-gray-100 text-sm drop-shadow-md">
+                  <div className="text-slate-600 text-sm">
                     {stat.label}
                   </div>
                 </div>

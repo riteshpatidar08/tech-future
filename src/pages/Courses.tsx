@@ -5,6 +5,8 @@ import CourseCard from "@/components/CourseCard";
 import Navigation from "@/components/Navigation";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Footer from "@/components/Footer";
+import StudyResources from "@/components/StudyResources";
+import Testimonials from "@/components/Testimonials";
 import { Code, Database, Brain, BarChart3 } from "lucide-react";
 import HandDrawnArrow from "@/components/HandDrawnArrow";
 import EducationIllustration from "@/components/EducationIllustration";
@@ -187,6 +189,9 @@ const Courses = () => {
           </div>
         </div>
       </section>
+      
+      <StudyResources />
+      <Testimonials />
       
       <Footer />
     </div>

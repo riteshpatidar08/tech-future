@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from "@/components/Navigation";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Footer from "@/components/Footer";
+import StudyResources from "@/components/StudyResources";
 import { Calendar, User, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import HandDrawnArrow from "@/components/HandDrawnArrow";
@@ -211,6 +212,8 @@ const Blog = () => {
           </div>
         </div>
       </section>
+      
+      <StudyResources />
       
       <Footer />
     </div>

@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from "@/components/Navigation";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Footer from "@/components/Footer";
+import PlatformStats from "@/components/PlatformStats";
+import Testimonials from "@/components/Testimonials";
 import { Target, Lightbulb, Trophy, Rocket, Users, Award, Globe, Star } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -160,6 +162,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      <PlatformStats />
+      <Testimonials />
       
       <Footer />
     </div>

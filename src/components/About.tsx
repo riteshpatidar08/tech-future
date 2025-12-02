@@ -69,50 +69,50 @@ const About = () => {
   const values = [
     {
       icon: <Zap className="h-10 w-10" />,
-      title: "Lightning Fast",
-      description: "Cutting-edge technology that delivers results at unprecedented speed",
+      title: "Daily Live Classes",
+      description: "Interactive classes with expert instructors to help you learn effectively",
       gradient: "from-yellow-400 to-orange-500"
     },
     {
       icon: <Globe className="h-10 w-10" />,
-      title: "Global Reach",
-      description: "Expanding your business presence across continents with our worldwide network",
+      title: "10 Million+ Resources",
+      description: "Tests, sample papers, notes, and study materials to enhance your preparation",
       gradient: "from-blue-400 to-cyan-500"
     },
     {
       icon: <Shield className="h-10 w-10" />,
-      title: "Enterprise Security",
-      description: "Bank-level security protocols protecting your most valuable digital assets",
+      title: "24x7 Support",
+      description: "Round-the-clock doubt solving sessions to help you whenever you need",
       gradient: "from-green-400 to-emerald-500"
     },
     {
       icon: <Heart className="h-10 w-10" />,
-      title: "Customer First",
-      description: "Every decision we make is driven by creating exceptional customer experiences",
+      title: "Student First",
+      description: "Every decision we make is driven by creating exceptional learning experiences",
       gradient: "from-pink-400 to-rose-500"
     },
     {
       icon: <Target className="h-10 w-10" />,
-      title: "Precision Focus",
-      description: "Laser-focused strategies that hit your business targets with remarkable accuracy",
+      title: "Expert Mentors",
+      description: "Learn from India's best faculty with years of teaching experience",
       gradient: "from-purple-400 to-violet-500"
     },
     {
       icon: <Lightbulb className="h-10 w-10" />,
-      title: "Innovation Hub",
-      description: "Where breakthrough ideas become game-changing solutions for tomorrow's challenges",
+      title: "Innovative Learning",
+      description: "Cutting-edge teaching methods and technology to make learning engaging",
       gradient: "from-amber-400 to-yellow-500"
     },
     {
       icon: <Trophy className="h-10 w-10" />,
-      title: "Award Winning",
-      description: "Industry-recognized excellence with 50+ awards from leading tech organizations",
+      title: "Proven Results",
+      description: "Thousands of successful students placed in top tech companies",
       gradient: "from-indigo-400 to-purple-500"
     },
     {
       icon: <Rocket className="h-10 w-10" />,
-      title: "Scale Rapidly",
-      description: "Proven methodologies that accelerate growth from startup to industry leader",
+      title: "Career Growth",
+      description: "Comprehensive programs designed to accelerate your career in tech",
       gradient: "from-cyan-400 to-blue-500"
     }
   ];
@@ -128,18 +128,19 @@ const About = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
           <div className="about-content">
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              Why We're
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"> Different</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight tracking-tight">
+              Why Choose
+              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"> Codex</span>
             </h2>
-            <p className="text-2xl text-gray-300 mb-8 leading-relaxed font-light">
-              We don't just build technology – we craft digital experiences that 
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold"> revolutionize industries </span>
-              and redefine what's possible.
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 leading-relaxed font-normal">
+              Codex is where students learn with 
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold"> passion </span>
+              and grow with guidance.
             </p>
-            <p className="text-xl text-gray-400 leading-relaxed">
-              Our team of visionary engineers, designers, and strategists work tirelessly to push the boundaries 
-              of innovation, delivering solutions that don't just meet expectations – they exceed them exponentially.
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+              We successfully provide students with intensive courses by India's qualified & experienced faculties. 
+              Codex strives to make the learning experience comprehensive and accessible for students of all sections. 
+              Our main focus is to create accessible learning experiences for students all over India.
             </p>
           </div>
           
@@ -162,10 +163,10 @@ const About = () => {
               <div className={`value-icon text-transparent bg-gradient-to-r ${value.gradient} bg-clip-text mb-6 group-hover:scale-125 transition-all duration-500 flex justify-center`}>
                 {value.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-300">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-300 leading-snug tracking-tight">
                 {value.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                 {value.description}
               </p>
               <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>

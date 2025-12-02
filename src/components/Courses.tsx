@@ -117,12 +117,12 @@ const Courses = () => {
   return (
     <section ref={coursesRef} className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="courses-header text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 className="courses-header text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
             Our Training Programs
           </h2>
-          <p className="courses-header text-xl text-gray-200 max-w-3xl mx-auto">
-            Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
+          <p className="courses-header text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            Codex is preparing students for tech careers. Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
           </p>
         </div>
         

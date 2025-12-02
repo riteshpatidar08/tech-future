@@ -62,10 +62,10 @@ const Contact = () => {
     <section ref={contactRef} className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="contact-header text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+          <h2 className="contact-header text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
             Ready to Start Your Journey?
           </h2>
-          <p className="contact-header text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="contact-header text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed px-4">
             Get in touch with us today for a free consultation and take the first step toward your tech career
           </p>
         </div>
@@ -73,7 +73,7 @@ const Contact = () => {
         <div className="contact-content grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="contact-form bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-6 text-white">Send us a Message</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-white leading-tight tracking-tight">Send us a Message</h3>
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input 
@@ -107,15 +107,15 @@ const Contact = () => {
           
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-white">Get in Touch</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-8 text-white leading-tight tracking-tight">Get in Touch</h3>
             <div className="space-y-6">
               <div className="contact-info flex items-start space-x-4 p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group">
                 <div className="p-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg group-hover:scale-110 transition-transform">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-white">Visit Our Campus</h4>
-                  <p className="text-gray-400">
+                  <h4 className="font-semibold text-base sm:text-lg text-white mb-1 tracking-tight">Visit Our Campus</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     123 Tech Street, Innovation District<br />
                     Bangalore, Karnataka 560001
                   </p>
@@ -127,8 +127,8 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-white">Call Us</h4>
-                  <p className="text-gray-400">
+                  <h4 className="font-semibold text-base sm:text-lg text-white mb-1 tracking-tight">Call Us</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     +91 98765 43210<br />
                     +91 87654 32109
                   </p>
@@ -140,10 +140,10 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-white">Email Us</h4>
-                  <p className="text-gray-400">
-                    info@techinstitute.com<br />
-                    admissions@techinstitute.com
+                  <h4 className="font-semibold text-base sm:text-lg text-white mb-1 tracking-tight">Email Us</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    info@codex.com<br />
+                    admissions@codex.com
                   </p>
                 </div>
               </div>
@@ -153,8 +153,8 @@ const Contact = () => {
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-white">Office Hours</h4>
-                  <p className="text-gray-400">
+                  <h4 className="font-semibold text-base sm:text-lg text-white mb-1 tracking-tight">Office Hours</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                     Monday - Friday: 9:00 AM - 7:00 PM<br />
                     Saturday: 10:00 AM - 4:00 PM
                   </p>

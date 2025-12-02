@@ -34,7 +34,7 @@ const Navigation = () => {
           <Link to="/" className="nav-item flex items-center space-x-2 text-white hover:text-purple-400 transition-colors duration-300">
             <Code className="h-8 w-8" />
             <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              TechInstitute
+              Codex
             </span>
           </Link>
 
@@ -44,10 +44,10 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+                className={`nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 tracking-tight ${
                   location.pathname === link.path
                     ? 'text-purple-400'
-                    : 'text-gray-300 hover:text-white'
+                    : 'text-gray-200 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -75,10 +75,10 @@ const Navigation = () => {
                 key={link.name}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 text-sm font-medium transition-colors ${
+                className={`block px-4 py-2 text-sm font-medium transition-colors tracking-tight ${
                   location.pathname === link.path
                     ? 'text-purple-400'
-                    : 'text-gray-300 hover:text-white'
+                    : 'text-gray-200 hover:text-white'
                 }`}
               >
                 {link.name}

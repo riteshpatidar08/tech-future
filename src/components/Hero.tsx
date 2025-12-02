@@ -75,43 +75,41 @@ const Hero = () => {
     <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Enhanced floating background elements */}
       <div ref={floatingElementsRef} className="absolute inset-0 pointer-events-none">
-        <div className="floating-element absolute top-20 left-10 w-4 h-4 bg-purple-500/30 rounded-full"></div>
-        <div className="floating-element absolute top-40 right-20 w-6 h-6 bg-cyan-500/20 rounded-full"></div>
+        <div className="floating-element absolute top-20 left-10 w-4 h-4 bg-black/30 rounded-full"></div>
+        <div className="floating-element absolute top-40 right-20 w-6 h-6 bg-blue-500/20 rounded-full"></div>
         <div className="floating-element absolute bottom-40 left-20 w-3 h-3 bg-blue-500/40 rounded-full"></div>
-        <div className="floating-element absolute bottom-60 right-10 w-5 h-5 bg-purple-400/25 rounded-full"></div>
-        <div className="floating-element absolute top-60 left-1/3 w-2 h-2 bg-cyan-400/35 rounded-full"></div>
+        <div className="floating-element absolute bottom-60 right-10 w-5 h-5 bg-black/25 rounded-full"></div>
+        <div className="floating-element absolute top-60 left-1/3 w-2 h-2 bg-blue-400/35 rounded-full"></div>
         <div className="floating-element absolute bottom-20 right-1/3 w-4 h-4 bg-blue-400/30 rounded-full"></div>
       </div>
 
       <div className="container mx-auto px-4 text-center max-w-6xl relative z-10">
         <div>
-          <h1 ref={titleRef} className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-              Innovate
+          <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight tracking-tight">
+            <span className="text-white">
+              Master Tech Skills,
             </span>
             <br />
-            <span className="text-5xl md:text-7xl text-white">Transform</span>
-            <br />
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Succeed
+            <span className="bg-gradient-to-r from-black via-blue-500 to-blue-400 bg-clip-text text-transparent">
+              Shape Your Future
             </span>
           </h1>
           
-          <p ref={subtitleRef} className="text-2xl md:text-3xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed font-light">
-            We're revolutionizing the tech industry with cutting-edge solutions that drive 
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold"> exponential growth </span>
-            for forward-thinking businesses
+          <p ref={subtitleRef} className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed font-normal px-4">
+            India's Trusted & Affordable Tech Education Platform
+            <br className="hidden sm:block" />
+            <span className="bg-gradient-to-r from-black to-blue-500 bg-clip-text text-transparent font-semibold">Unlock your potential</span> by signing up with Codex - The most affordable learning solution
           </p>
           
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <Link to="/contact">
-              <Button size="lg" className="hero-button bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 group border-0">
+              <Button size="lg" className="hero-button bg-gradient-to-r from-black to-blue-600 hover:from-black hover:to-blue-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 group border-0 tracking-tight">
                 Start Your Journey
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
             </Link>
             <Link to="/about">
-              <Button variant="outline" size="lg" className="hero-button border-3 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-bold rounded-2xl transition-all duration-500 backdrop-blur-sm hover:scale-105 hover:shadow-2xl">
+              <Button variant="outline" size="lg" className="hero-button border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-2xl transition-all duration-500 backdrop-blur-sm hover:scale-105 hover:shadow-2xl tracking-tight">
                 Learn More
               </Button>
             </Link>
@@ -120,26 +118,26 @@ const Hero = () => {
           <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="stat-card flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl backdrop-blur-sm border border-purple-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 group hover:scale-105">
               <Users className="h-12 w-12 text-purple-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-              <div className="text-4xl font-bold text-white mb-2">10K+</div>
-              <div className="text-gray-400 text-lg">Happy Clients</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">10K+</div>
+              <div className="text-gray-300 text-sm sm:text-base font-medium">Happy Students</div>
             </div>
             
             <div className="stat-card flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl backdrop-blur-sm border border-cyan-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 group hover:scale-105">
               <Award className="h-12 w-12 text-cyan-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-              <div className="text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-gray-400 text-lg">Awards Won</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">500+</div>
+              <div className="text-gray-300 text-sm sm:text-base font-medium">Live Classes</div>
             </div>
             
             <div className="stat-card flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl backdrop-blur-sm border border-blue-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 group hover:scale-105">
               <Rocket className="h-12 w-12 text-blue-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-              <div className="text-4xl font-bold text-white mb-2">200+</div>
-              <div className="text-gray-400 text-lg">Projects Launched</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">24x7</div>
+              <div className="text-gray-300 text-sm sm:text-base font-medium">Doubt Solving</div>
             </div>
 
             <div className="stat-card flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl backdrop-blur-sm border border-purple-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 group hover:scale-105">
               <TrendingUp className="h-12 w-12 text-purple-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-              <div className="text-4xl font-bold text-white mb-2">300%</div>
-              <div className="text-gray-400 text-lg">Growth Rate</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">100+</div>
+              <div className="text-gray-300 text-sm sm:text-base font-medium">Expert Mentors</div>
             </div>
           </div>
         </div>

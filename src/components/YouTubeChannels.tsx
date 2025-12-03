@@ -110,13 +110,10 @@ const YouTubeChannels = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4"
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0F172A]"
               style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', cursive",
-                background: 'linear-gradient(to right, #1e40af, #06b6d4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                fontWeight: 700
               }}>
             Join The Codex Family, Today!
           </h2>
@@ -150,8 +147,8 @@ const YouTubeChannels = () => {
                 </div>
 
                 {/* Channel name */}
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors"
-                    style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                <h3 className="text-lg font-bold text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors"
+                    style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
                   {channel.name}
                 </h3>
 
@@ -173,7 +170,7 @@ const YouTubeChannels = () => {
                 {/* Subscribe button */}
                 <button
                   className={`w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r ${channel.gradient} hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2`}
-                  style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '1em' }}
+                  style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1em' }}
                   onClick={(e) => {
                     e.preventDefault();
                     // Handle subscribe action
@@ -196,7 +193,7 @@ const YouTubeChannels = () => {
         <div className="text-center mt-12">
           <button
             className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-3xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-            style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '1.1em' }}
+            style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}
           >
             View All Channels
           </button>

@@ -144,13 +144,14 @@ const Hero = () => {
           <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight relative z-10"
               style={{ 
                 fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                fontWeight: 700,
                 letterSpacing: '0.02em'
               }}>
-            <span className="text-slate-900 inline-block transform hover:rotate-1 transition-transform">
+            <span className="text-[#0F172A] inline-block transform hover:rotate-1 transition-transform">
               Master Tech Skills,
             </span>
             <br />
-            <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent inline-block transform hover:-rotate-1 transition-transform">
+            <span className="text-[#0F172A] inline-block transform hover:-rotate-1 transition-transform">
               Shape Your Future
             </span>
           </h1>
@@ -169,14 +170,14 @@ const Hero = () => {
             
             <Link to="/contact" className="transform hover:scale-105 transition-transform duration-300">
               <Button size="lg" className="hero-button bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:rotate-1 group border-0 tracking-tight"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '0.95em' }}>
+                      style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '0.95em' }}>
                 Start Your Journey
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
             </Link>
             <Link to="/about" className="transform hover:scale-105 transition-transform duration-300">
               <Button variant="outline" size="lg" className="hero-button border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-3xl transition-all duration-500 hover:-rotate-1 hover:shadow-lg tracking-tight"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '0.95em' }}>
+                      style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '0.95em' }}>
                 Learn More
               </Button>
             </Link>

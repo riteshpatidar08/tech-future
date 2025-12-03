@@ -73,18 +73,19 @@ const NotFound = () => {
             style={{ transform: 'rotate(-1deg)' }}
           >
             <h1
-              className="text-8xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent"
+              className="text-8xl font-bold mb-4 text-[#0F172A]"
               style={{
                 fontFamily:
                   "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                fontWeight: 700,
                 letterSpacing: '0.02em',
               }}
             >
               404
             </h1>
             <p
-              className="text-2xl text-slate-600 mb-8"
-              style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}
+              className="text-2xl text-[#0F172A] mb-8"
+              style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}
             >
               Oops! Page not found
             </p>
@@ -92,7 +93,8 @@ const NotFound = () => {
               <Button
                 className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-3xl font-semibold transition-all duration-300 transform hover:scale-105"
                 style={{
-                  fontFamily: "'Dancing Script', 'Pacifico', cursive",
+                  fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                  fontWeight: 700,
                   fontSize: '1.1em',
                 }}
               >

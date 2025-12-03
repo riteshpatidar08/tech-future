@@ -102,13 +102,10 @@ const StudyResources = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4"
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0F172A]"
               style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', cursive",
-                background: 'linear-gradient(to right, #1e40af, #06b6d4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                fontWeight: 700
               }}>
             Study Resources
           </h2>
@@ -138,9 +135,10 @@ const StudyResources = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 text-center"
+                  <h3 className="text-lg md:text-xl font-bold text-[#0F172A] mb-3 text-center"
                       style={{ 
-                        fontFamily: "'Dancing Script', 'Pacifico', cursive"
+                        fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                        fontWeight: 700
                       }}>
                     {resource.title}
                   </h3>

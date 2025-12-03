@@ -105,9 +105,10 @@ const Contact = () => {
             </div>
           </div>
           
-          <h2 className="contact-header text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-4 leading-tight tracking-tight relative z-10"
+          <h2 className="contact-header text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F172A] mb-4 leading-tight tracking-tight relative z-10"
               style={{ 
                 fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                fontWeight: 700,
                 letterSpacing: '0.02em'
               }}>
             Ready to Start Your Journey?
@@ -126,8 +127,8 @@ const Contact = () => {
               <HandDrawnArrow direction="right" color="#F89820" className="w-14 h-14" />
             </div>
             
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent leading-tight tracking-tight"
-                style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-[#0F172A] leading-tight tracking-tight"
+                style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
               Send us a Message
             </h3>
             <form className="space-y-6">
@@ -156,7 +157,7 @@ const Contact = () => {
                 className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors resize-none rounded-xl"
               />
               <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:rotate-1"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive", fontSize: '1.1em' }}>
+                      style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
                 Send Message
               </Button>
             </form>
@@ -169,8 +170,8 @@ const Contact = () => {
               <HandDrawnArrow direction="left" color="#7F6DFF" className="w-14 h-14" />
             </div>
             
-            <h3 className="text-xl sm:text-2xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent leading-tight tracking-tight"
-                style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+            <h3 className="text-xl sm:text-2xl font-bold mb-8 text-[#0F172A] leading-tight tracking-tight"
+                style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
               Get in Touch
             </h3>
             <div className="space-y-6">

@@ -51,12 +51,12 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-10 w-auto" }) =
         y="135" 
         fontFamily="'Dancing Script', 'Pacifico', 'Brush Script MT', cursive"
         fontSize="150" 
-        fontWeight="bold"
+        fontWeight="700"
         letterSpacing="4"
         textAnchor="middle"
         fill="#0F172A"
         stroke="#0F172A"
-        strokeWidth="3"
+        strokeWidth="4"
       >
         Codex
       </text>

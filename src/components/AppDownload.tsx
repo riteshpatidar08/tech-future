@@ -63,13 +63,10 @@ const AppDownload = () => {
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4"
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-[#0F172A]"
                 style={{ 
-                  fontFamily: "'Dancing Script', 'Pacifico', cursive",
-                  background: 'linear-gradient(to right, #1e40af, #06b6d4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
+                  fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                  fontWeight: 700
                 }}>
               Join 10K+ students on the app today!
             </h2>
@@ -125,8 +122,8 @@ const AppDownload = () => {
                   <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl h-96 flex items-center justify-center">
                     <div className="text-center">
                       <Smartphone className="h-24 w-24 mx-auto mb-4 text-blue-600" />
-                      <div className="text-2xl font-bold text-slate-900 mb-2"
-                           style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                      <div className="text-2xl font-bold text-[#0F172A] mb-2"
+                           style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
                         Codex App
                       </div>
                       <div className="text-slate-600">Learn on the go!</div>

@@ -119,13 +119,10 @@ const Testimonials = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4"
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0F172A]"
               style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', cursive",
-                background: 'linear-gradient(to right, #1e40af, #06b6d4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
+                fontWeight: 700
               }}>
             Students ❤️ Codex
           </h2>
@@ -165,8 +162,8 @@ const Testimonials = () => {
                   {/* Student info */}
                   <div className="flex items-center justify-between border-t pt-4" style={{ borderColor: colors.border }}>
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-1"
-                          style={{ fontFamily: "'Dancing Script', 'Pacifico', cursive" }}>
+                      <h3 className="text-base font-bold text-[#0F172A] mb-1"
+                          style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
                         {testimonial.name}
                       </h3>
                       <div className="flex items-center gap-2">

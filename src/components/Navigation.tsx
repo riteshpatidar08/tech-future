@@ -1,13 +1,16 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Home, BookOpen, Info, FileText, FolderOpen, GraduationCap, Mail } from 'lucide-react';
+import { Menu, X, Home, BookOpen, Info, FileText, FolderOpen, GraduationCap, Mail, Code, Database, Brain, BarChart3, Shield, Smartphone, Cloud, ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Logo from './Logo';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(0); // Track selected category index
   const location = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Animate navigation on mount
@@ -17,9 +20,88 @@ const Navigation = () => {
     );
   }, []);
 
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setCoursesOpen(false);
+      }
+    };
+
+    if (coursesOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [coursesOpen]);
+
+  const courseCategories = [
+    {
+      name: "Web Development",
+      icon: Code,
+      courses: [
+        { name: "Full Stack Development", path: "/course/fullstack" },
+        { name: "Frontend Development", path: "/course/frontend" },
+        { name: "Backend Development", path: "/course/backend" },
+        { name: "MERN Stack", path: "/course/mern" }
+      ]
+    },
+    {
+      name: "Data Science & Analytics",
+      icon: Database,
+      courses: [
+        { name: "Python Data Science", path: "/course/python-ds" },
+        { name: "Data Analytics", path: "/course/data-analytics" },
+        { name: "Big Data Analytics", path: "/course/big-data" },
+        { name: "Business Intelligence", path: "/course/bi" }
+      ]
+    },
+    {
+      name: "AI & Machine Learning",
+      icon: Brain,
+      courses: [
+        { name: "Machine Learning", path: "/course/machine-learning" },
+        { name: "Deep Learning", path: "/course/deep-learning" },
+        { name: "AI with Python", path: "/course/ai-python" },
+        { name: "Computer Vision", path: "/course/computer-vision" }
+      ]
+    },
+    {
+      name: "Cloud & DevOps",
+      icon: Cloud,
+      courses: [
+        { name: "AWS Cloud Computing", path: "/course/aws" },
+        { name: "DevOps Engineering", path: "/course/devops" },
+        { name: "Docker & Kubernetes", path: "/course/docker" },
+        { name: "CI/CD Pipelines", path: "/course/cicd" }
+      ]
+    },
+    {
+      name: "Mobile Development",
+      icon: Smartphone,
+      courses: [
+        { name: "React Native", path: "/course/react-native" },
+        { name: "Flutter Development", path: "/course/flutter" },
+        { name: "iOS Development", path: "/course/ios" },
+        { name: "Android Development", path: "/course/android" }
+      ]
+    },
+    {
+      name: "Cybersecurity",
+      icon: Shield,
+      courses: [
+        { name: "Ethical Hacking", path: "/course/ethical-hacking" },
+        { name: "Cybersecurity Fundamentals", path: "/course/cybersecurity" },
+        { name: "Network Security", path: "/course/network-security" },
+        { name: "Penetration Testing", path: "/course/penetration-testing" }
+      ]
+    }
+  ];
+
   const navLinks = [
     { name: 'Home', path: '/', icon: Home },
-    { name: 'Courses', path: '/courses', icon: BookOpen },
     { name: 'About', path: '/about', icon: Info },
     { name: 'Blog', path: '/blog', icon: FileText },
     { name: 'Resources', path: '/resources', icon: FolderOpen },
@@ -37,7 +119,130 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
+            {/* Courses Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onMouseEnter={() => setCoursesOpen(true)}
+                onMouseLeave={() => setCoursesOpen(false)}
+                className={`nav-item relative px-3 py-2 text-sm font-bold transition-all duration-300 tracking-tight flex flex-col items-center gap-1 group ${
+                  location.pathname.startsWith('/course') || location.pathname === '/courses'
+                    ? 'text-[#00D4AA]'
+                    : 'text-slate-700 hover:text-[#00D4AA]'
+                }`}
+              >
+                <div className="relative">
+                  <BookOpen 
+                    size={20} 
+                    className={`transition-all duration-300 ${
+                      location.pathname.startsWith('/course') || location.pathname === '/courses' || coursesOpen
+                        ? 'text-[#00D4AA] scale-110' 
+                        : 'text-[#00D4AA] group-hover:scale-110'
+                    }`}
+                  />
+                  {coursesOpen && (
+                    <ChevronDown 
+                      size={10} 
+                      className="absolute -bottom-1 -right-1 text-[#00D4AA] transition-transform duration-300 rotate-180"
+                    />
+                  )}
+                </div>
+                <span className="text-[10px] leading-tight">Courses</span>
+                {(location.pathname.startsWith('/course') || location.pathname === '/courses') && (
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#00D4AA] to-[#61DAFB] rounded-full"></div>
+                )}
+              </button>
+
+              {/* Dropdown Menu - PW Skills Style Sidebar */}
+              {coursesOpen && (
+                <div
+                  onMouseEnter={() => setCoursesOpen(true)}
+                  onMouseLeave={() => setCoursesOpen(false)}
+                  className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[900px] bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden z-50"
+                >
+                  <div className="flex">
+                    {/* Left Sidebar - Categories */}
+                    <div className="w-64 bg-slate-50 border-r border-gray-200">
+                      <div className="p-5 border-b border-gray-200 bg-white">
+                        <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Browse Courses</h3>
+                      </div>
+                      <div className="py-1">
+                        {courseCategories.map((category, index) => {
+                          const Icon = category.icon;
+                          const isSelected = selectedCategory === index;
+                          return (
+                            <div
+                              key={index}
+                              onClick={() => setSelectedCategory(index)}
+                              className={`px-4 py-3 cursor-pointer transition-colors border-l-2 ${
+                                isSelected
+                                  ? 'bg-white border-blue-600'
+                                  : 'border-transparent hover:bg-white hover:border-blue-600'
+                              }`}
+                            >
+                              <div className="flex items-center gap-3">
+                                <Icon 
+                                  size={18} 
+                                  className={isSelected ? 'text-blue-600' : 'text-slate-600'} 
+                                />
+                                <span className={`text-sm font-medium ${
+                                  isSelected ? 'text-blue-600 font-semibold' : 'text-slate-700'
+                                }`}>
+                                  {category.name}
+                                </span>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Right Content Area - Subcategories for Selected Category */}
+                    <div className="flex-1 p-6">
+                      {courseCategories[selectedCategory] && (() => {
+                        const category = courseCategories[selectedCategory];
+                        const Icon = category.icon;
+                        return (
+                          <div>
+                            <div className="flex items-center gap-3 mb-6">
+                              <div className="p-2 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 text-white">
+                                <Icon size={20} />
+                              </div>
+                              <h3 className="font-semibold text-slate-900 text-base">
+                                {category.name}
+                              </h3>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                              {category.courses.map((course, courseIndex) => (
+                                <Link
+                                  key={courseIndex}
+                                  to={course.path}
+                                  onClick={() => setCoursesOpen(false)}
+                                  className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-all duration-200"
+                                >
+                                  {course.name}
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-gray-200">
+                              <Link
+                                to="/courses"
+                                onClick={() => setCoursesOpen(false)}
+                                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                              >
+                                View All Courses
+                                <ChevronDown size={14} className="rotate-[-90deg]" />
+                              </Link>
+                            </div>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = location.pathname === link.path;
@@ -45,23 +250,23 @@ const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`nav-item relative px-3 py-2 text-sm font-bold transition-all duration-300 tracking-tight flex items-center gap-1.5 group ${
+                  className={`nav-item relative px-3 py-2 text-sm font-bold transition-all duration-300 tracking-tight flex flex-col items-center gap-1 group ${
                     isActive
                       ? 'text-blue-600'
                       : 'text-slate-700 hover:text-blue-600'
                   }`}
                 >
                   <Icon 
-                    size={18} 
+                    size={20} 
                     className={`transition-all duration-300 ${
                       isActive 
                         ? 'text-blue-600 scale-110' 
                         : 'text-slate-600 group-hover:text-blue-600 group-hover:scale-110'
                     }`}
                   />
-                  <span>{link.name}</span>
+                  <span className="text-[10px] leading-tight">{link.name}</span>
                   {isActive && (
-                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full"></div>
                   )}
                 </Link>
               );
@@ -79,7 +284,47 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 bg-white border-t border-gray-200">
+          <div className="lg:hidden py-4 bg-white border-t border-gray-200 max-h-[80vh] overflow-y-auto">
+            {/* Courses Section */}
+            <div className="px-4 mb-2">
+              <div className="flex items-center gap-2.5 px-4 py-2.5 text-sm font-bold text-slate-700">
+                <BookOpen size={18} className="text-slate-600" />
+                <span>Courses</span>
+              </div>
+              <div className="ml-8 mt-2 space-y-1">
+                {courseCategories.map((category, index) => {
+                  const Icon = category.icon;
+                  return (
+                    <div key={index} className="mb-3">
+                      <div className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-600">
+                        <Icon size={16} />
+                        <span>{category.name}</span>
+                      </div>
+                      <div className="ml-6 space-y-1">
+                        {category.courses.map((course, courseIndex) => (
+                          <Link
+                            key={courseIndex}
+                            to={course.path}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-3 py-1.5 text-xs text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                          >
+                            {course.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+                <Link
+                  to="/courses"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 text-xs font-semibold text-blue-600 hover:bg-blue-50 rounded mt-2"
+                >
+                  View All Courses →
+                </Link>
+              </div>
+            </div>
+
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = location.pathname === link.path;

@@ -162,6 +162,25 @@ const Hero = () => {
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold">Unlock your potential</span> by signing up with Codex - The most affordable learning solution
           </p>
           
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-sm text-slate-600 relative z-10 px-4">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span>10,000+ Happy Students</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 bg-blue-500 rounded-full animate-pulse"></span>
+              <span>500+ Live Classes</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 bg-purple-500 rounded-full animate-pulse"></span>
+              <span>95% Placement Rate</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 bg-orange-500 rounded-full animate-pulse"></span>
+              <span>Industry Experts</span>
+            </div>
+          </div>
+          
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-6 justify-center mb-16 relative z-10">
             {/* Arrow pointing to button */}
             <div className="absolute -left-20 top-1/2 hidden xl:block animate-float" style={{ animationDelay: '0.5s' }}>

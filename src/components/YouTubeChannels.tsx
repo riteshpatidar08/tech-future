@@ -2,8 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Youtube, ExternalLink } from 'lucide-react';
-import HandDrawnArrow from './HandDrawnArrow';
-import EducationIllustration from './EducationIllustration';
+import Tablet3D from './Tablet3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,35 +56,35 @@ const YouTubeChannels = () => {
   // Sample channels - user will replace with actual data
   const channels: Channel[] = [
     {
-      name: "Codex Tech",
+      name: "Syntaxim Tech",
       subscribers: "50K",
       description: "Main channel for tech tutorials and course content",
       gradient: "from-blue-600 to-cyan-600",
       iconColor: "#3776AB"
     },
     {
-      name: "Codex Web Dev",
+      name: "Syntaxim Web Dev",
       subscribers: "25K",
       description: "Web development tutorials and projects",
       gradient: "from-purple-600 to-pink-600",
       iconColor: "#00D4AA"
     },
     {
-      name: "Codex Data Science",
+      name: "Syntaxim Data Science",
       subscribers: "20K",
       description: "Data science and Python tutorials",
       gradient: "from-cyan-600 to-blue-600",
       iconColor: "#7F6DFF"
     },
     {
-      name: "Codex ML",
+      name: "Syntaxim ML",
       subscribers: "15K",
       description: "Machine Learning and AI content",
       gradient: "from-orange-600 to-yellow-600",
       iconColor: "#F89820"
     },
     {
-      name: "Codex Foundation",
+      name: "Syntaxim Foundation",
       subscribers: "30K",
       description: "Beginner-friendly programming tutorials",
       gradient: "from-green-600 to-teal-600",
@@ -94,28 +93,22 @@ const YouTubeChannels = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
-      {/* Decorative illustrations */}
-      <div className="absolute top-10 right-10 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="online-learning" size={120} />
+    <section ref={sectionRef} className="relative py-20 md:py-28 bg-white overflow-hidden">
+      {/* 3D Tablet Elements */}
+      <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
+        <Tablet3D className="scale-75" />
       </div>
-      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block transform -rotate-12">
-        <EducationIllustration type="laptop" size={100} />
-      </div>
-
-      {/* Hand-drawn arrows */}
-      <div className="absolute top-1/4 left-10 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow direction="right" color="#3776AB" className="w-16 h-16" />
+      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block">
+        <Tablet3D className="scale-75" />
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0F172A]"
-              style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                fontWeight: 700
-              }}>
-            Join The Codex Family, Today!
+          <div className="flex justify-center mb-6">
+            <Tablet3D className="scale-75" />
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-slate-900">
+            Join The Syntaxim Family, Today!
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
             Explore our YouTube Channels and subscribe to get access to quality education for free.
@@ -148,7 +141,7 @@ const YouTubeChannels = () => {
 
                 {/* Channel name */}
                 <h3 className="text-lg font-bold text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors"
-                    style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
+                    className="font-bold">
                   {channel.name}
                 </h3>
 
@@ -170,7 +163,7 @@ const YouTubeChannels = () => {
                 {/* Subscribe button */}
                 <button
                   className={`w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r ${channel.gradient} hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2`}
-                  style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1em' }}
+                  className="font-bold text-base"
                   onClick={(e) => {
                     e.preventDefault();
                     // Handle subscribe action
@@ -180,10 +173,6 @@ const YouTubeChannels = () => {
                   Subscribe
                 </button>
 
-                {/* Decorative illustration */}
-                <div className="absolute bottom-2 right-2 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                  <EducationIllustration type="online-learning" size={50} />
-                </div>
               </div>
             </a>
           ))}
@@ -192,8 +181,7 @@ const YouTubeChannels = () => {
         {/* CTA Button */}
         <div className="text-center mt-12">
           <button
-            className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-3xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-            style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}
+            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition-all duration-300"
           >
             View All Channels
           </button>

@@ -4,8 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Award, CheckCircle2, Shield, Globe, FileCheck, Star } from 'lucide-react';
-import HandDrawnArrow from './HandDrawnArrow';
-import EducationIllustration from './EducationIllustration';
+import Certificate3D from './Certificate3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,27 +89,23 @@ const CertificationDetails = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
-      <div className="absolute top-10 right-10 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="certificate" size={120} />
+    <section ref={sectionRef} className="relative py-20 md:py-28 bg-white overflow-hidden">
+      {/* 3D Certificate Elements */}
+      <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
+        <Certificate3D className="scale-75" />
       </div>
-      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block transform -rotate-12">
-        <EducationIllustration type="trophy" size={100} />
-      </div>
-
-      <div className="absolute top-1/4 right-10 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow direction="left" color="#3776AB" className="w-20 h-20" />
+      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block">
+        <Certificate3D className="scale-75" />
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <Certificate3D className="scale-75" />
+          </div>
           <div className="inline-flex items-center gap-2 mb-4">
-            <Award className="h-6 w-6 text-blue-600" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F172A]"
-                style={{ 
-                  fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                  fontWeight: 700
-                }}>
+            <Award className="h-6 w-6 text-slate-900" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
               Industry-Recognized Certification
             </h2>
           </div>
@@ -122,14 +117,13 @@ const CertificationDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <Card className="border-2 shadow-2xl overflow-hidden">
-              <div className="bg-gradient-to-br from-blue-600 to-cyan-600 p-8 text-white text-center">
+              <div className="bg-slate-900 p-8 text-white text-center">
                 <Award className="h-16 w-16 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2"
                     style={{ 
-                      fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                       fontWeight: 700
                     }}>
-                  Codex Professional Certificate
+                  Syntaxim Professional Certificate
                 </h3>
                 <p className="text-blue-100">Verified by Industry Experts</p>
               </div>
@@ -169,7 +163,7 @@ const CertificationDetails = () => {
           {features.map((feature, idx) => (
             <Card key={idx} className="border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 text-center">
               <CardContent className="p-6">
-                <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg mb-4">
+                <div className="inline-flex p-4 rounded-lg bg-slate-100 mb-4">
                   <div className="text-white">{feature.icon}</div>
                 </div>
                 <h4 className="text-lg font-bold text-[#0F172A] mb-2">{feature.title}</h4>
@@ -181,8 +175,7 @@ const CertificationDetails = () => {
 
         <div className="mt-12 text-center">
           <p className="text-slate-600 mb-4">Complete any course to earn your certificate</p>
-          <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-3xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                  style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
+          <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300">
             View Sample Certificate
           </button>
         </div>

@@ -2,8 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import HandDrawnArrow from "./HandDrawnArrow";
-import CourseTechIllustration from "./CourseTechIllustration";
+import CodeCube3D from "./CodeCube3D";
 
 interface CourseCardProps {
   title: string;
@@ -37,28 +36,19 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
   const colors = getLogoColors(courseId);
   
   return (
-    <div className="group relative bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border" 
-         style={{ borderColor: colors.border }}>
-      {/* Gradient Background with logo colors */}
-      <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-20 opacity-10" 
-           style={{ background: `linear-gradient(135deg, ${colors.bg}, transparent)` }}></div>
-      
-      {/* Course-specific tech illustration - positioned in the middle */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none z-0">
-        <CourseTechIllustration courseId={courseId} size={240} />
-      </div>
-      
-      {/* Hand-drawn arrow on hover */}
-      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-        <HandDrawnArrow direction="diagonal" color={colors.icon} className="w-10 h-10" />
+    <div className="group relative bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+      {/* 3D Code Cube Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none z-0">
+        <CodeCube3D className="scale-50" />
       </div>
       
       {/* Content */}
       <div className="relative p-6 z-10">
         <div className="flex items-center mb-4">
-          <div className="p-3 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform"
-               style={{ background: `linear-gradient(135deg, ${colors.icon}, ${colors.icon}dd)` }}>
-            {icon}
+          <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+            <div className="text-slate-900 group-hover:text-white transition-colors">
+              {icon}
+            </div>
           </div>
           <div className="ml-4">
             <div className="flex items-center space-x-2 text-sm text-slate-600">
@@ -80,9 +70,8 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
           </p>
         </div>
         
-        <div className="flex items-center mb-4 text-sm text-slate-600 p-3 rounded-lg"
-             style={{ background: `${colors.bg}` }}>
-          <Clock className="h-4 w-4 mr-2" style={{ color: colors.icon }} />
+        <div className="flex items-center mb-4 text-sm text-slate-600 p-3 rounded-lg bg-slate-50">
+          <Clock className="h-4 w-4 mr-2 text-slate-700" />
           <span className="text-slate-700 font-medium">{duration}</span>
         </div>
         
@@ -91,7 +80,7 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
           <ul className="space-y-1">
             {features.map((feature, index) => (
               <li key={index} className="text-xs text-slate-600 flex items-center bg-slate-50 p-1.5 rounded-md">
-                <div className="w-1.5 h-1.5 rounded-full mr-2" style={{ backgroundColor: colors.icon }}></div>
+                <div className="w-1.5 h-1.5 rounded-full mr-2 bg-slate-900"></div>
                 <span>{feature}</span>
               </li>
             ))}
@@ -100,13 +89,11 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
         
         <div className="space-y-3">
           <Link to={`/course/${courseId}`}>
-            <Button className="w-full hover:shadow-lg transition-all duration-300 text-white font-semibold py-3 rounded-xl transform hover:scale-105"
-                    style={{ background: `linear-gradient(135deg, ${colors.icon}, ${colors.icon}dd)` }}>
+            <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-lg transition-all duration-300">
               View Details
             </Button>
           </Link>
-          <Button variant="outline" className="w-full border-2 text-slate-700 hover:bg-slate-50 transition-all duration-300 font-semibold py-3 rounded-xl"
-                  style={{ borderColor: colors.border }}>
+          <Button variant="outline" className="w-full border-2 border-slate-200 text-slate-700 hover:bg-slate-50 transition-all duration-300 font-semibold py-3 rounded-lg">
             Enroll Now
           </Button>
         </div>

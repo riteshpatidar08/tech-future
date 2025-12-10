@@ -109,7 +109,6 @@ const StudentPortal = () => {
             <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-4xl mx-auto relative z-10">
               <h1 className="text-5xl md:text-6xl font-bold text-[#0F172A] mb-6"
                   style={{ 
-                    fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                     fontWeight: 700,
                     letterSpacing: '0.02em'
                   }}>

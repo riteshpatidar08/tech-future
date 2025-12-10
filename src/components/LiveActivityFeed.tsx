@@ -5,8 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Users, BookOpen, Award, Video, Clock } from 'lucide-react';
-import HandDrawnArrow from './HandDrawnArrow';
-import EducationIllustration from './EducationIllustration';
+import Chart3D from './Chart3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +16,6 @@ interface Activity {
   course: string;
   time: string;
   iconType: 'award' | 'book' | 'video';
-  color: string;
 }
 
 const activities: Activity[] = [
@@ -28,7 +26,6 @@ const activities: Activity[] = [
     course: 'Full Stack Development',
     time: '2 minutes ago',
     iconType: 'award',
-    color: 'bg-blue-500',
   },
   {
     id: 2,
@@ -37,7 +34,6 @@ const activities: Activity[] = [
     course: 'Python Data Science',
     time: '5 minutes ago',
     iconType: 'book',
-    color: 'bg-cyan-500',
   },
   {
     id: 3,
@@ -46,7 +42,6 @@ const activities: Activity[] = [
     course: 'Machine Learning Basics',
     time: '8 minutes ago',
     iconType: 'video',
-    color: 'bg-purple-500',
   },
   {
     id: 4,
@@ -55,7 +50,6 @@ const activities: Activity[] = [
     course: 'Data Analytics',
     time: '12 minutes ago',
     iconType: 'award',
-    color: 'bg-orange-500',
   },
   {
     id: 5,
@@ -64,7 +58,6 @@ const activities: Activity[] = [
     course: 'Full Stack Development',
     time: '15 minutes ago',
     iconType: 'award',
-    color: 'bg-blue-500',
   },
   {
     id: 6,
@@ -73,27 +66,24 @@ const activities: Activity[] = [
     course: 'Machine Learning',
     time: '18 minutes ago',
     iconType: 'book',
-    color: 'bg-purple-500',
   },
 ];
 
 const LiveActivityFeed = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const feedRef = useRef<HTMLDivElement>(null);
-  const [displayedActivities, setDisplayedActivities] = useState<Activity[]>(
-    []
-  );
+  const [displayedActivities, setDisplayedActivities] = useState<Activity[]>([]);
 
   useEffect(() => {
     if (sectionRef.current) {
       gsap.fromTo(
         sectionRef.current,
-        { y: 100, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
+          duration: 0.6,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
@@ -105,17 +95,11 @@ const LiveActivityFeed = () => {
   }, []);
 
   useEffect(() => {
-    // Animate activities appearing one by one
     let currentIndex = 0;
     const interval = setInterval(() => {
       const currentActivity = activities[currentIndex];
-      if (
-        currentIndex < activities.length &&
-        currentActivity &&
-        currentActivity.id
-      ) {
+      if (currentIndex < activities.length && currentActivity && currentActivity.id) {
         setDisplayedActivities((prev) => {
-          // Ensure we don't add duplicates
           if (prev.some((a) => a && a.id && a.id === currentActivity.id)) {
             return prev;
           }
@@ -139,8 +123,8 @@ const LiveActivityFeed = () => {
       if (lastActivityElement) {
         gsap.fromTo(
           lastActivityElement,
-          { x: -50, opacity: 0, scale: 0.9 },
-          { x: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }
+          { x: -20, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.4, ease: 'power2.out' }
         );
       }
     }
@@ -169,55 +153,36 @@ const LiveActivityFeed = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-20 md:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden"
-    >
-      {/* Decorative illustrations */}
-      <div className="absolute top-10 right-10 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="student" size={120} />
+    <section ref={sectionRef} className="relative py-24 md:py-32 bg-slate-50 overflow-hidden">
+      {/* 3D Chart Elements */}
+      <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
+        <Chart3D className="scale-75" />
       </div>
-      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block transform -rotate-12">
-        <EducationIllustration type="rocket" size={100} />
-      </div>
-
-      {/* Hand-drawn arrows */}
-      <div className="absolute top-1/4 left-10 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow
-          direction="right"
-          color="#3776AB"
-          className="w-20 h-20"
-        />
+      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block">
+        <Chart3D className="scale-75" />
       </div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
         <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <Chart3D className="scale-75" />
+          </div>
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="relative">
-              <Users className="h-6 w-6 text-blue-600" />
-              <span className="absolute -top-1 -right-1 h-3 w-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
+              <Users className="h-6 w-6 text-slate-900" />
+              <span className="absolute -top-1 -right-1 h-3 w-3 bg-green-500 rounded-full border-2 border-white"></span>
             </div>
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F172A]"
-              style={{
-                fontFamily:
-                  "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                fontWeight: 700,
-              }}
-            >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
               Live Activity Feed
             </h2>
           </div>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             See what our students are achieving right now! Join thousands of
             learners on their journey.
           </p>
         </div>
 
-        <Card
-          ref={feedRef}
-          className="border-2 shadow-xl bg-white/90 backdrop-blur-sm"
-        >
+        <Card ref={feedRef} className="border border-slate-200 shadow-sm bg-white">
           <CardContent className="p-6 space-y-4">
             {displayedActivities
               .filter((activity) => activity && activity.id && activity.name)
@@ -225,17 +190,17 @@ const LiveActivityFeed = () => {
                 <div
                   key={activity.id}
                   data-activity-index={index}
-                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-200 hover:shadow-md"
+                  className="flex items-center gap-4 p-4 rounded-lg hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-0"
                 >
-                  <Avatar className="h-12 w-12 border-2 border-blue-200">
-                    <AvatarFallback className="bg-gradient-to-br from-blue-500 to-cyan-500 text-white font-semibold">
+                  <Avatar className="h-10 w-10 border border-slate-200">
+                    <AvatarFallback className="bg-slate-100 text-slate-700 font-medium">
                       {getInitials(activity.name || '')}
                     </AvatarFallback>
                   </Avatar>
 
                   <div className="flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-semibold text-slate-800">
+                      <span className="font-medium text-slate-900">
                         {activity.name || 'Student'}
                       </span>
                       <span className="text-slate-600">
@@ -243,7 +208,7 @@ const LiveActivityFeed = () => {
                       </span>
                       <Badge
                         variant="outline"
-                        className="border-blue-300 text-blue-700"
+                        className="border-slate-300 text-slate-700"
                       >
                         {activity.course || 'Course'}
                       </Badge>
@@ -256,11 +221,7 @@ const LiveActivityFeed = () => {
                     </div>
                   </div>
 
-                  <div
-                    className={`p-2 rounded-lg ${
-                      activity.color || 'bg-blue-500'
-                    } text-white`}
-                  >
+                  <div className="p-2 rounded-lg bg-slate-100 text-slate-700">
                     {getIcon(activity.iconType || 'award')}
                   </div>
                 </div>
@@ -268,7 +229,7 @@ const LiveActivityFeed = () => {
 
             {displayedActivities.length === 0 && (
               <div className="text-center py-12 text-slate-500">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-slate-900 mb-4"></div>
                 <p>Loading activities...</p>
               </div>
             )}
@@ -278,7 +239,7 @@ const LiveActivityFeed = () => {
         <div className="text-center mt-8">
           <p className="text-sm text-slate-600">
             <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span className="h-2 w-2 bg-green-500 rounded-full"></span>
               Live updates every few seconds
             </span>
           </p>

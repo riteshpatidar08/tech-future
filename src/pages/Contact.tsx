@@ -149,8 +149,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-lg text-slate-900 mb-2">Email Us</h4>
                     <p className="text-slate-600">
-                      info@codex.com<br />
-                      admissions@codex.com
+                      info@syntaxim.com<br />
+                      admissions@syntaxim.com
                     </p>
                   </div>
                 </div>

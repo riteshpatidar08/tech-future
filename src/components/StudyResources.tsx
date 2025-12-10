@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, FileText, BookMarked } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import EducationIllustration from './EducationIllustration';
-import HandDrawnArrow from './HandDrawnArrow';
+import Book3D from './Book3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,150 +15,94 @@ const StudyResources = () => {
     const cards = cardsRef.current?.children;
     if (!cards) return;
 
-    gsap.fromTo(cards,
-      { y: 100, opacity: 0, scale: 0.8, rotation: (i) => (i % 2 === 0 ? -5 : 5) },
+    gsap.fromTo(
+      cards,
+      { y: 40, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        scale: 1,
-        rotation: (i) => (i % 2 === 0 ? -2 : 2),
-        duration: 1,
-        stagger: 0.2,
-        ease: 'back.out(1.7)',
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
-          toggleActions: 'play none none none'
-        }
+          toggleActions: 'play none none none',
+        },
       }
     );
-
-    // Floating animation for cards
-    gsap.to('.resource-card', {
-      y: (i) => -10 + (i * 2),
-      rotation: (i) => (i % 2 === 0 ? -1 : 1),
-      duration: 3 + Math.random() * 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      stagger: 0.3
-    });
   }, []);
 
   const resources = [
     {
       title: 'Reference Books',
-      description: 'Our experts have created thorough study materials that break down complicated concepts into easily understandable content',
+      description:
+        'Our experts have created thorough study materials that break down complicated concepts into easily understandable content',
       icon: BookOpen,
-      gradient: 'from-blue-600 to-cyan-600',
-      bgGradient: 'from-blue-50 to-cyan-50',
-      borderColor: 'border-blue-200',
-      iconColor: '#3776AB',
-      link: '/resources'
+      link: '/resources',
     },
     {
       title: 'Study Notes',
-      description: 'Use Codex\'s detailed study materials that simplify complex ideas into easily understandable language',
+      description:
+        "Use Syntaxim's detailed study materials that simplify complex ideas into easily understandable language",
       icon: FileText,
-      gradient: 'from-purple-600 to-pink-600',
-      bgGradient: 'from-purple-50 to-pink-50',
-      borderColor: 'border-purple-200',
-      iconColor: '#7F6DFF',
-      link: '/resources'
+      link: '/resources',
     },
     {
       title: 'Practice Materials',
-      description: 'Unlock academic excellence with Codex\'s practice materials which provide you step-by-step solutions',
+      description:
+        "Unlock academic excellence with Syntaxim's practice materials which provide you step-by-step solutions",
       icon: BookMarked,
-      gradient: 'from-orange-600 to-yellow-600',
-      bgGradient: 'from-orange-50 to-yellow-50',
-      borderColor: 'border-orange-200',
-      iconColor: '#F89820',
-      link: '/resources'
-    }
+      link: '/resources',
+    },
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-white overflow-hidden">
-      {/* Decorative illustrations */}
-      <div className="absolute top-10 left-10 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="book" size={120} />
+    <section ref={sectionRef} className="relative py-24 md:py-32 bg-slate-50 overflow-hidden">
+      {/* 3D Book Elements */}
+      <div className="absolute top-20 right-20 opacity-10 hidden lg:block">
+        <Book3D className="scale-75" />
       </div>
-      <div className="absolute bottom-10 right-10 opacity-10 hidden lg:block transform -rotate-12">
-        <EducationIllustration type="lightbulb" size={100} />
-      </div>
-      <div className="absolute top-1/2 left-5 opacity-8 hidden xl:block transform rotate-45">
-        <EducationIllustration type="coding" size={90} />
-      </div>
-
-      {/* Hand-drawn arrows */}
-      <div className="absolute top-20 right-20 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow direction="left" color="#3776AB" className="w-20 h-20" />
-      </div>
-      <div className="absolute bottom-20 left-20 hidden xl:block animate-float transform -rotate-12" style={{ animationDelay: '1s' }}>
-        <HandDrawnArrow direction="right" color="#00D4AA" className="w-16 h-16" />
+      <div className="absolute bottom-20 left-20 opacity-10 hidden lg:block">
+        <Book3D className="scale-75" />
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0F172A]"
-              style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                fontWeight: 700
-              }}>
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <Book3D className="scale-75" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
             Study Resources
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
-            A diverse array of learning materials to enhance your educational journey.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Access comprehensive study materials designed to help you excel in
+            your learning journey.
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div
+          ref={cardsRef}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {resources.map((resource, index) => {
-            const Icon = resource.icon;
+            const IconComponent = resource.icon;
             return (
-              <Link
-                key={index}
-                to={resource.link}
-                className="resource-card group"
-              >
-                <div
-                  className={`relative h-full p-8 rounded-3xl border-2 ${resource.borderColor} bg-gradient-to-br ${resource.bgGradient} shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1`}
-                  style={{ transform: `rotate(${index % 2 === 0 ? '-2deg' : '2deg'})` }}
-                >
-                  {/* Icon */}
+              <Link key={index} to={resource.link} className="group">
+                <div className="h-full p-8 border border-slate-200 rounded-lg bg-white hover:border-slate-900 hover:shadow-lg transition-all duration-300">
                   <div className="mb-6 flex justify-center">
-                    <div className={`p-4 rounded-2xl bg-gradient-to-br ${resource.gradient} shadow-lg transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
-                      <Icon className="h-10 w-10 text-white" />
+                    <div className="p-4 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+                      <IconComponent className="h-8 w-8 text-slate-900 group-hover:text-white transition-colors" />
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-lg md:text-xl font-bold text-[#0F172A] mb-3 text-center"
-                      style={{ 
-                        fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                        fontWeight: 700
-                      }}>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 text-center">
                     {resource.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-slate-600 text-sm md:text-base leading-relaxed text-center">
+                  <p className="text-slate-600 text-center leading-relaxed">
                     {resource.description}
                   </p>
-
-                  {/* Decorative illustration */}
-                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                    <EducationIllustration 
-                      type={index === 0 ? 'book' : index === 1 ? 'certificate' : 'coding'} 
-                      size={80} 
-                    />
-                  </div>
-
-                  {/* Arrow indicator */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <HandDrawnArrow direction="right" color={resource.iconColor} className="w-12 h-12" />
-                  </div>
                 </div>
               </Link>
             );
@@ -171,4 +114,3 @@ const StudyResources = () => {
 };
 
 export default StudyResources;
-

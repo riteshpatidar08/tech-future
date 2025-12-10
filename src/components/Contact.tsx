@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import HandDrawnArrow from "./HandDrawnArrow";
-import EducationIllustration from "./EducationIllustration";
+import Mail3D from './Mail3D';
+import Phone3D from './Phone3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,56 +61,28 @@ const Contact = () => {
   }, []);
 
   return (
-    <section ref={contactRef} className="py-20 bg-white relative overflow-hidden">
-      {/* Decorative tech icons */}
-      <div className="absolute top-20 left-5 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="student" size={120} />
+    <section ref={contactRef} className="py-20 bg-slate-50 relative overflow-hidden">
+      {/* 3D Mail and Phone Elements */}
+      <div className="absolute top-20 left-10 opacity-10 hidden lg:block">
+        <Mail3D className="scale-75" />
       </div>
-      <div className="absolute top-40 right-10 opacity-10 hidden xl:block transform -rotate-6">
-        <EducationIllustration type="laptop" size={100} />
+      <div className="absolute top-40 right-10 opacity-10 hidden xl:block">
+        <Phone3D className="scale-75" />
       </div>
-      <div className="absolute bottom-20 left-10 opacity-10 hidden lg:block transform rotate-6">
-        <EducationIllustration type="lightbulb" size={110} />
+      <div className="absolute bottom-20 left-10 opacity-10 hidden lg:block">
+        <Mail3D className="scale-75" />
       </div>
-      <div className="absolute top-1/2 left-5 opacity-10 hidden xl:block transform rotate-45">
-        <EducationIllustration type="teamwork" size={100} />
-      </div>
-      <div className="absolute bottom-1/3 right-5 opacity-10 hidden xl:block transform -rotate-12">
-        <EducationIllustration type="certificate" size={90} />
-      </div>
-      
-      {/* Hand-drawn arrows */}
-      <div className="absolute top-1/3 right-5 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow direction="left" color="#3776AB" className="w-20 h-20" />
-      </div>
-      <div className="absolute bottom-1/4 left-5 hidden xl:block animate-float transform -rotate-12" style={{ animationDelay: '1s' }}>
-        <HandDrawnArrow direction="right" color="#00D4AA" className="w-16 h-16" />
+      <div className="absolute bottom-1/3 right-10 opacity-10 hidden xl:block">
+        <Phone3D className="scale-75" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 relative">
-          {/* Tech icons behind header */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="absolute -left-20 top-0 opacity-15">
-              <svg width="100" height="100" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="70" fill="#3776AB"/>
-                <circle cx="150" cy="100" r="70" fill="#FFDE57"/>
-              </svg>
-            </div>
-            <div className="absolute -right-20 top-0 opacity-15">
-              <svg width="100" height="100" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="75" fill="#00D4AA"/>
-                <circle cx="100" cy="100" r="20" fill="#61DAFB"/>
-              </svg>
-            </div>
+          <div className="flex justify-center mb-6">
+            <Mail3D className="scale-75" />
           </div>
           
-          <h2 className="contact-header text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F172A] mb-4 leading-tight tracking-tight relative z-10"
-              style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                fontWeight: 700,
-                letterSpacing: '0.02em'
-              }}>
+          <h2 className="contact-header text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight tracking-tight relative z-10">
             Ready to Start Your Journey?
           </h2>
           <p className="contact-header text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-4 relative z-10">
@@ -120,15 +92,8 @@ const Contact = () => {
         
         <div className="contact-content grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="contact-form bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 relative"
-               style={{ transform: 'rotate(-1deg)' }}>
-            {/* Arrow pointing to form */}
-            <div className="absolute -left-12 top-1/2 hidden xl:block animate-float">
-              <HandDrawnArrow direction="right" color="#F89820" className="w-14 h-14" />
-            </div>
-            
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-[#0F172A] leading-tight tracking-tight"
-                style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
+          <div className="contact-form bg-white rounded-lg p-8 border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all duration-300 relative">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-900 leading-tight tracking-tight">
               Send us a Message
             </h3>
             <form className="space-y-6">
@@ -156,8 +121,7 @@ const Contact = () => {
                 rows={4}
                 className="bg-white border-gray-300 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 transition-colors resize-none rounded-xl"
               />
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:rotate-1"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
+              <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg py-3 rounded-lg transition-all duration-300">
                 Send Message
               </Button>
             </form>
@@ -165,26 +129,14 @@ const Contact = () => {
           
           {/* Contact Information */}
           <div className="relative">
-            {/* Arrow pointing to contact info */}
-            <div className="absolute -right-12 top-1/2 hidden xl:block animate-float" style={{ animationDelay: '0.8s' }}>
-              <HandDrawnArrow direction="left" color="#7F6DFF" className="w-14 h-14" />
-            </div>
-            
-            <h3 className="text-xl sm:text-2xl font-bold mb-8 text-[#0F172A] leading-tight tracking-tight"
-                style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
+            <h3 className="text-xl sm:text-2xl font-bold mb-8 text-slate-900 leading-tight tracking-tight">
               Get in Touch
             </h3>
             <div className="space-y-6">
               {/* Card 1 - Location Bangalore */}
-              <div className="contact-info flex items-start space-x-4 p-6 rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 group"
-                   style={{ 
-                     background: 'linear-gradient(135deg, rgba(127,109,255,0.08) 0%, rgba(255,111,97,0.05) 100%)',
-                     borderColor: 'rgba(127,109,255,0.2)',
-                     transform: 'rotate(1deg)'
-                   }}>
-                <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
-                     style={{ background: 'linear-gradient(135deg, #7F6DFF, #FF6F61)' }}>
-                  <MapPin className="h-6 w-6 text-white" />
+              <div className="contact-info flex items-start space-x-4 p-6 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+                  <MapPin className="h-6 w-6 text-slate-900 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-base sm:text-lg text-slate-900 mb-1 tracking-tight">Visit Our Campus - Bangalore</h4>
@@ -196,15 +148,9 @@ const Contact = () => {
               </div>
               
               {/* Card 1b - Location Bhopal */}
-              <div className="contact-info flex items-start space-x-4 p-6 rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 group"
-                   style={{ 
-                     background: 'linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(97,218,251,0.05) 100%)',
-                     borderColor: 'rgba(0,212,170,0.2)',
-                     transform: 'rotate(-0.5deg)'
-                   }}>
-                <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
-                     style={{ background: 'linear-gradient(135deg, #00D4AA, #61DAFB)' }}>
-                  <MapPin className="h-6 w-6 text-white" />
+              <div className="contact-info flex items-start space-x-4 p-6 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+                  <MapPin className="h-6 w-6 text-slate-900 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-base sm:text-lg text-slate-900 mb-1 tracking-tight">Visit Our Campus - Bhopal</h4>
@@ -216,15 +162,9 @@ const Contact = () => {
               </div>
               
               {/* Card 2 - Phone */}
-              <div className="contact-info flex items-start space-x-4 p-6 rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 group"
-                   style={{ 
-                     background: 'linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(97,218,251,0.05) 100%)',
-                     borderColor: 'rgba(0,212,170,0.2)',
-                     transform: 'rotate(-1deg)'
-                   }}>
-                <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
-                     style={{ background: 'linear-gradient(135deg, #00D4AA, #61DAFB)' }}>
-                  <Phone className="h-6 w-6 text-white" />
+              <div className="contact-info flex items-start space-x-4 p-6 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+                  <Phone className="h-6 w-6 text-slate-900 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-base sm:text-lg text-slate-900 mb-1 tracking-tight">Call Us</h4>
@@ -236,35 +176,23 @@ const Contact = () => {
               </div>
               
               {/* Card 3 - Email */}
-              <div className="contact-info flex items-start space-x-4 p-6 rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 group"
-                   style={{ 
-                     background: 'linear-gradient(135deg, rgba(55,118,171,0.08) 0%, rgba(255,222,87,0.05) 100%)',
-                     borderColor: 'rgba(55,118,171,0.2)',
-                     transform: 'rotate(0.5deg)'
-                   }}>
-                <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
-                     style={{ background: 'linear-gradient(135deg, #3776AB, #0DB7ED)' }}>
-                  <Mail className="h-6 w-6 text-white" />
+              <div className="contact-info flex items-start space-x-4 p-6 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+                  <Mail className="h-6 w-6 text-slate-900 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-base sm:text-lg text-slate-900 mb-1 tracking-tight">Email Us</h4>
                   <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    info@codex.com<br />
-                    admissions@codex.com
+                    info@syntaxim.com<br />
+                    admissions@syntaxim.com
                   </p>
                 </div>
               </div>
               
               {/* Card 4 - Office Hours */}
-              <div className="contact-info flex items-start space-x-4 p-6 rounded-xl border shadow-md hover:shadow-lg transition-all duration-300 group"
-                   style={{ 
-                     background: 'linear-gradient(135deg, rgba(248,152,32,0.08) 0%, rgba(237,139,0,0.05) 100%)',
-                     borderColor: 'rgba(248,152,32,0.2)',
-                     transform: 'rotate(-0.5deg)'
-                   }}>
-                <div className="p-3 rounded-lg group-hover:scale-110 transition-transform"
-                     style={{ background: 'linear-gradient(135deg, #F89820, #FFB300)' }}>
-                  <Clock className="h-6 w-6 text-white" />
+              <div className="contact-info flex items-start space-x-4 p-6 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
+                  <Clock className="h-6 w-6 text-slate-900 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-base sm:text-lg text-slate-900 mb-1 tracking-tight">Office Hours</h4>

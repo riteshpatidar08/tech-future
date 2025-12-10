@@ -25,7 +25,7 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
              borderRightColor: '#8B5CF6',
            }}>
         
-        {/* Playful top border with Codex colors */}
+        {/* Playful top border with Syntaxim colors */}
         <div className="relative h-12 bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-yellow-500/20"></div>
           <div className="absolute bottom-0 left-0 w-20 h-6 bg-white transform -skew-x-12 shadow-lg" style={{ transform: 'rotate(-2deg) skewX(-12deg)' }}></div>
@@ -38,12 +38,12 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
 
         {/* Certificate Content */}
         <div className="p-4 md:p-6 bg-white/80 backdrop-blur-sm">
-          {/* Top Section - Codex Branding */}
+          {/* Top Section - Syntaxim Branding */}
           <div className="flex items-center justify-between mb-6 pb-4 border-b-2 border-dashed"
                style={{ 
                  borderBottomColor: '#3B82F6'
                }}>
-            {/* Left - Codex Logo */}
+            {/* Left - Syntaxim Logo */}
             <div className="flex items-center gap-2" style={{ transform: 'rotate(-1deg)' }}>
               <div className="relative">
                 <Logo className="h-12 w-auto" />
@@ -53,14 +53,13 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
               <div>
                 <div className="text-sm font-bold mb-0.5"
                      style={{ 
-                       fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", 
                        fontWeight: 700,
                        background: 'linear-gradient(135deg, #3B82F6, #06B6D4, #F97316)',
                        WebkitBackgroundClip: 'text',
                        WebkitTextFillColor: 'transparent',
                        backgroundClip: 'text'
                      }}>
-                  CODEX
+                  SYNTAXIM
                 </div>
                 <div className="text-[10px] text-slate-600 font-semibold">TECH EDUCATION</div>
               </div>
@@ -98,7 +97,6 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                   fontWeight: 700,
                   letterSpacing: '0.03em',
                   textShadow: '0 2px 8px rgba(59, 130, 246, 0.1)',
@@ -111,7 +109,7 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
           {/* Certification Text - Playful Style */}
           <div className="text-center mb-6 px-2">
             <p className="text-sm md:text-base text-slate-700 leading-relaxed mb-3 font-medium"
-               style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 600 }}>
+               className="font-semibold">
               This is to certify that
             </p>
             <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-50 via-cyan-50 to-orange-50 rounded-xl border-2 border-transparent mb-3 shadow-md relative overflow-hidden"
@@ -122,7 +120,6 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
               <div className="absolute inset-0 bg-gradient-to-r from-blue-200/20 via-cyan-200/20 to-orange-200/20"></div>
               <p className="text-xl md:text-2xl font-bold relative z-10"
                  style={{ 
-                   fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", 
                    fontWeight: 700,
                    letterSpacing: '0.03em',
                    background: 'linear-gradient(135deg, #1E40AF, #0891B2, #C2410C)',
@@ -161,7 +158,7 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
           <div className="text-center mb-4">
             <p className="text-[10px] text-slate-500 mb-1 font-semibold uppercase tracking-wide">Verify at:</p>
             <p className="text-xs text-blue-700 font-mono bg-gradient-to-r from-blue-50 to-cyan-50 px-3 py-1 rounded-lg inline-block border-2 border-blue-300 font-semibold shadow-sm">
-              https://codex.com/certificate/xxxxx
+              https://syntaxim.com/certificate/xxxxx
             </p>
           </div>
 
@@ -175,20 +172,19 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
                    }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"></div>
                 <div className="absolute bottom-1 left-2 text-slate-600 text-[10px] font-semibold"
-                     style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
+                     className="font-bold">
                   Signature
                 </div>
               </div>
               <p className="text-sm font-bold"
                  style={{ 
-                   fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", 
                    fontWeight: 700,
                    background: 'linear-gradient(135deg, #3B82F6, #F97316)',
                    WebkitBackgroundClip: 'text',
                    WebkitTextFillColor: 'transparent',
                    backgroundClip: 'text'
                  }}>
-                Codex Team
+                Syntaxim Team
               </p>
               <p className="text-xs text-slate-600 font-medium">(Founder & CEO)</p>
             </div>
@@ -210,7 +206,7 @@ const CertificateIllustration: React.FC<CertificateIllustrationProps> = ({
         </div>
       </div>
 
-      {/* Playful decorative corner elements with Codex colors */}
+      {/* Playful decorative corner elements with Syntaxim colors */}
       <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full opacity-40 shadow-md flex items-center justify-center animate-pulse"
            style={{ transform: 'rotate(-15deg)' }}>
         <div className="w-3 h-3 bg-white rounded-full opacity-60"></div>

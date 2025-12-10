@@ -899,14 +899,7 @@ const CourseDetails = () => {
         <AnimatedBackground />
         <Navigation />
         <div className="text-center bg-white rounded-2xl p-8 border border-gray-200 shadow-md">
-          <h1
-            className="text-4xl font-bold mb-4 text-[#0F172A]"
-            style={{
-              fontFamily:
-                "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-              fontWeight: 700,
-            }}
-          >
+          <h1 className="text-4xl font-extrabold mb-4 text-[#0F172A]">
             Course Not Found
           </h1>
           <Link to="/courses">
@@ -965,15 +958,7 @@ const CourseDetails = () => {
                       {course.subtitle}
                     </span>
                   </div>
-                  <h1
-                    className="text-4xl md:text-6xl font-bold text-[#0F172A] mb-2"
-                    style={{
-                      fontFamily:
-                        "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                      fontWeight: 700,
-                      letterSpacing: '0.02em',
-                    }}
-                  >
+                  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#0F172A] mb-2">
                     {course.title}
                   </h1>
                   <p className="text-xl text-slate-600 mb-4">
@@ -1042,14 +1027,7 @@ const CourseDetails = () => {
                 className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{ transform: 'rotate(0.5deg)' }}
               >
-                <h2
-                  className="text-3xl font-bold text-[#0F172A] mb-4 flex items-center"
-                  style={{
-                    fontFamily:
-                      "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                    fontWeight: 700,
-                  }}
-                >
+                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-4 flex items-center">
                   <BookOpen
                     className="h-7 w-7 mr-3"
                     style={{ color: '#7F6DFF' }}
@@ -1066,14 +1044,7 @@ const CourseDetails = () => {
                 className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{ transform: 'rotate(-0.5deg)' }}
               >
-                <h2
-                  className="text-3xl font-bold text-[#0F172A] mb-6 flex items-center"
-                  style={{
-                    fontFamily:
-                      "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                    fontWeight: 700,
-                  }}
-                >
+                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
                   <CheckCircle
                     className="h-7 w-7 mr-3"
                     style={{ color: '#00D4AA' }}
@@ -1101,14 +1072,7 @@ const CourseDetails = () => {
                 className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{ transform: 'rotate(0.3deg)' }}
               >
-                <h2
-                  className="text-3xl font-bold text-[#0F172A] mb-6 flex items-center"
-                  style={{
-                    fontFamily:
-                      "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                    fontWeight: 700,
-                  }}
-                >
+                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
                   <Trophy
                     className="h-7 w-7 mr-3"
                     style={{ color: '#F89820' }}
@@ -1169,14 +1133,7 @@ const CourseDetails = () => {
                 className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{ transform: 'rotate(-0.3deg)' }}
               >
-                <h2
-                  className="text-3xl font-bold text-[#0F172A] mb-6 flex items-center"
-                  style={{
-                    fontFamily:
-                      "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                    fontWeight: 700,
-                  }}
-                >
+                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
                   <User className="h-7 w-7 mr-3" style={{ color: '#7F6DFF' }} />
                   Meet Your Instructors
                 </h2>
@@ -1217,14 +1174,7 @@ const CourseDetails = () => {
                 className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{ transform: 'rotate(0.2deg)' }}
               >
-                <h2
-                  className="text-3xl font-bold text-[#0F172A] mb-6"
-                  style={{
-                    fontFamily:
-                      "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                    fontWeight: 700,
-                  }}
-                >
+                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6">
                   Prerequisites
                 </h2>
                 <ul className="space-y-3">
@@ -1248,14 +1198,7 @@ const CourseDetails = () => {
                 className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{ transform: 'rotate(-0.2deg)' }}
               >
-                <h2
-                  className="text-3xl font-bold text-[#0F172A] mb-6 flex items-center"
-                  style={{
-                    fontFamily:
-                      "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                    fontWeight: 700,
-                  }}
-                >
+                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
                   <HelpCircle
                     className="h-7 w-7 mr-3"
                     style={{ color: '#7F6DFF' }}
@@ -1325,12 +1268,7 @@ const CourseDetails = () => {
 
                   <div className="space-y-4 mb-6">
                     <Button
-                      className={`w-full bg-gradient-to-r ${course.gradient} hover:shadow-lg transition-all duration-300 text-white font-semibold py-4 rounded-3xl transform hover:scale-105 text-lg`}
-                      style={{
-                        fontFamily:
-                          "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                        fontWeight: 700,
-                      }}
+                      className={`w-full bg-gradient-to-r ${course.gradient} hover:shadow-lg transition-all duration-300 text-white font-extrabold py-4 rounded-3xl transform hover:scale-105 text-lg`}
                     >
                       Enroll Now
                     </Button>
@@ -1374,14 +1312,7 @@ const CourseDetails = () => {
                   className="detail-section bg-white rounded-2xl p-6 border border-gray-200 shadow-md"
                   style={{ transform: 'rotate(-0.5deg)' }}
                 >
-                  <h3
-                    className="text-xl font-bold text-[#0F172A] mb-4"
-                    style={{
-                      fontFamily:
-                        "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                      fontWeight: 700,
-                    }}
-                  >
+                  <h3 className="text-xl font-extrabold text-[#0F172A] mb-4">
                     Available Batches
                   </h3>
                   <div className="space-y-4">
@@ -1425,14 +1356,7 @@ const CourseDetails = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2
-                className="text-4xl font-bold text-[#0F172A] mb-4"
-                style={{
-                  fontFamily:
-                    "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                  fontWeight: 700,
-                }}
-              >
+              <h2 className="text-4xl font-extrabold text-[#0F172A] mb-4">
                 Your Certificate of Completion
               </h2>
               <p className="text-slate-600 text-lg max-w-2xl mx-auto">
@@ -1460,14 +1384,7 @@ const CourseDetails = () => {
                 {/* Certificate Benefits */}
                 <div className="flex-1 space-y-6">
                   <div>
-                    <h3
-                      className="text-2xl font-bold text-[#0F172A] mb-4"
-                      style={{
-                        fontFamily:
-                          "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                        fontWeight: 700,
-                      }}
-                    >
+                    <h3 className="text-2xl font-extrabold text-[#0F172A] mb-4">
                       Certificate Benefits
                     </h3>
                     <ul className="space-y-3">
@@ -1543,14 +1460,7 @@ const CourseDetails = () => {
         <section className="py-12 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-8">
-              <h2
-                className="text-4xl font-bold text-[#0F172A] mb-4"
-                style={{
-                  fontFamily:
-                    "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                  fontWeight: 700,
-                }}
-              >
+              <h2 className="text-4xl font-extrabold text-[#0F172A] mb-4">
                 Related Courses
               </h2>
               <p className="text-slate-600 text-lg">

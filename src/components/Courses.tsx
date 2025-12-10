@@ -4,8 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CourseCard from "./CourseCard";
 import { Code, Database, Brain, BarChart3 } from "lucide-react";
-import HandDrawnArrow from "./HandDrawnArrow";
-import EducationIllustration from "./EducationIllustration";
+import CodeCube3D from './CodeCube3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,41 +117,31 @@ const Courses = () => {
 
   return (
     <section ref={coursesRef} className="py-20 bg-white relative overflow-hidden">
-      {/* Decorative elements */}
+      {/* 3D Code Cube Elements */}
       <div className="absolute top-10 left-5 opacity-10 hidden lg:block">
-        <EducationIllustration type="book" size={100} />
+        <CodeCube3D className="scale-75" />
       </div>
       <div className="absolute bottom-10 right-5 opacity-10 hidden lg:block">
-        <EducationIllustration type="lightbulb" size={120} />
+        <CodeCube3D className="scale-75" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4 relative">
-          {/* Arrow pointing to heading */}
-          <div className="absolute -left-16 top-1/2 hidden xl:block animate-float">
-            <HandDrawnArrow direction="right" color="#0DB7ED" className="w-20 h-20" />
+          <div className="flex justify-center mb-6">
+            <CodeCube3D className="scale-75" />
           </div>
           
-          <h2 className="courses-header text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
+          <h2 className="courses-header text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
             Our Training Programs
           </h2>
           <p className="courses-header text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Codex is preparing students for tech careers. Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
+            Syntaxim is preparing students for tech careers. Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
           </p>
         </div>
         
         <div className="courses-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto relative">
-          {/* Arrow pointing to courses */}
-          <div className="absolute -right-16 top-1/2 hidden xl:block animate-float" style={{ animationDelay: '0.8s' }}>
-            <HandDrawnArrow direction="left" color="#FF6F61" className="w-16 h-16" />
-          </div>
-          
           {courses.map((course, index) => (
             <div key={index} className="course-card relative">
-              {/* Small arrow on hover */}
-              <div className="absolute -top-4 -right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:block">
-                <HandDrawnArrow direction="diagonal" color="#FFB300" className="w-12 h-12" />
-              </div>
               <CourseCard {...course} courseId={course.id} />
             </div>
           ))}

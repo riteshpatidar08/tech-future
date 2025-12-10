@@ -134,7 +134,6 @@ const Resources = () => {
             <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-4xl mx-auto relative z-10">
               <h1 className="text-5xl md:text-6xl font-bold text-[#0F172A] mb-6"
                   style={{ 
-                    fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                     fontWeight: 700,
                     letterSpacing: '0.02em'
                   }}>
@@ -185,7 +184,7 @@ const Resources = () => {
                         {category.icon()}
                       </div>
                       <h2 className="text-3xl font-bold text-[#0F172A]"
-                          style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
+                          className="font-bold">
                         {category.title}
                       </h2>
                     </div>
@@ -240,7 +239,7 @@ const Resources = () => {
           {/* Additional Resources Section */}
           <div className="mt-16 bg-white rounded-2xl p-8 border border-gray-200 shadow-md max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-[#0F172A] mb-4"
-                style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700 }}>
+                className="font-bold">
               Need More Resources?
             </h2>
             <p className="text-slate-600 mb-6">
@@ -248,11 +247,11 @@ const Resources = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-3xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
+                      className="font-bold text-lg">
                 Subscribe for Updates
               </button>
               <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-3xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
-                      style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
+                      className="font-bold text-lg">
                 Request Resources
               </button>
             </div>

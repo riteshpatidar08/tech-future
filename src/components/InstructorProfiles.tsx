@@ -5,8 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Linkedin, Github, Award, Users, BookOpen, Star } from 'lucide-react';
-import HandDrawnArrow from './HandDrawnArrow';
-import EducationIllustration from './EducationIllustration';
+import Laptop3D from './Laptop3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,25 +151,24 @@ const InstructorProfiles = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-white overflow-hidden">
-      <div className="absolute top-10 right-10 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="student" size={120} />
+    <section ref={sectionRef} className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+      {/* 3D Laptop Elements */}
+      <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
+        <Laptop3D className="scale-75" />
       </div>
-      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block transform -rotate-12">
-        <EducationIllustration type="certificate" size={100} />
-      </div>
-
-      <div className="absolute top-1/4 left-10 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow direction="right" color="#3776AB" className="w-20 h-20" />
+      <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block">
+        <Laptop3D className="scale-75" />
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <Laptop3D className="scale-75" />
+          </div>
           <div className="inline-flex items-center gap-2 mb-4">
             <Users className="h-6 w-6 text-blue-600" />
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F172A]"
                 style={{ 
-                  fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                   fontWeight: 700
                 }}>
               Learn from Industry Experts
@@ -184,10 +182,10 @@ const InstructorProfiles = () => {
         <div ref={instructorsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {instructors.map((instructor) => (
             <Card key={instructor.id} className="border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden group">
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6">
+              <div className="bg-slate-50 p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <Avatar className="h-20 w-20 border-4 border-white shadow-lg">
-                    <AvatarFallback className="bg-gradient-to-br from-blue-500 to-cyan-500 text-white text-2xl font-bold">
+                    <AvatarFallback className="bg-slate-900 text-white text-2xl font-bold">
                       {getInitials(instructor.name)}
                     </AvatarFallback>
                   </Avatar>
@@ -264,7 +262,7 @@ const InstructorProfiles = () => {
                   <button className="p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-600 transition-colors">
                     <Github className="h-4 w-4" />
                   </button>
-                  <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-md transition-all">
+                  <button className="flex-1 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">
                     View Profile
                   </button>
                 </div>
@@ -275,8 +273,7 @@ const InstructorProfiles = () => {
 
         <div className="text-center mt-12">
           <p className="text-slate-600 mb-4">Want to learn from the best?</p>
-          <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-3xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                  style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
+          <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300">
             Meet All Instructors
           </button>
         </div>

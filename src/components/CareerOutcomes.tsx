@@ -3,8 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, TrendingUp, DollarSign, Users, Award, Target } from 'lucide-react';
-import HandDrawnArrow from './HandDrawnArrow';
-import EducationIllustration from './EducationIllustration';
+import GraduationCap3D from './GraduationCap3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -128,27 +127,23 @@ const CareerOutcomes = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
-      <div className="absolute top-10 left-10 opacity-10 hidden lg:block transform rotate-12">
-        <EducationIllustration type="trophy" size={120} />
+    <section ref={sectionRef} className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+      {/* 3D Graduation Cap Elements */}
+      <div className="absolute top-10 left-10 opacity-10 hidden lg:block">
+        <GraduationCap3D className="scale-75" />
       </div>
-      <div className="absolute bottom-10 right-10 opacity-10 hidden lg:block transform -rotate-12">
-        <EducationIllustration type="certificate" size={100} />
-      </div>
-
-      <div className="absolute top-1/4 right-10 hidden xl:block animate-float transform rotate-12">
-        <HandDrawnArrow direction="left" color="#3776AB" className="w-20 h-20" />
+      <div className="absolute bottom-10 right-10 opacity-10 hidden lg:block">
+        <GraduationCap3D className="scale-75" />
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <GraduationCap3D className="scale-75" />
+          </div>
           <div className="inline-flex items-center gap-2 mb-4">
-            <Target className="h-6 w-6 text-blue-600" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F172A]"
-                style={{ 
-                  fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
-                  fontWeight: 700
-                }}>
+            <Target className="h-6 w-6 text-slate-900" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
               Proven Career Outcomes
             </h2>
           </div>
@@ -161,12 +156,11 @@ const CareerOutcomes = () => {
           {outcomes.map((outcome, idx) => (
             <Card key={idx} className="border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 text-center">
               <CardContent className="p-8">
-                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${outcome.gradient} shadow-lg mb-4`}>
-                  <div className="text-white">{outcome.icon}</div>
+                <div className="inline-flex p-4 rounded-lg bg-slate-100 mb-4">
+                  <div className="text-slate-900">{outcome.icon}</div>
                 </div>
                 <div className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-2"
                      style={{ 
-                       fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                        fontWeight: 700
                      }}>
                   {outcome.value}
@@ -181,7 +175,6 @@ const CareerOutcomes = () => {
         <div className="mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-center text-[#0F172A] mb-8"
               style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                 fontWeight: 700
               }}>
             Our Students Work At
@@ -198,10 +191,9 @@ const CareerOutcomes = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-slate-900 rounded-lg p-8 md:p-12 text-white text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4"
               style={{ 
-                fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive",
                 fontWeight: 700
               }}>
             Ready to Transform Your Career?
@@ -210,7 +202,7 @@ const CareerOutcomes = () => {
             Join thousands of students who have successfully transitioned into tech careers. Start your journey today!
           </p>
           <button className="bg-white text-blue-600 px-8 py-4 rounded-3xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                  style={{ fontFamily: "'Dancing Script', 'Pacifico', 'Brush Script MT', cursive", fontWeight: 700, fontSize: '1.1em' }}>
+                  className="font-bold text-lg">
             Start Your Career Transformation
           </button>
         </div>

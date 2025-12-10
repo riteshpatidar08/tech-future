@@ -66,7 +66,7 @@ const Footer = () => {
             <h4 className="text-base sm:text-lg font-semibold mb-4 text-slate-900 tracking-tight">Connect With Us</h4>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:info@codex.com" className="text-slate-600 hover:text-blue-600 transition-colors text-sm flex items-center space-x-2">
+                <a href="mailto:info@syntaxim.com" className="text-slate-600 hover:text-blue-600 transition-colors text-sm flex items-center space-x-2">
                   <Mail className="h-4 w-4" />
                   <span>Email Us</span>
                 </a>
@@ -93,7 +93,7 @@ const Footer = () => {
               <a href="#" className="hover:text-blue-600 transition-colors mr-4 leading-relaxed">Privacy Policy</a>
               <a href="#" className="hover:text-blue-600 transition-colors leading-relaxed">Terms of Use</a>
             </div>
-            <p className="text-slate-600 text-sm leading-relaxed">&copy; 2024 Codex. All rights reserved.</p>
+            <p className="text-slate-600 text-sm leading-relaxed">&copy; 2024 Syntaxim. All rights reserved.</p>
           </div>
         </div>
       </div>

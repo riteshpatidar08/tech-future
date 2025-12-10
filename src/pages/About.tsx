@@ -101,7 +101,7 @@ const About = () => {
           <div ref={headerRef} className="text-center mb-20">
             <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-5xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-6">
-                About Codex
+                About Syntaxim
               </h1>
               <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 We're committed to transforming careers through comprehensive, practical training programs. 

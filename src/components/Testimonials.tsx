@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Quote, Star } from 'lucide-react';
 import Certificate3D from './Certificate3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +46,7 @@ const Testimonials = () => {
       rank: 'AIR 1',
       exam: 'Full Stack Development',
       quote:
-        'Syntaxim helped me master React and Node.js from scratch. The hands-on projects and expert guidance made all the difference. I landed my dream job at a top tech company!',
+        'Syntaxim helped me master React and Node.js from scratch. The hands-on projects and expert guidance made all the difference. I landed my dream job!',
     },
     {
       name: 'Priya Sharma',
@@ -70,7 +71,7 @@ const Testimonials = () => {
     },
     {
       name: 'Karan Mehta',
-      rank: 'Placed at Google',
+      rank: 'Successfully Placed',
       exam: 'Full Stack Development',
       quote:
         'The comprehensive curriculum and real-world projects prepared me perfectly for interviews. Syntaxim gave me the confidence and skills to crack top tech companies.',
@@ -85,7 +86,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-24 md:py-32 bg-slate-50 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative py-16 md:py-20 bg-slate-50 overflow-hidden"
+    >
+      {/* Background Pattern */}
+      <BackgroundPattern variant="dots" opacity={0.03} />
+
       {/* 3D Certificate Elements */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <Certificate3D className="scale-75" />
@@ -93,18 +100,18 @@ const Testimonials = () => {
       <div className="absolute bottom-20 left-10 opacity-10 hidden lg:block">
         <Certificate3D className="scale-75" />
       </div>
-      
+
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 md:mb-16">
           <div className="flex justify-center mb-6">
             <Certificate3D className="scale-75" />
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             What Our Students Say
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our students have to say
-            about their experience with Syntaxim.
+          <p className="text-xs md:text-sm text-slate-600 max-w-2xl mx-auto">
+            Don't just take our word for it. Here's what our students have to
+            say about their experience with Syntaxim.
           </p>
         </div>
 
@@ -120,20 +127,22 @@ const Testimonials = () => {
               <div className="mb-4">
                 <Quote className="h-8 w-8 text-slate-400" />
               </div>
-              <p className="text-slate-700 mb-6 leading-relaxed">
+              <p className="text-sm text-slate-700 mb-4 leading-relaxed">
                 "{testimonial.quote}"
               </p>
-              <div className="border-t border-slate-200 pt-4">
-                <div className="font-semibold text-slate-900 mb-1">
+              <div className="border-t border-slate-200 pt-3">
+                <div className="font-semibold text-sm text-slate-900 mb-1">
                   {testimonial.name}
                 </div>
                 {testimonial.rank && (
-                  <div className="text-sm text-slate-600 mb-1">
+                  <div className="text-xs text-slate-600 mb-1">
                     {testimonial.rank}
                   </div>
                 )}
                 {testimonial.exam && (
-                  <div className="text-sm text-slate-500">{testimonial.exam}</div>
+                  <div className="text-xs text-slate-500">
+                    {testimonial.exam}
+                  </div>
                 )}
                 <div className="flex items-center gap-1 mt-2">
                   {[...Array(5)].map((_, i) => (

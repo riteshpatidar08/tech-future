@@ -4,6 +4,7 @@ import { BookOpen, FileText, BookMarked } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Book3D from './Book3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +60,9 @@ const StudyResources = () => {
 
   return (
     <section ref={sectionRef} className="relative py-24 md:py-32 bg-slate-50 overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid" opacity={0.02} />
+      
       {/* 3D Book Elements */}
       <div className="absolute top-20 right-20 opacity-10 hidden lg:block">
         <Book3D className="scale-75" />

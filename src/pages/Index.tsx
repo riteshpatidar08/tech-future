@@ -7,7 +7,7 @@ import ExamCategories from "@/components/ExamCategories";
 import PlatformStats from "@/components/PlatformStats";
 import Testimonials from "@/components/Testimonials";
 import YouTubeChannels from "@/components/YouTubeChannels";
-import AppDownload from "@/components/AppDownload";
+// import AppDownload from "@/components/AppDownload";
 import Courses from "@/components/Courses";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
@@ -19,7 +19,7 @@ import VideoPreview from "@/components/VideoPreview";
 import LearningPath from "@/components/LearningPath";
 import InstructorProfiles from "@/components/InstructorProfiles";
 import SuccessStories from "@/components/SuccessStories";
-import PricingPlans from "@/components/PricingPlans";
+// import PricingPlans from "@/components/PricingPlans";
 import CareerOutcomes from "@/components/CareerOutcomes";
 import TechnologyStack from "@/components/TechnologyStack";
 import CertificationDetails from "@/components/CertificationDetails";
@@ -36,16 +36,16 @@ const Index = () => {
       <CourseQuiz />
       <VideoPreview />
       <TechnologyStack />
-      <InstructorProfiles />
-      <SuccessStories />
+      {/* <InstructorProfiles /> */}
+      {/* <SuccessStories /> */}
       <CareerOutcomes />
       <LiveActivityFeed />
       <StudyResources />
       <Testimonials />
-      <PricingPlans />
+      {/* <PricingPlans /> */}
       <CertificationDetails />
-      <YouTubeChannels />
-      <AppDownload />
+      {/* <YouTubeChannels /> */}
+      {/* <AppDownload /> */}
       <Courses />
       <InteractiveFAQ />
       <About />

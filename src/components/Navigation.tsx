@@ -1,13 +1,31 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Home, BookOpen, Info, FileText, FolderOpen, GraduationCap, Mail, Code, Database, Brain, BarChart3, Shield, Smartphone, Cloud, ChevronDown } from 'lucide-react';
+import {
+  Menu,
+  X,
+  Home,
+  BookOpen,
+  Info,
+  FileText,
+  FolderOpen,
+  GraduationCap,
+  Mail,
+  Code,
+  Database,
+  Brain,
+  BarChart3,
+  Smartphone,
+  ChevronDown,
+} from 'lucide-react';
 import { gsap } from 'gsap';
-import Logo from './Logo';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const [expandedCategories, setExpandedCategories] = useState<Set<number>>(
+    new Set()
+  );
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -21,7 +39,10 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setCoursesOpen(false);
       }
     };
@@ -37,13 +58,23 @@ const Navigation = () => {
 
   const courseCategories = [
     {
+      name: 'Python',
+      icon: Database,
+      courses: [
+        { name: 'Python Core', path: '/course/python-core' },
+        { name: 'Python with Web Dev Django', path: '/course/python-django' },
+        { name: 'GenAI LLMOps', path: '/course/genai-llmops' },
+        { name: 'Python Data Science', path: '/course/python-ds' },
+        { name: 'AI with Python', path: '/course/ai-python' },
+      ],
+    },
+    {
       name: 'Web Development',
       icon: Code,
       courses: [
         { name: 'Full Stack Development', path: '/course/fullstack' },
         { name: 'Frontend Development', path: '/course/frontend' },
         { name: 'Backend Development', path: '/course/backend' },
-        { name: 'MERN Stack', path: '/course/mern' },
       ],
     },
     {
@@ -61,39 +92,17 @@ const Navigation = () => {
       icon: Brain,
       courses: [
         { name: 'Machine Learning', path: '/course/machine-learning' },
-        { name: 'Deep Learning', path: '/course/deep-learning' },
         { name: 'AI with Python', path: '/course/ai-python' },
-        { name: 'Computer Vision', path: '/course/computer-vision' },
-      ],
-    },
-    {
-      name: 'Cloud & DevOps',
-      icon: Cloud,
-      courses: [
-        { name: 'AWS Cloud Computing', path: '/course/aws' },
-        { name: 'DevOps Engineering', path: '/course/devops' },
-        { name: 'Docker & Kubernetes', path: '/course/docker' },
-        { name: 'CI/CD Pipelines', path: '/course/cicd' },
       ],
     },
     {
       name: 'Mobile Development',
       icon: Smartphone,
       courses: [
-        { name: 'React Native', path: '/course/react-native' },
-        { name: 'Flutter Development', path: '/course/flutter' },
-        { name: 'iOS Development', path: '/course/ios' },
-        { name: 'Android Development', path: '/course/android' },
-      ],
-    },
-    {
-      name: 'Cybersecurity',
-      icon: Shield,
-      courses: [
-        { name: 'Ethical Hacking', path: '/course/ethical-hacking' },
-        { name: 'Cybersecurity Fundamentals', path: '/course/cybersecurity' },
-        { name: 'Network Security', path: '/course/network-security' },
-        { name: 'Penetration Testing', path: '/course/penetration-testing' },
+        {
+          name: 'Mobile App Development with React Native',
+          path: '/course/react-native',
+        },
       ],
     },
   ];
@@ -101,22 +110,27 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'About', path: '/about', icon: Info },
-    { name: 'Blog', path: '/blog', icon: FileText },
-    { name: 'Resources', path: '/resources', icon: FolderOpen },
-    { name: 'Student Portal', path: '/student-portal', icon: GraduationCap },
+    // { name: 'Blog', path: '/blog', icon: FileText },
+    // { name: 'Resources', path: '/resources', icon: FolderOpen },
+    // { name: 'Student Portal', path: '/student-portal', icon: GraduationCap },
     { name: 'Contact', path: '/contact', icon: Mail },
   ];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
           <Link
             to="/"
             className="nav-item flex items-center transition-opacity duration-300 hover:opacity-80"
           >
-            <Logo className="h-10 w-auto" />
+            <span
+              className="text-xl md:text-2xl font-bold text-slate-900"
+              style={{ fontFamily: 'Geist, sans-serif' }}
+            >
+              Syntaxim
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -127,7 +141,8 @@ const Navigation = () => {
                 onMouseEnter={() => setCoursesOpen(true)}
                 onMouseLeave={() => setCoursesOpen(false)}
                 className={`nav-item relative px-4 py-2 text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
-                  location.pathname.startsWith('/course') || location.pathname === '/courses'
+                  location.pathname.startsWith('/course') ||
+                  location.pathname === '/courses'
                     ? 'text-slate-900'
                     : 'text-slate-700 hover:text-slate-900'
                 }`}
@@ -136,7 +151,9 @@ const Navigation = () => {
                 <BookOpen
                   size={18}
                   className={`transition-all duration-300 ${
-                    location.pathname.startsWith('/course') || location.pathname === '/courses' || coursesOpen
+                    location.pathname.startsWith('/course') ||
+                    location.pathname === '/courses' ||
+                    coursesOpen
                       ? 'text-slate-900'
                       : 'text-slate-600 group-hover:text-slate-900'
                   }`}
@@ -148,7 +165,8 @@ const Navigation = () => {
                     coursesOpen ? 'rotate-180' : ''
                   }`}
                 />
-                {(location.pathname.startsWith('/course') || location.pathname === '/courses') && (
+                {(location.pathname.startsWith('/course') ||
+                  location.pathname === '/courses') && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-slate-900 rounded-full"></div>
                 )}
               </button>
@@ -188,7 +206,11 @@ const Navigation = () => {
                               <div className="flex items-center gap-3">
                                 <Icon
                                   size={18}
-                                  className={isSelected ? 'text-slate-900' : 'text-slate-600'}
+                                  className={
+                                    isSelected
+                                      ? 'text-slate-900'
+                                      : 'text-slate-600'
+                                  }
                                 />
                                 <span
                                   className={`text-sm ${
@@ -209,49 +231,53 @@ const Navigation = () => {
 
                     {/* Right Content Area */}
                     <div className="flex-1 p-6">
-                      {courseCategories[selectedCategory] && (() => {
-                        const category = courseCategories[selectedCategory];
-                        const Icon = category.icon;
-                        return (
-                          <div>
-                            <div className="flex items-center gap-3 mb-6">
-                              <div className="p-2 rounded-lg bg-slate-900 text-white">
-                                <Icon size={20} />
-                              </div>
-                              <h3
-                                className="font-bold text-slate-900 text-base"
-                                style={{ fontFamily: 'Geist, sans-serif' }}
-                              >
-                                {category.name}
-                              </h3>
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                              {category.courses.map((course, courseIndex) => (
-                                <Link
-                                  key={courseIndex}
-                                  to={course.path}
-                                  onClick={() => setCoursesOpen(false)}
-                                  className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-all duration-200 font-medium"
+                      {courseCategories[selectedCategory] &&
+                        (() => {
+                          const category = courseCategories[selectedCategory];
+                          const Icon = category.icon;
+                          return (
+                            <div>
+                              <div className="flex items-center gap-3 mb-6">
+                                <div className="p-2 rounded-lg bg-slate-900 text-white">
+                                  <Icon size={20} />
+                                </div>
+                                <h3
+                                  className="font-bold text-slate-900 text-base"
                                   style={{ fontFamily: 'Geist, sans-serif' }}
                                 >
-                                  {course.name}
+                                  {category.name}
+                                </h3>
+                              </div>
+                              <div className="grid grid-cols-2 gap-4">
+                                {category.courses.map((course, courseIndex) => (
+                                  <Link
+                                    key={courseIndex}
+                                    to={course.path}
+                                    onClick={() => setCoursesOpen(false)}
+                                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-all duration-200 font-medium"
+                                    style={{ fontFamily: 'Geist, sans-serif' }}
+                                  >
+                                    {course.name}
+                                  </Link>
+                                ))}
+                              </div>
+                              <div className="mt-6 pt-6 border-t border-slate-200">
+                                <Link
+                                  to="/courses"
+                                  onClick={() => setCoursesOpen(false)}
+                                  className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-slate-700 transition-colors"
+                                  style={{ fontFamily: 'Geist, sans-serif' }}
+                                >
+                                  View All Courses
+                                  <ChevronDown
+                                    size={14}
+                                    className="rotate-[-90deg]"
+                                  />
                                 </Link>
-                              ))}
+                              </div>
                             </div>
-                            <div className="mt-6 pt-6 border-t border-slate-200">
-                              <Link
-                                to="/courses"
-                                onClick={() => setCoursesOpen(false)}
-                                className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-slate-700 transition-colors"
-                                style={{ fontFamily: 'Geist, sans-serif' }}
-                              >
-                                View All Courses
-                                <ChevronDown size={14} className="rotate-[-90deg]" />
-                              </Link>
-                            </div>
-                          </div>
-                        );
-                      })()}
+                          );
+                        })()}
                     </div>
                   </div>
                 </div>
@@ -300,81 +326,108 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 bg-white border-t border-slate-200 max-h-[80vh] overflow-y-auto">
+          <div className="lg:hidden bg-white border-t border-slate-200 max-h-[calc(100vh-4rem)] overflow-y-auto">
             {/* Courses Section */}
-            <div className="px-4 mb-2">
+            <div className="px-4 py-3 border-b border-slate-100">
               <div
-                className="flex items-center gap-2.5 px-4 py-2.5 text-sm font-bold text-slate-700"
+                className="flex items-center gap-2.5 px-2 py-2 text-sm font-bold text-slate-900"
                 style={{ fontFamily: 'Geist, sans-serif' }}
               >
-                <BookOpen size={18} className="text-slate-600" />
+                <BookOpen size={18} className="text-slate-700" />
                 <span>Courses</span>
               </div>
-              <div className="ml-8 mt-2 space-y-1">
-                {courseCategories.map((category, index) => {
-                  const Icon = category.icon;
-                  return (
-                    <div key={index} className="mb-3">
-                      <div
-                        className="flex items-center gap-2 px-3 py-2 text-xs font-bold text-slate-600"
-                        style={{ fontFamily: 'Geist, sans-serif' }}
-                      >
-                        <Icon size={16} />
+            </div>
+
+            <div className="px-4 py-2">
+              {courseCategories.map((category, index) => {
+                const Icon = category.icon;
+                const isExpanded = expandedCategories.has(index);
+                const toggleCategory = () => {
+                  setExpandedCategories((prev) => {
+                    const newSet = new Set(prev);
+                    if (newSet.has(index)) {
+                      newSet.delete(index);
+                    } else {
+                      newSet.add(index);
+                    }
+                    return newSet;
+                  });
+                };
+                return (
+                  <div key={index} className="mb-2">
+                    <button
+                      onClick={toggleCategory}
+                      className="flex items-center justify-between w-full gap-2 px-2 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50 rounded-md transition-all"
+                      style={{ fontFamily: 'Geist, sans-serif' }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <Icon size={16} className="text-slate-600" />
                         <span>{category.name}</span>
                       </div>
-                      <div className="ml-6 space-y-1">
+                      <ChevronDown
+                        size={14}
+                        className={`text-slate-600 transition-transform duration-200 ${
+                          isExpanded ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {isExpanded && (
+                      <div className="ml-6 mt-1 space-y-0.5">
                         {category.courses.map((course, courseIndex) => (
                           <Link
                             key={courseIndex}
                             to={course.path}
                             onClick={() => setIsOpen(false)}
-                            className="block px-3 py-1.5 text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-all font-semibold"
+                            className="block px-3 py-2 text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-all font-medium"
                             style={{ fontFamily: 'Geist, sans-serif' }}
                           >
                             {course.name}
                           </Link>
                         ))}
                       </div>
-                    </div>
-                  );
-                })}
-                <Link
-                  to="/courses"
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50 rounded mt-2"
-                  style={{ fontFamily: 'Geist, sans-serif' }}
-                >
-                  View All Courses →
-                </Link>
-              </div>
+                    )}
+                  </div>
+                );
+              })}
+              <Link
+                to="/courses"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2.5 text-xs font-bold text-slate-900 hover:bg-slate-50 rounded-md mt-3 border-t border-slate-100 pt-3"
+                style={{ fontFamily: 'Geist, sans-serif' }}
+              >
+                View All Courses →
+              </Link>
             </div>
 
-            {navLinks.map((link) => {
-              const Icon = link.icon;
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-2.5 px-4 py-2.5 text-sm font-bold transition-all duration-300 rounded-lg mx-2 ${
-                    isActive
-                      ? 'text-slate-900 bg-slate-50'
-                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                  style={{ fontFamily: 'Geist, sans-serif' }}
-                >
-                  <Icon
-                    size={18}
-                    className={isActive ? 'text-slate-900' : 'text-slate-600'}
-                  />
-                  <span>{link.name}</span>
-                  {isActive && (
-                    <div className="ml-auto w-1.5 h-1.5 rounded-full bg-slate-900"></div>
-                  )}
-                </Link>
-              );
-            })}
+            {/* Navigation Links */}
+            <div className="border-t border-slate-200 pt-2 pb-2">
+              {navLinks.map((link) => {
+                const Icon = link.icon;
+                const isActive = location.pathname === link.path;
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-2.5 px-4 py-3 text-sm font-bold transition-all duration-300 ${
+                      isActive
+                        ? 'text-slate-900 bg-slate-50 border-l-2 border-slate-900'
+                        : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
+                    }`}
+                    style={{ fontFamily: 'Geist, sans-serif' }}
+                  >
+                    <Icon
+                      size={18}
+                      className={isActive ? 'text-slate-900' : 'text-slate-600'}
+                    />
+                    <span>{link.name}</span>
+                    {isActive && (
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

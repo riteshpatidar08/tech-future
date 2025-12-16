@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
+import BackgroundPattern from './BackgroundPattern';
 import {
   Quote,
   TrendingUp,
@@ -189,6 +190,9 @@ const SuccessStories = () => {
       ref={sectionRef}
       className="relative py-20 md:py-28 bg-white overflow-hidden"
     >
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid-dots" opacity={0.025} />
+      
       {/* 3D Certificate Elements */}
       <div className="absolute top-10 left-10 opacity-10 hidden lg:block">
         <Certificate3D className="scale-75" />
@@ -317,7 +321,7 @@ const SuccessStories = () => {
 
         <div className="mt-12 bg-slate-900 rounded-lg p-8 md:p-12 text-white text-center">
           <h3 className="text-2xl md:text-3xl font-extrabold mb-4">
-            Join 10,000+ Successful Students
+            Join 500+ Successful Students
           </h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
             Be the next success story. Start your journey today and transform

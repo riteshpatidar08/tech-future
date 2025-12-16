@@ -1,0 +1,174 @@
+{
+  "id": "big-data",
+  "title": "Big Data Analytics",
+  "subtitle": "Master Hadoop, Spark & Cloud Analytics",
+  "description": "Learn to process and analyze massive datasets using Hadoop, Spark, Kafka, and cloud platforms. Master distributed computing and real-time data processing.",
+  "duration": "5 months",
+  "students": "25+ students",
+  "rating": "4.8",
+  "price": "₹44,999",
+  "originalPrice": "₹89,999",
+  "discount": "50% OFF",
+  "icon": "Database",
+  "gradient": "from-blue-600 to-indigo-600",
+  "overview": "This comprehensive Big Data Analytics course covers Hadoop ecosystem, Apache Spark, Kafka, cloud platforms (AWS, GCP), and distributed computing. Learn to process petabytes of data and build scalable analytics solutions.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "100+ Hours of Content",
+    "Real-world Projects",
+    "Hadoop & Spark Ecosystem",
+    "Cloud Platform Training",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Hadoop Ecosystem (HDFS, MapReduce, YARN)",
+    "Apache Spark (Core, SQL, Streaming)",
+    "Apache Kafka for Real-time Processing",
+    "NoSQL Databases (HBase, Cassandra, MongoDB)",
+    "Cloud Platforms (AWS EMR, GCP Dataproc)",
+    "Data Warehousing (Snowflake, Redshift)",
+    "Data Pipeline Design",
+    "Distributed Computing Concepts",
+    "Performance Optimization",
+    "Real-time Analytics"
+  ],
+  "modules": [
+    {
+      "title": "Big Data Fundamentals & Hadoop Ecosystem",
+      "duration": "4 weeks",
+      "topics": [
+        "Introduction to Big Data",
+        "Hadoop Architecture & HDFS",
+        "MapReduce Programming",
+        "YARN Resource Management",
+        "Hadoop Cluster Setup",
+        "Data Ingestion Techniques"
+      ]
+    },
+    {
+      "title": "Apache Spark Core & Advanced",
+      "duration": "5 weeks",
+      "topics": [
+        "Spark Architecture & RDDs",
+        "Spark SQL & DataFrames",
+        "Spark Streaming",
+        "Spark MLlib",
+        "Performance Tuning",
+        "Real-time Processing"
+      ]
+    },
+    {
+      "title": "Real-time Data Processing with Kafka",
+      "duration": "3 weeks",
+      "topics": [
+        "Kafka Architecture",
+        "Producers & Consumers",
+        "Kafka Streams",
+        "Event Sourcing",
+        "Real-time Analytics"
+      ]
+    },
+    {
+      "title": "NoSQL Databases for Big Data",
+      "duration": "3 weeks",
+      "topics": [
+        "HBase for Columnar Storage",
+        "Cassandra for Distributed Data",
+        "MongoDB for Document Storage",
+        "Database Selection Strategies"
+      ]
+    },
+    {
+      "title": "Cloud Big Data Platforms",
+      "duration": "4 weeks",
+      "topics": [
+        "AWS EMR & Glue",
+        "GCP Dataproc & BigQuery",
+        "Azure HDInsight",
+        "Cloud Data Warehouses",
+        "Cost Optimization"
+      ]
+    },
+    {
+      "title": "Data Pipeline & Architecture",
+      "duration": "3 weeks",
+      "topics": [
+        "ETL/ELT Pipelines",
+        "Data Lake Architecture",
+        "Lambda & Kappa Architectures",
+        "Data Quality & Governance"
+      ]
+    }
+  ],
+  "careerOutcomes": [
+    "Big Data Engineer",
+    "Data Engineer",
+    "Spark Developer",
+    "Cloud Data Architect",
+    "Big Data Analyst"
+  ],
+  "tools": [
+    "Hadoop",
+    "Apache Spark",
+    "Apache Kafka",
+    "HBase",
+    "Cassandra",
+    "AWS EMR",
+    "GCP Dataproc",
+    "Snowflake",
+    "Airflow"
+  ],
+  "requirements": [
+    "Basic programming knowledge (Python/Java)",
+    "Understanding of databases",
+    "Linux command line basics",
+    "Cloud computing basics (helpful)"
+  ],
+  "instructors": [
+    {
+      "name": "Data Engineering Expert",
+      "role": "Senior Big Data Architect",
+      "experience": "12+ years",
+      "company": "Ex-Amazon, Microsoft",
+      "image": "/api/placeholder/100/100"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Apr 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "25 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Apr 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3 hours of classes per day."
+    },
+    {
+      "question": "Do I need prior experience?",
+      "answer": "Basic programming knowledge in Python or Java is recommended."
+    },
+    {
+      "question": "Will I get hands-on experience?",
+      "answer": "Yes, you'll work on real-world big data projects throughout the course."
+    },
+    {
+      "question": "What cloud platforms are covered?",
+      "answer": "We cover AWS, GCP, and Azure for big data processing."
+    }
+  ]
+}
+

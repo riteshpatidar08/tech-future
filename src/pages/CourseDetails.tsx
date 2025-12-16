@@ -7,6 +7,7 @@ import AnimatedBackground from '@/components/AnimatedBackground';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import CourseCard from '@/components/CourseCard';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 import {
   Code,
   Database,
@@ -33,12 +34,43 @@ import {
   Phone,
   HelpCircle,
   Sparkles,
+  Smartphone,
 } from 'lucide-react';
-import HandDrawnArrow from '@/components/HandDrawnArrow';
-import EducationIllustration from '@/components/EducationIllustration';
 import CertificateIllustration from '@/components/CertificateIllustration';
+import Chart3DShape from '@/components/Chart3DShape';
+import Database3DShape from '@/components/Database3DShape';
+import Chart3D from '@/components/Chart3D';
+import BackgroundPattern from '@/components/BackgroundPattern';
+
+// Import course data from JSON files
+import fullstackData from '@/data/courses/fullstack.json';
+import frontendData from '@/data/courses/frontend.json';
+import backendData from '@/data/courses/backend.json';
+import pythonCoreData from '@/data/courses/python-core.json';
+import pythonDjangoData from '@/data/courses/python-django.json';
+import genaiLLMOpsData from '@/data/courses/genai-llmops.json';
+import aiPythonData from '@/data/courses/ai-python.json';
+import reactNativeData from '@/data/courses/react-native.json';
+import pythonDSData from '@/data/courses/python-ds.json';
+import machineLearningData from '@/data/courses/machine-learning.json';
+import bigDataData from '@/data/courses/big-data.json';
+import biData from '@/data/courses/bi.json';
+import flutterData from '@/data/courses/flutter.json';
+import iosData from '@/data/courses/ios.json';
+// Import data-analytics from existing CourseDetails data (it has bonuses, sectors, etc.)
+// For now, we'll keep it in the component or create a separate JSON
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Icon mapping
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } =
+  {
+    Code,
+    Database,
+    Brain,
+    BarChart3,
+    Smartphone,
+  };
 
 const CourseDetails = () => {
   const { courseId } = useParams();
@@ -50,8 +82,18 @@ const CourseDetails = () => {
   const [expandedFaq, setExpandedFaq] = useState<{ [key: number]: boolean }>(
     {}
   );
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
 
   useEffect(() => {
+    // Check if lead form has been submitted (stored in localStorage)
+    const hasSubmittedLead = localStorage.getItem(
+      `syntaxim_lead_submitted_${courseId}`
+    );
+    if (hasSubmittedLead) {
+      setLeadSubmitted(true);
+    }
+
     gsap.fromTo(
       headerRef.current?.children,
       { y: 60, opacity: 0 },
@@ -77,7 +119,7 @@ const CourseDetails = () => {
         delay: 0.5,
       }
     );
-  }, []);
+  }, [courseId]);
 
   const toggleModule = (index: number) => {
     setExpandedModules((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -87,735 +129,237 @@ const CourseDetails = () => {
     setExpandedFaq((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const courseData = {
-    fullstack: {
-      title: 'Full Stack Development',
-      subtitle: 'With AI Integration',
+  const handleLeadFormSubmit = () => {
+    setLeadSubmitted(true);
+    setShowLeadForm(false);
+    localStorage.setItem(`syntaxim_lead_submitted_${courseId}`, 'true');
+  };
+
+  // Helper function to transform JSON data to component format
+  const transformCourseData = (data: any) => {
+    const IconComponent = iconMap[data.icon] || Code;
+    return {
+      ...data,
+      icon: () => <IconComponent className="h-8 w-8" />,
+      // Ensure instructors have image property
+      instructors:
+        data.instructors?.map((instructor: any) => ({
+          ...instructor,
+          image: instructor.image || '/api/placeholder/100/100',
+        })) || [],
+    };
+  };
+
+  // Load course data from JSON files
+  const courseData: any = {
+    fullstack: transformCourseData(fullstackData),
+    frontend: transformCourseData(frontendData),
+    backend: transformCourseData(backendData),
+    'python-core': transformCourseData(pythonCoreData),
+    'python-django': transformCourseData(pythonDjangoData),
+    'genai-llmops': transformCourseData(genaiLLMOpsData),
+    'ai-python': transformCourseData(aiPythonData),
+    'react-native': transformCourseData(reactNativeData),
+    'python-ds': transformCourseData(pythonDSData),
+    'machine-learning': transformCourseData(machineLearningData),
+    'big-data': transformCourseData(bigDataData),
+    bi: transformCourseData(biData),
+    flutter: transformCourseData(flutterData),
+    ios: transformCourseData(iosData),
+    // Keep data-analytics with special fields (bonuses, sectors, etc.)
+    'data-analytics': {
+      title: 'DataVerse AI: The Complete Data Analytics & Automation Program',
+      subtitle: 'Transform Data Into Decisions With AI-Powered Analytics',
       description:
-        'Master modern web development with React, Node.js, and databases. Build complete web applications from frontend to backend with industry-standard tools and practices. Learn to integrate AI capabilities into your applications.',
+        'Transform Data Into Decisions With AI-Powered Analytics. Master Excel, SQL, Power BI, Tableau, Python, R, and AI tools to become a complete data analytics professional.',
       duration: '6 months',
-      students: '200+ students',
+      students: '60+ students',
       rating: '4.9',
-      price: '₹49,999',
-      originalPrice: '₹99,999',
-      discount: '50% OFF',
-      icon: () => <Code className="h-8 w-8" />,
-      gradient: 'from-purple-600 to-cyan-600',
-      overview:
-        "This comprehensive Full Stack Development course will transform you into a professional web developer. You'll learn to build modern, scalable web applications using cutting-edge technologies like React, Node.js, and cloud platforms. The course includes hands-on projects and AI integration techniques.",
-      highlights: [
-        'Live & Recorded Classes',
-        'Industry Expert Mentors',
-        '100+ Hours of Content',
-        'Real-world Projects',
-        'AI Integration Training',
-        'Placement Assistance',
-        'Lifetime Access',
-        'Certificate of Completion',
-      ],
-      features: [
-        'React.js & Next.js Development',
-        'Node.js & Express Backend',
-        'MongoDB & PostgreSQL Databases',
-        'RESTful APIs & GraphQL',
-        'Deployment & DevOps Practices',
-        'Authentication & Security',
-        'Testing & Quality Assurance',
-        'Version Control with Git',
-        'AI/ML Integration in Web Apps',
-        'Cloud Deployment (AWS, Vercel)',
-      ],
-      modules: [
-        {
-          title: 'HTML, CSS & JavaScript Fundamentals',
-          duration: '3 weeks',
-          topics: [
-            'HTML5 & Semantic HTML',
-            'CSS3 & Flexbox/Grid',
-            'JavaScript ES6+',
-            'DOM Manipulation',
-            'Async Programming',
-            'Modern JavaScript Patterns',
-          ],
-        },
-        {
-          title: 'React.js & Component Architecture',
-          duration: '4 weeks',
-          topics: [
-            'React Fundamentals',
-            'Hooks & Context API',
-            'State Management',
-            'Component Design Patterns',
-            'React Router',
-            'Performance Optimization',
-          ],
-        },
-        {
-          title: 'Node.js & Server-side Development',
-          duration: '4 weeks',
-          topics: [
-            'Node.js Basics',
-            'Express.js Framework',
-            'RESTful API Design',
-            'Middleware & Authentication',
-            'File Upload & Processing',
-            'Error Handling',
-          ],
-        },
-        {
-          title: 'Database Design & Integration',
-          duration: '3 weeks',
-          topics: [
-            'MongoDB & Mongoose',
-            'PostgreSQL & Prisma',
-            'Database Design',
-            'Query Optimization',
-            'Relationships & Joins',
-            'Migrations',
-          ],
-        },
-        {
-          title: 'API Development & Integration',
-          duration: '3 weeks',
-          topics: [
-            'RESTful APIs',
-            'GraphQL',
-            'API Documentation',
-            'Third-party APIs',
-            'WebSockets',
-            'Real-time Communication',
-          ],
-        },
-        {
-          title: 'Authentication & Security',
-          duration: '2 weeks',
-          topics: [
-            'JWT Authentication',
-            'OAuth Integration',
-            'Password Security',
-            'API Security',
-            'CORS & CSRF',
-            'Security Best Practices',
-          ],
-        },
-        {
-          title: 'Testing & Deployment',
-          duration: '3 weeks',
-          topics: [
-            'Unit Testing',
-            'Integration Testing',
-            'CI/CD Pipelines',
-            'Docker & Containers',
-            'Cloud Deployment',
-            'Monitoring & Logging',
-          ],
-        },
-        {
-          title: 'Capstone Project',
-          duration: '4 weeks',
-          topics: [
-            'Project Planning',
-            'Full Stack Application',
-            'AI Features Integration',
-            'Deployment',
-            'Code Review',
-            'Portfolio Presentation',
-          ],
-        },
-      ],
-      requirements: [
-        'Basic computer skills',
-        'High school education or equivalent',
-        'Willingness to learn and practice',
-        'Access to a computer with internet',
-      ],
-      instructors: [
-        {
-          name: 'Sarah Johnson',
-          role: 'Senior Full Stack Developer',
-          experience: '10+ years',
-          company: 'Ex-Google, Microsoft',
-          image: '/api/placeholder/100/100',
-        },
-        {
-          name: 'Mike Chen',
-          role: 'AI Integration Specialist',
-          experience: '8+ years',
-          company: 'Ex-OpenAI, Meta',
-          image: '/api/placeholder/100/100',
-        },
-      ],
-      batches: [
-        {
-          type: 'Offline',
-          location: 'Bangalore',
-          startDate: 'Jan 15, 2025',
-          schedule: 'Mon-Fri, 10 AM - 1 PM',
-          seats: '30 seats available',
-        },
-        {
-          type: 'Online',
-          location: 'Live Classes',
-          startDate: 'Jan 20, 2025',
-          schedule: 'Mon-Fri, 7 PM - 9 PM',
-          seats: 'Unlimited seats',
-        },
-      ],
-      faqs: [
-        {
-          question: 'What is the course duration?',
-          answer:
-            'The course duration is 6 months with 3-4 hours of classes per day, 5 days a week. This includes live classes, assignments, and project work.',
-        },
-        {
-          question: 'Do I need prior programming experience?',
-          answer:
-            'No prior programming experience is required. The course starts from the basics and gradually builds up to advanced concepts. However, basic computer skills and logical thinking are helpful.',
-        },
-        {
-          question: 'Will I get a certificate?',
-          answer:
-            'Yes, upon successful completion of the course and all assignments, you will receive a certificate of completion that is recognized by industry partners.',
-        },
-        {
-          question: 'What if I miss a class?',
-          answer:
-            'All classes are recorded and available for lifetime access. You can watch the recordings at your convenience and catch up on any missed sessions.',
-        },
-        {
-          question: 'Is placement assistance provided?',
-          answer:
-            'Yes, we provide comprehensive placement assistance including resume building, interview preparation, mock interviews, and connections with our hiring partners.',
-        },
-        {
-          question: 'What tools and software do I need?',
-          answer:
-            "You'll need a computer with internet connection. All required software and tools will be provided during the course, and we'll guide you through the installation process.",
-        },
-      ],
-    },
-    'python-ds': {
-      title: 'Python Data Science',
-      subtitle: 'Complete Data Analysis',
-      description:
-        'Dive deep into data science with Python. Learn pandas, NumPy, and advanced statistical analysis techniques to extract insights from complex datasets.',
-      duration: '4 months',
-      students: '150+ students',
-      rating: '4.8',
       price: '₹39,999',
       originalPrice: '₹79,999',
-      discount: '50% OFF',
-      icon: () => <Database className="h-8 w-8" />,
-      gradient: 'from-cyan-600 to-blue-600',
-      overview:
-        'Master the art of data science with Python. This course covers everything from data manipulation and visualization to advanced statistical analysis and machine learning fundamentals.',
-      highlights: [
-        'Live & Recorded Classes',
-        'Industry Expert Mentors',
-        '80+ Hours of Content',
-        'Real-world Projects',
-        'Jupyter Notebooks',
-        'Placement Assistance',
-        'Lifetime Access',
-        'Certificate of Completion',
-      ],
-      features: [
-        'Python Programming Fundamentals',
-        'Pandas & NumPy for Data Manipulation',
-        'Data Visualization with Matplotlib & Seaborn',
-        'Statistical Analysis & Hypothesis Testing',
-        'Jupyter Notebooks & Data Storytelling',
-        'Web Scraping & Data Collection',
-        'SQL for Data Analysis',
-        'Introduction to Machine Learning',
-      ],
-      modules: [
-        {
-          title: 'Python Programming Basics',
-          duration: '2 weeks',
-          topics: [
-            'Python Syntax',
-            'Data Types & Structures',
-            'Functions & Modules',
-            'Object-Oriented Programming',
-            'Error Handling',
-            'File Operations',
-          ],
-        },
-        {
-          title: 'Data Manipulation with Pandas',
-          duration: '3 weeks',
-          topics: [
-            'DataFrames & Series',
-            'Data Cleaning',
-            'Data Transformation',
-            'Grouping & Aggregation',
-            'Merging & Joining',
-            'Time Series Data',
-          ],
-        },
-        {
-          title: 'Data Visualization',
-          duration: '3 weeks',
-          topics: [
-            'Matplotlib Basics',
-            'Seaborn Advanced',
-            'Plotly Interactive Charts',
-            'Dashboard Creation',
-            'Data Storytelling',
-            'Best Practices',
-          ],
-        },
-        {
-          title: 'Statistical Analysis',
-          duration: '3 weeks',
-          topics: [
-            'Descriptive Statistics',
-            'Inferential Statistics',
-            'Hypothesis Testing',
-            'A/B Testing',
-            'Correlation & Regression',
-            'Statistical Modeling',
-          ],
-        },
-        {
-          title: 'Data Collection & Web Scraping',
-          duration: '2 weeks',
-          topics: [
-            'Web Scraping with BeautifulSoup',
-            'API Integration',
-            'Data Collection Strategies',
-            'Data Storage',
-            'ETL Pipelines',
-            'Data Quality',
-          ],
-        },
-        {
-          title: 'SQL & Databases',
-          duration: '2 weeks',
-          topics: [
-            'SQL Fundamentals',
-            'Advanced Queries',
-            'Database Design',
-            'Data Warehousing',
-            'SQL with Python',
-            'Performance Optimization',
-          ],
-        },
-        {
-          title: 'ML Fundamentals',
-          duration: '3 weeks',
-          topics: [
-            'Supervised Learning',
-            'Unsupervised Learning',
-            'Model Evaluation',
-            'Feature Engineering',
-            'Model Selection',
-            'Introduction to Scikit-learn',
-          ],
-        },
-        {
-          title: 'Capstone Project',
-          duration: '2 weeks',
-          topics: [
-            'Project Planning',
-            'End-to-End Analysis',
-            'Report Writing',
-            'Presentation',
-            'Code Review',
-            'Portfolio Building',
-          ],
-        },
-      ],
-      requirements: [
-        'Basic math knowledge',
-        'High school education or equivalent',
-        'Interest in data and analytics',
-        'Access to a computer with internet',
-      ],
-      instructors: [
-        {
-          name: 'Dr. Emily Rodriguez',
-          role: 'Senior Data Scientist',
-          experience: '12+ years',
-          company: 'Ex-Amazon, Netflix',
-          image: '/api/placeholder/100/100',
-        },
-      ],
-      batches: [
-        {
-          type: 'Offline',
-          location: 'Bhopal',
-          startDate: 'Feb 1, 2025',
-          schedule: 'Mon-Fri, 2 PM - 5 PM',
-          seats: '25 seats available',
-        },
-        {
-          type: 'Online',
-          location: 'Live Classes',
-          startDate: 'Feb 5, 2025',
-          schedule: 'Mon-Fri, 8 PM - 10 PM',
-          seats: 'Unlimited seats',
-        },
-      ],
-      faqs: [
-        {
-          question: 'What is the course duration?',
-          answer:
-            'The course duration is 4 months with 3 hours of classes per day, 5 days a week.',
-        },
-        {
-          question: 'Do I need prior programming experience?',
-          answer:
-            'No prior programming experience is required. We start from Python basics.',
-        },
-        {
-          question: 'Will I get a certificate?',
-          answer:
-            'Yes, upon successful completion, you will receive a certificate of completion.',
-        },
-        {
-          question: 'What if I miss a class?',
-          answer: 'All classes are recorded and available for lifetime access.',
-        },
-        {
-          question: 'Is placement assistance provided?',
-          answer: 'Yes, we provide comprehensive placement assistance.',
-        },
-        {
-          question: 'What tools and software do I need?',
-          answer:
-            "You'll need a computer with internet. All software will be provided during the course.",
-        },
-      ],
-    },
-    'machine-learning': {
-      title: 'Machine Learning',
-      subtitle: 'AI & Deep Learning',
-      description:
-        'Build intelligent systems with ML algorithms. From supervised learning to deep neural networks, master the technologies powering AI revolution.',
-      duration: '5 months',
-      students: '100+ students',
-      rating: '4.9',
-      price: '₹59,999',
-      originalPrice: '₹1,19,999',
-      discount: '50% OFF',
-      icon: () => <Brain className="h-8 w-8" />,
-      gradient: 'from-blue-600 to-purple-600',
-      overview:
-        'Dive into the world of artificial intelligence and machine learning. Learn to build intelligent systems that can learn from data and make predictions.',
-      highlights: [
-        'Live & Recorded Classes',
-        'Industry Expert Mentors',
-        '120+ Hours of Content',
-        'Real-world Projects',
-        'TensorFlow & PyTorch',
-        'Placement Assistance',
-        'Lifetime Access',
-        'Certificate of Completion',
-      ],
-      features: [
-        'Supervised & Unsupervised Learning',
-        'Deep Learning & Neural Networks',
-        'TensorFlow & PyTorch Frameworks',
-        'Computer Vision Applications',
-        'Natural Language Processing',
-        'Model Deployment & MLOps',
-        'Feature Engineering & Selection',
-        'Model Evaluation & Optimization',
-      ],
-      modules: [
-        {
-          title: 'ML Fundamentals & Math',
-          duration: '3 weeks',
-          topics: [
-            'Linear Algebra',
-            'Calculus',
-            'Probability',
-            'Statistics',
-            'ML Concepts',
-            'Mathematical Foundations',
-          ],
-        },
-        {
-          title: 'Supervised Learning Algorithms',
-          duration: '4 weeks',
-          topics: [
-            'Linear Regression',
-            'Logistic Regression',
-            'Decision Trees',
-            'Random Forests',
-            'SVM',
-            'Ensemble Methods',
-          ],
-        },
-        {
-          title: 'Unsupervised Learning',
-          duration: '3 weeks',
-          topics: [
-            'Clustering',
-            'Dimensionality Reduction',
-            'PCA',
-            'K-means',
-            'Hierarchical Clustering',
-            'Anomaly Detection',
-          ],
-        },
-        {
-          title: 'Deep Learning & Neural Networks',
-          duration: '4 weeks',
-          topics: [
-            'Neural Networks',
-            'Backpropagation',
-            'CNNs',
-            'RNNs',
-            'LSTMs',
-            'Advanced Architectures',
-          ],
-        },
-        {
-          title: 'Computer Vision',
-          duration: '3 weeks',
-          topics: [
-            'Image Processing',
-            'Object Detection',
-            'Image Classification',
-            'Transfer Learning',
-            'YOLO',
-            'Advanced CV',
-          ],
-        },
-        {
-          title: 'Natural Language Processing',
-          duration: '3 weeks',
-          topics: [
-            'Text Processing',
-            'NLP Basics',
-            'Transformers',
-            'BERT',
-            'GPT Models',
-            'Sentiment Analysis',
-          ],
-        },
-        {
-          title: 'Model Deployment',
-          duration: '2 weeks',
-          topics: [
-            'MLOps',
-            'Model Serving',
-            'Cloud Deployment',
-            'API Creation',
-            'Monitoring',
-            'Production Best Practices',
-          ],
-        },
-        {
-          title: 'Advanced Projects',
-          duration: '3 weeks',
-          topics: [
-            'End-to-End Projects',
-            'Model Optimization',
-            'Production Deployment',
-            'Portfolio Building',
-            'Code Review',
-            'Presentation',
-          ],
-        },
-      ],
-      requirements: [
-        'Python programming knowledge',
-        'Basic statistics and linear algebra',
-        'Completed Data Science course or equivalent',
-        'Strong analytical thinking',
-      ],
-      instructors: [
-        {
-          name: 'Dr. Michael Chen',
-          role: 'ML Research Scientist',
-          experience: '15+ years',
-          company: 'Ex-Google AI, DeepMind',
-          image: '/api/placeholder/100/100',
-        },
-      ],
-      batches: [
-        {
-          type: 'Offline',
-          location: 'Bangalore',
-          startDate: 'Mar 1, 2025',
-          schedule: 'Mon-Fri, 10 AM - 1 PM',
-          seats: '20 seats available',
-        },
-        {
-          type: 'Online',
-          location: 'Live Classes',
-          startDate: 'Mar 5, 2025',
-          schedule: 'Mon-Fri, 7 PM - 9 PM',
-          seats: 'Unlimited seats',
-        },
-      ],
-      faqs: [
-        {
-          question: 'What is the course duration?',
-          answer:
-            'The course duration is 5 months with 3-4 hours of classes per day.',
-        },
-        {
-          question: 'Do I need prior programming experience?',
-          answer:
-            'Yes, Python programming knowledge is required. We recommend completing our Data Science course first.',
-        },
-        {
-          question: 'Will I get a certificate?',
-          answer:
-            'Yes, upon successful completion, you will receive a certificate of completion.',
-        },
-        {
-          question: 'What if I miss a class?',
-          answer: 'All classes are recorded and available for lifetime access.',
-        },
-        {
-          question: 'Is placement assistance provided?',
-          answer: 'Yes, we provide comprehensive placement assistance.',
-        },
-        {
-          question: 'What tools and software do I need?',
-          answer:
-            "You'll need a computer with internet. All software will be provided during the course.",
-        },
-      ],
-    },
-    'data-analytics': {
-      title: 'Data Analytics',
-      subtitle: 'Business Intelligence',
-      description:
-        'Transform raw data into actionable insights. Master visualization tools and business intelligence to drive data-driven decisions.',
-      duration: '3 months',
-      students: '120+ students',
-      rating: '4.7',
-      price: '₹29,999',
-      originalPrice: '₹59,999',
       discount: '50% OFF',
       icon: () => <BarChart3 className="h-8 w-8" />,
       gradient: 'from-orange-600 to-red-600',
       overview:
-        'Learn to analyze and visualize data to drive business decisions. Master industry-standard tools and techniques for data analysis and reporting.',
+        'A comprehensive program covering everything from Excel basics to AI-powered analytics. Learn industry-standard tools, work on real-world projects, and master data-driven decision making with hands-on experience across multiple sectors.',
       highlights: [
+        '9 Core Modules + 5 Bonus Modules',
         'Live & Recorded Classes',
         'Industry Expert Mentors',
-        '60+ Hours of Content',
-        'Real-world Projects',
-        'Power BI & Tableau',
+        '200+ Hours of Content',
+        'Real-world Sector Projects',
+        'AI-Powered Analytics',
         'Placement Assistance',
-        'Lifetime Access',
+        'Lifetime Learning Access',
         'Certificate of Completion',
       ],
       features: [
-        'Excel Advanced Techniques',
+        'Excel & Google Sheets Intelligence',
+        'SQL & Database Management',
         'Power BI & Tableau Mastery',
-        'SQL for Data Analysis',
-        'Statistical Analysis Methods',
-        'Dashboard Creation & Design',
-        'Business Intelligence Concepts',
-        'Data Storytelling & Presentation',
-        'KPI Development & Tracking',
+        'Looker & Google Visualization',
+        'Power Automate & AI Workflows',
+        'Business Statistics & Insights',
+        'Python for Data Analytics',
+        'AI Vision & Predictive Analytics',
+        'Prompt Engineering & Generative AI',
+        'R Language & R Studio',
       ],
       modules: [
         {
-          title: 'Excel for Data Analysis',
-          duration: '2 weeks',
-          topics: [
-            'Advanced Formulas',
-            'Pivot Tables',
-            'Data Analysis Tools',
-            'Charts & Graphs',
-            'Macros & VBA',
-            'Excel Best Practices',
-          ],
-        },
-        {
-          title: 'SQL Fundamentals',
+          title:
+            'Module 1: Excel & Google Sheets Intelligence — Foundations of Data Handling',
           duration: '3 weeks',
           topics: [
-            'SQL Basics',
-            'Joins & Subqueries',
-            'Aggregations',
-            'Window Functions',
-            'CTEs',
-            'Performance Tuning',
+            'Data cleaning, formatting & transformation',
+            'Formulas, functions & logic building',
+            'Pivot Tables, Charts & Dashboard Design',
+            'Power Query, Power Pivot & Automation',
+            'Google Sheets Functions & formulas',
+            'Data cleaning & transformation in Sheets',
+            'AppScript basics for automation',
+            'Connected Sheets for BigQuery',
+            'Case Study: Retail Store Sales Reporting',
           ],
         },
         {
-          title: 'Power BI Mastery',
+          title: 'Module 2: DataSpeak — SQL & Database Management',
+          duration: '4 weeks',
+          topics: [
+            'DBMS & RDBMS concepts',
+            'SQL joins, subqueries, views & constraints',
+            'Schema design & relationships',
+            'Connecting SQL to BI tools',
+            'Case Study: E-commerce Customer Segmentation',
+          ],
+        },
+        {
+          title: 'Module 3: Visual Minds — Power BI & Tableau Mastery',
+          duration: '4 weeks',
+          topics: [
+            'Data modeling & DAX',
+            'KPIs, filters, slicers & interactive storytelling',
+            'Data blending & visual insights',
+            'Case Studies: Finance Revenue Dashboard, Retail Analytics',
+          ],
+        },
+        {
+          title:
+            'Module 4: Insight Studio — Looker & Google Visualization Tools',
           duration: '3 weeks',
           topics: [
-            'Power BI Basics',
-            'Data Modeling',
-            'DAX Formulas',
-            'Visualizations',
-            'Dashboards',
-            'Power BI Service',
+            'Connecting Sheets, MySQL & BigQuery',
+            'Dynamic dashboards & filters',
+            'Google Cloud visualization',
+            'Case Study: Digital Marketing Campaign Report',
           ],
         },
         {
-          title: 'Tableau Visualization',
+          title: 'Module 5: FlowLogic — Power Automate & AI Workflow Design',
+          duration: '3 weeks',
+          topics: [
+            'Automated report pipelines',
+            'Trigger-based alerts & email systems',
+            'AI connectors for insights generation',
+            'Case Study: Automated HR Reporting System',
+          ],
+        },
+        {
+          title: 'Module 6: StatSense — Business Statistics & Insights',
+          duration: '3 weeks',
+          topics: [
+            'Descriptive & inferential statistics',
+            'Hypothesis testing, correlation & regression',
+            'KPI-driven decision making',
+            'Case Study: Telecom Customer Retention Analysis',
+          ],
+        },
+        {
+          title: 'Module 7: PyAnalytics — Python for Data Analytics',
+          duration: '4 weeks',
+          topics: [
+            'Python basics, functions & loops',
+            'Pandas & NumPy for data analysis',
+            'Matplotlib & Seaborn visualizations',
+            'Python automation scripts',
+            'Case Study: Product Demand Prediction',
+          ],
+        },
+        {
+          title: 'Module 8: AI Vision — Smart Insights & Predictive Analytics',
+          duration: '3 weeks',
+          topics: [
+            'AI tools for data interpretation',
+            'Regression & classification analytics',
+            'AI-powered dashboards',
+            'Case Study: AI-Driven Sales Forecasting',
+          ],
+        },
+        {
+          title: 'Module 9: PromptVerse — Prompt Engineering & Generative AI',
           duration: '2 weeks',
           topics: [
-            'Tableau Basics',
-            'Data Connections',
-            'Calculations',
-            'Advanced Charts',
-            'Dashboards',
-            'Tableau Server',
+            'Generative AI fundamentals',
+            'Effective prompt design',
+            'Automating insights with AI',
+            'Case Study: AI-Generated Marketing Campaign Report',
+          ],
+        },
+      ],
+      bonuses: [
+        {
+          title: 'Bonus 1: Prompt Engineering Masterclass',
+          topics: ['Advanced prompt design', 'AI-powered workflow creation'],
+        },
+        {
+          title: 'Bonus 2: Generative AI Tools Training',
+          topics: [
+            'ChatGPT, Gemini, Claude hands-on practice',
+            'AI-assisted report & dashboard automation',
           ],
         },
         {
-          title: 'Statistical Analysis',
-          duration: '2 weeks',
-          topics: [
-            'Descriptive Statistics',
-            'Inferential Statistics',
-            'Hypothesis Testing',
-            'Regression Analysis',
-            'Time Series',
-            'Forecasting',
-          ],
+          title: 'Bonus 3: Tableau Full Training',
+          topics: ['Dashboarding, analytics & storytelling'],
         },
         {
-          title: 'Dashboard Design',
-          duration: '2 weeks',
-          topics: [
-            'Design Principles',
-            'User Experience',
-            'Interactive Dashboards',
-            'Storytelling',
-            'Best Practices',
-            'Portfolio Projects',
-          ],
+          title: 'Bonus 4: R Language & R Studio',
+          topics: ['Statistical analysis & visualization'],
         },
         {
-          title: 'Business Intelligence',
-          duration: '1 week',
-          topics: [
-            'BI Concepts',
-            'Data Warehousing',
-            'ETL Processes',
-            'Reporting',
-            'Analytics Strategy',
-            'Case Studies',
-          ],
+          title: 'Bonus 5: Sector-Wise Full Case Studies',
+          topics: ['Retail, Finance, HR, Healthcare, Marketing & more'],
         },
-        {
-          title: 'Final Project',
-          duration: '1 week',
-          topics: [
-            'End-to-End Project',
-            'Dashboard Creation',
-            'Presentation',
-            'Portfolio Building',
-            'Code Review',
-            'Certification',
-          ],
-        },
+      ],
+      sectors: [
+        'Retail & E-commerce',
+        'Banking & Finance',
+        'Healthcare & Pharma',
+        'HR & Recruitment',
+        'Marketing & Digital Media',
+        'Manufacturing & Supply Chain',
+        'Education & EdTech',
+      ],
+      careerOutcomes: [
+        'Data Analyst',
+        'BI Specialist',
+        'AI Automation Analyst',
+        'Data Visualization Engineer',
+        'Reporting Engineer',
+        'Prompt Engineer',
+      ],
+      tools: [
+        'Microsoft Excel',
+        'Google Sheets',
+        'MySQL',
+        'Power BI',
+        'Tableau',
+        'Looker Studio',
+        'Power Automate',
+        'Python',
+        'R',
+        'AI Tools (ChatGPT, Gemini, Claude)',
+        'BigQuery',
       ],
       requirements: [
         'Basic computer skills',
@@ -917,76 +461,62 @@ const CourseDetails = () => {
       <AnimatedBackground />
       <Navigation />
 
-      {/* Hero Banner Section */}
-      <section className="pt-24 pb-12 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-5 opacity-10 hidden lg:block transform rotate-12">
-          <EducationIllustration type="book" size={120} />
-        </div>
-        <div className="absolute bottom-20 right-10 opacity-10 hidden lg:block transform -rotate-6">
-          <EducationIllustration type="laptop" size={100} />
-        </div>
-
+      {/* Hero Banner Section - Compact Design */}
+      <section className="pt-20 pb-8 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <BackgroundPattern variant="dots" opacity={0.03} />
         <div className="container mx-auto px-4 relative z-10">
-          <div ref={headerRef} className="max-w-7xl mx-auto">
+          <div ref={headerRef} className="max-w-6xl mx-auto">
             <Link
               to="/courses"
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6 transition-colors bg-white px-4 py-2 rounded-xl border border-gray-200 shadow-sm hover:shadow-md"
+              className="inline-flex items-center text-slate-700 hover:text-slate-900 mb-4 transition-colors"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Courses
+              <span className="text-sm font-medium">Back to Courses</span>
             </Link>
 
-            {/* Main Hero Card */}
-            <div
-              className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-xl mb-8"
-              style={{ transform: 'rotate(-0.5deg)' }}
-            >
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
-                <div
-                  className={`p-6 rounded-3xl bg-gradient-to-br ${course.gradient} text-white shadow-2xl`}
-                  style={{ transform: 'rotate(2deg)' }}
-                >
-                  {course.icon()}
+            {/* Compact Hero */}
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-md mb-6">
+              <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className={`p-4 rounded-lg bg-slate-900 flex-shrink-0`}>
+                  <div className="text-white">{course.icon()}</div>
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="px-4 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="px-2 py-1 rounded text-xs font-semibold bg-orange-100 text-orange-700">
                       {course.discount}
                     </span>
-                    <span className="px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-700">
+                    <span className="px-2 py-1 rounded text-xs font-semibold bg-blue-100 text-blue-700">
                       {course.subtitle}
                     </span>
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#0F172A] mb-2">
+                  <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
                     {course.title}
                   </h1>
-                  <p className="text-xl text-slate-600 mb-4">
+                  <p className="text-base text-slate-600 mb-4 leading-relaxed">
                     {course.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 text-slate-600">
-                    <div className="flex items-center bg-slate-50 px-4 py-2 rounded-lg">
-                      <Star className="h-5 w-5 text-yellow-500 fill-yellow-500 mr-2" />
-                      <span className="text-slate-700 font-semibold">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex items-center bg-slate-100 px-3 py-1.5 rounded text-xs">
+                      <Star className="h-3.5 w-3.5 text-yellow-500 fill-yellow-500 mr-1.5" />
+                      <span className="font-semibold text-slate-900">
                         {course.rating}
                       </span>
-                      <span className="text-slate-500 ml-1">/5.0</span>
                     </div>
-                    <div className="flex items-center bg-slate-50 px-4 py-2 rounded-lg">
-                      <Users className="h-5 w-5 text-blue-600 mr-2" />
-                      <span className="text-slate-700 font-semibold">
+                    <div className="flex items-center bg-slate-100 px-3 py-1.5 rounded text-xs">
+                      <Users className="h-3.5 w-3.5 text-slate-600 mr-1.5" />
+                      <span className="font-semibold text-slate-900">
                         {course.students}
                       </span>
                     </div>
-                    <div className="flex items-center bg-slate-50 px-4 py-2 rounded-lg">
-                      <Clock className="h-5 w-5 text-cyan-600 mr-2" />
-                      <span className="text-slate-700 font-semibold">
+                    <div className="flex items-center bg-slate-100 px-3 py-1.5 rounded text-xs">
+                      <Clock className="h-3.5 w-3.5 text-slate-600 mr-1.5" />
+                      <span className="font-semibold text-slate-900">
                         {course.duration}
                       </span>
                     </div>
-                    <div className="flex items-center bg-slate-50 px-4 py-2 rounded-lg">
-                      <Award className="h-5 w-5 text-purple-600 mr-2" />
-                      <span className="text-slate-700 font-semibold">
+                    <div className="flex items-center bg-slate-100 px-3 py-1.5 rounded text-xs">
+                      <Award className="h-3.5 w-3.5 text-slate-600 mr-1.5" />
+                      <span className="font-semibold text-slate-900">
                         Certificate
                       </span>
                     </div>
@@ -995,18 +525,15 @@ const CourseDetails = () => {
               </div>
             </div>
 
-            {/* Key Highlights */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {/* Compact Highlights */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {course.highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-4 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 text-center"
-                  style={{
-                    transform: `rotate(${index % 2 === 0 ? '1deg' : '-1deg'})`,
-                  }}
+                  className="bg-white rounded-lg p-3 border border-slate-200 shadow-sm text-center"
                 >
-                  <Sparkles className="h-6 w-6 mx-auto mb-2 text-blue-600" />
-                  <p className="text-sm font-semibold text-slate-900">
+                  <Sparkles className="h-4 w-4 mx-auto mb-1.5 text-blue-600" />
+                  <p className="text-xs font-semibold text-slate-900 leading-tight">
                     {highlight}
                   </p>
                 </div>
@@ -1016,88 +543,102 @@ const CourseDetails = () => {
         </div>
       </section>
 
-      {/* Main Content Section */}
-      <section ref={contentRef} className="py-12 relative overflow-hidden">
+      {/* Main Content Section - Compact & Dense */}
+      <section
+        ref={contentRef}
+        className="py-8 relative overflow-hidden bg-white"
+      >
+        <BackgroundPattern variant="dots" opacity={0.02} />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Course Overview */}
-              <div
-                className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                style={{ transform: 'rotate(0.5deg)' }}
-              >
-                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-4 flex items-center">
-                  <BookOpen
-                    className="h-7 w-7 mr-3"
-                    style={{ color: '#7F6DFF' }}
-                  />
-                  Course Overview
-                </h2>
-                <p className="text-lg text-slate-600 leading-relaxed">
+          <div className="max-w-6xl mx-auto space-y-6">
+            {/* Course Overview - Compact */}
+            <div className="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-xl p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-blue-600" />
+                About This Course
+              </h2>
+              <div className="space-y-3">
+                <p className="text-base text-slate-700 leading-relaxed">
                   {course.overview}
                 </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {course.description}
+                </p>
               </div>
+            </div>
 
-              {/* What You'll Learn */}
-              <div
-                className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                style={{ transform: 'rotate(-0.5deg)' }}
-              >
-                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
-                  <CheckCircle
-                    className="h-7 w-7 mr-3"
-                    style={{ color: '#00D4AA' }}
-                  />
-                  What You'll Learn
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {course.features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start text-slate-700 bg-gradient-to-r from-slate-50 to-blue-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-all"
-                    >
-                      <CheckCircle
-                        className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0"
-                        style={{ color: '#00D4AA' }}
-                      />
-                      <span className="font-medium">{feature}</span>
+            {/* What You'll Learn - Compact Grid */}
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-emerald-600" />
+                What You'll Learn
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {course.features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors"
+                  >
+                    <CheckCircle className="h-4 w-4 text-emerald-600 mr-2.5 mt-0.5 flex-shrink-0" />
+                    <span className="font-medium text-sm leading-snug">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Curriculum/Syllabus - Compact */}
+            <div
+              id="curriculum-section"
+              className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm"
+            >
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Trophy className="h-5 w-5 text-amber-600" />
+                Course Curriculum
+              </h2>
+
+              {!leadSubmitted ? (
+                <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-6 border-2 border-slate-200 shadow-md text-center">
+                  <div className="max-w-md mx-auto">
+                    <div className="p-3 bg-slate-900 rounded-lg w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-sm">
+                      <BookOpen className="h-8 w-8 text-white" />
                     </div>
-                  ))}
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                      Unlock Full Course Curriculum
+                    </h3>
+                    <p className="text-slate-600 mb-5 text-sm leading-relaxed">
+                      Fill out the form below to access the complete course
+                      curriculum, detailed modules, and all course information.
+                    </p>
+                    <Button
+                      onClick={() => setShowLeadForm(true)}
+                      className="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-2.5 rounded-lg"
+                    >
+                      View Course Curriculum
+                    </Button>
+                  </div>
                 </div>
-              </div>
-
-              {/* Curriculum/Syllabus */}
-              <div
-                className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                style={{ transform: 'rotate(0.3deg)' }}
-              >
-                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
-                  <Trophy
-                    className="h-7 w-7 mr-3"
-                    style={{ color: '#F89820' }}
-                  />
-                  Course Curriculum
-                </h2>
-                <div className="space-y-4">
+              ) : (
+                <div className="space-y-2">
                   {course.modules.map((module, index) => (
                     <div
                       key={index}
-                      className="border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 transition-all"
+                      className="border border-slate-200 rounded-lg overflow-hidden hover:border-blue-300 transition-all"
                     >
                       <button
                         onClick={() => toggleModule(index)}
-                        className="w-full flex items-center justify-between p-5 bg-gradient-to-r from-slate-50 to-blue-50 hover:from-blue-50 hover:to-cyan-50 transition-all"
+                        className="w-full flex items-center justify-between p-4 bg-slate-50 hover:bg-blue-50 transition-all"
                       >
                         <div className="flex items-center flex-1">
-                          <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
+                          <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-sm mr-4">
                             {index + 1}
                           </div>
                           <div className="text-left">
-                            <h3 className="font-bold text-slate-900 text-lg">
+                            <h3 className="font-bold text-slate-900 text-base">
                               {module.title}
                             </h3>
-                            <p className="text-sm text-slate-600">
+                            <p className="text-xs text-slate-600 mt-0.5">
                               {module.duration}
                             </p>
                           </div>
@@ -1109,14 +650,14 @@ const CourseDetails = () => {
                         )}
                       </button>
                       {expandedModules[index] && (
-                        <div className="p-5 bg-white border-t border-gray-200">
-                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="p-4 bg-white border-t border-slate-200">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
                             {module.topics.map((topic, topicIndex) => (
                               <li
                                 key={topicIndex}
-                                className="flex items-center text-slate-700"
+                                className="flex items-center text-slate-700 text-sm"
                               >
-                                <div className="w-2 h-2 rounded-full mr-3 bg-blue-600"></div>
+                                <div className="w-1.5 h-1.5 rounded-full mr-2.5 bg-blue-600 flex-shrink-0"></div>
                                 <span>{topic}</span>
                               </li>
                             ))}
@@ -1126,253 +667,173 @@ const CourseDetails = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Instructors */}
-              <div
-                className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                style={{ transform: 'rotate(-0.3deg)' }}
-              >
-                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
-                  <User className="h-7 w-7 mr-3" style={{ color: '#7F6DFF' }} />
-                  Meet Your Instructors
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {course.instructors.map((instructor, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all"
-                      style={{
-                        transform: `rotate(${
-                          index % 2 === 0 ? '1deg' : '-1deg'
-                        })`,
-                      }}
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                          {instructor.name.charAt(0)}
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-bold text-lg text-slate-900 mb-1">
-                            {instructor.name}
-                          </h3>
-                          <p className="text-blue-600 font-semibold mb-1">
-                            {instructor.role}
-                          </p>
-                          <p className="text-sm text-slate-600 mb-2">
-                            {instructor.experience} • {instructor.company}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Requirements */}
-              <div
-                className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                style={{ transform: 'rotate(0.2deg)' }}
-              >
-                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6">
-                  Prerequisites
-                </h2>
-                <ul className="space-y-3">
-                  {course.requirements.map((req, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-slate-700 bg-gradient-to-r from-slate-50 to-blue-50 p-4 rounded-lg border border-gray-200"
-                    >
-                      <CheckCircle
-                        className="h-5 w-5 mr-3 flex-shrink-0"
-                        style={{ color: '#00D4AA' }}
-                      />
-                      <span className="font-medium">{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* FAQ Section */}
-              <div
-                className="detail-section bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                style={{ transform: 'rotate(-0.2deg)' }}
-              >
-                <h2 className="text-3xl font-extrabold text-[#0F172A] mb-6 flex items-center">
-                  <HelpCircle
-                    className="h-7 w-7 mr-3"
-                    style={{ color: '#7F6DFF' }}
-                  />
-                  Frequently Asked Questions
-                </h2>
-                <div className="space-y-4">
-                  {course.faqs.map((faq, index) => (
-                    <div
-                      key={index}
-                      className="border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 transition-all"
-                    >
-                      <button
-                        onClick={() => toggleFaq(index)}
-                        className="w-full flex items-center justify-between p-5 bg-gradient-to-r from-slate-50 to-blue-50 hover:from-blue-50 hover:to-cyan-50 transition-all text-left"
-                      >
-                        <h3 className="font-bold text-slate-900 pr-4">
-                          {faq.question}
-                        </h3>
-                        {expandedFaq[index] ? (
-                          <ChevronUp className="h-5 w-5 text-slate-600 flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="h-5 w-5 text-slate-600 flex-shrink-0" />
-                        )}
-                      </button>
-                      {expandedFaq[index] && (
-                        <div className="p-5 bg-white border-t border-gray-200">
-                          <p className="text-slate-700 leading-relaxed">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
             </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-6">
-                {/* Pricing Card */}
-                <div
-                  className="detail-section bg-white rounded-2xl p-8 border-2 border-blue-200 shadow-xl"
-                  style={{
-                    transform: 'rotate(1deg)',
-                    background:
-                      'linear-gradient(135deg, rgba(59,130,246,0.05), rgba(6,182,212,0.05))',
-                  }}
-                >
-                  <div className="text-center mb-6">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-4xl font-bold text-slate-900">
-                        {course.price}
-                      </span>
-                      <span className="text-xl text-slate-400 line-through">
-                        {course.originalPrice}
-                      </span>
-                    </div>
-                    <div className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full text-white font-bold text-sm inline-block mb-2">
-                      {course.discount} Limited Time Offer
-                    </div>
-                    <div className="text-slate-600 text-sm">
-                      One-time payment • Lifetime access
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 mb-6">
-                    <Button
-                      className={`w-full bg-gradient-to-r ${course.gradient} hover:shadow-lg transition-all duration-300 text-white font-extrabold py-4 rounded-3xl transform hover:scale-105 text-lg`}
+            {/* Bonus Modules - Compact */}
+            {course.bonuses && course.bonuses.length > 0 && (
+              <div className="bg-gradient-to-br from-yellow-50 to-orange-50/50 rounded-xl p-6 border border-yellow-200 shadow-sm">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-yellow-600" />
+                  Bonus Modules Included
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {course.bonuses.map((bonus: any, index: number) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-lg p-4 border border-yellow-200"
                     >
-                      Enroll Now
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-2 border-gray-300 text-slate-700 hover:bg-slate-50 hover:border-blue-600 transition-all duration-300 py-3 rounded-3xl"
-                    >
-                      <Download className="h-4 w-4 mr-2" />
-                      Download Syllabus
-                    </Button>
-                  </div>
-
-                  <div className="space-y-3 text-sm border-t border-gray-200 pt-6">
-                    <div className="flex justify-between items-center bg-slate-50 p-3 rounded-lg">
-                      <span className="text-slate-600">Duration:</span>
-                      <span className="text-slate-900 font-semibold">
-                        {course.duration}
-                      </span>
+                      <h3 className="font-bold text-base text-slate-900 mb-2">
+                        {bonus.title}
+                      </h3>
+                      <ul className="space-y-1.5">
+                        {bonus.topics.map(
+                          (topic: string, topicIndex: number) => (
+                            <li
+                              key={topicIndex}
+                              className="flex items-start text-slate-700 text-sm"
+                            >
+                              <div className="w-1.5 h-1.5 rounded-full mr-2 mt-1.5 bg-yellow-500 flex-shrink-0"></div>
+                              <span>{topic}</span>
+                            </li>
+                          )
+                        )}
+                      </ul>
                     </div>
-                    <div className="flex justify-between items-center bg-slate-50 p-3 rounded-lg">
-                      <span className="text-slate-600">Students:</span>
-                      <span className="text-slate-900 font-semibold">
-                        {course.students}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center bg-slate-50 p-3 rounded-lg">
-                      <span className="text-slate-600">Rating:</span>
-                      <span className="text-slate-900 font-semibold">
-                        {course.rating}/5
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center bg-slate-50 p-3 rounded-lg">
-                      <span className="text-slate-600">Certificate:</span>
-                      <span className="text-slate-900 font-semibold">Yes</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
+              </div>
+            )}
 
-                {/* Batch Options */}
-                <div
-                  className="detail-section bg-white rounded-2xl p-6 border border-gray-200 shadow-md"
-                  style={{ transform: 'rotate(-0.5deg)' }}
-                >
-                  <h3 className="text-xl font-extrabold text-[#0F172A] mb-4">
-                    Available Batches
-                  </h3>
-                  <div className="space-y-4">
-                    {course.batches.map((batch, index) => (
+            {/* Sectors Covered - Compact */}
+            {course.sectors && course.sectors.length > 0 && (
+              <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <BarChart3 className="h-5 w-5 text-blue-600" />
+                  Sectors Covered
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {course.sectors.map((sector: string, index: number) => (
+                    <div
+                      key={index}
+                      className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200 hover:border-blue-300 transition-all text-sm font-semibold text-slate-900"
+                    >
+                      {sector}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Career Outcomes - Compact */}
+            {course.careerOutcomes && course.careerOutcomes.length > 0 && (
+              <div className="bg-gradient-to-br from-purple-50 to-indigo-50/50 rounded-xl p-6 border border-purple-200 shadow-sm">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <Trophy className="h-5 w-5 text-purple-600" />
+                  Career Outcomes
+                </h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {course.careerOutcomes.map(
+                    (outcome: string, index: number) => (
                       <div
                         key={index}
-                        className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-all"
+                        className="bg-white rounded-lg p-3 border border-purple-200 text-center"
                       >
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
-                            {batch.type}
-                          </span>
-                          <span className="text-xs text-slate-600">
-                            {batch.seats}
-                          </span>
-                        </div>
-                        <div className="flex items-center text-sm text-slate-600 mb-1">
-                          <MapPin className="h-4 w-4 mr-1" />
-                          {batch.location}
-                        </div>
-                        <div className="flex items-center text-sm text-slate-600 mb-1">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Starts: {batch.startDate}
-                        </div>
-                        <div className="flex items-center text-sm text-slate-600">
-                          <Clock className="h-4 w-4 mr-1" />
-                          {batch.schedule}
-                        </div>
+                        <Award className="h-4 w-4 mx-auto mb-1.5 text-purple-600" />
+                        <span className="font-semibold text-xs text-slate-900 leading-tight">
+                          {outcome}
+                        </span>
                       </div>
-                    ))}
-                  </div>
+                    )
+                  )}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            )}
 
-      {/* Certificate Section */}
-      <section className="py-12 bg-gradient-to-br from-white via-blue-50 to-cyan-50 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-extrabold text-[#0F172A] mb-4">
-                Your Certificate of Completion
+            {/* Tools Covered - Compact */}
+            {course.tools && course.tools.length > 0 && (
+              <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <Code className="h-5 w-5 text-emerald-600" />
+                  Tools Covered
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {course.tools.map((tool: string, index: number) => (
+                    <div
+                      key={index}
+                      className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 rounded-lg border border-emerald-200 hover:border-emerald-300 transition-all text-sm font-semibold text-slate-900"
+                    >
+                      {tool}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Requirements - Compact */}
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-2 border-slate-200 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-slate-900" />
+                Prerequisites
               </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-                Upon successful completion of this course, you'll receive a
-                verified certificate that you can share on LinkedIn, add to your
-                resume, or display in your portfolio.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {course.requirements.map((req, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center text-slate-700 bg-white p-3 rounded-lg border-2 border-slate-200 hover:border-slate-900 transition-colors shadow-sm"
+                  >
+                    <CheckCircle className="h-4 w-4 mr-2.5 flex-shrink-0 text-slate-900" />
+                    <span className="font-medium text-sm">{req}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div
-              className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200"
-              style={{ transform: 'rotate(0.5deg)' }}
-            >
-              <div className="flex flex-col lg:flex-row items-center gap-12">
-                {/* Certificate Preview */}
-                <div className="flex-1">
+            {/* FAQ Section - Compact */}
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <HelpCircle className="h-5 w-5 text-purple-600" />
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-2">
+                {course.faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="border border-slate-200 rounded-lg overflow-hidden hover:border-purple-300 transition-all"
+                  >
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex items-center justify-between p-4 bg-slate-50 hover:bg-purple-50 transition-all text-left"
+                    >
+                      <h3 className="font-bold text-base text-slate-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      {expandedFaq[index] ? (
+                        <ChevronUp className="h-5 w-5 text-slate-600 flex-shrink-0" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-slate-600 flex-shrink-0" />
+                      )}
+                    </button>
+                    {expandedFaq[index] && (
+                      <div className="p-4 bg-white border-t border-slate-200">
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Certificate Section - Compact */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-xl p-6 border border-blue-200 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Award className="h-5 w-5 text-blue-600" />
+                Certificate of Completion
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white rounded-lg p-4 border border-blue-200">
                   <CertificateIllustration
                     courseName={`${course.title} ${
                       course.subtitle ? `With ${course.subtitle}` : ''
@@ -1380,113 +841,83 @@ const CourseDetails = () => {
                     className="max-w-full"
                   />
                 </div>
-
-                {/* Certificate Benefits */}
-                <div className="flex-1 space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-extrabold text-[#0F172A] mb-4">
-                      Certificate Benefits
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <h3 className="font-bold text-base text-slate-900 mb-3">
+                      Benefits
                     </h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            Verified & Shareable
-                          </p>
-                          <p className="text-sm text-slate-600">
-                            Share on LinkedIn, add to your resume, or display in
-                            your portfolio
-                          </p>
-                        </div>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-slate-700">
+                          Verified & Shareable
+                        </span>
                       </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            Industry Recognized
-                          </p>
-                          <p className="text-sm text-slate-600">
-                            Recognized by top tech companies and hiring managers
-                          </p>
-                        </div>
+                      <li className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-slate-700">
+                          Industry Recognized
+                        </span>
                       </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            Lifetime Access
-                          </p>
-                          <p className="text-sm text-slate-600">
-                            Download and verify your certificate anytime,
-                            anywhere
-                          </p>
-                        </div>
+                      <li className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-slate-700">Lifetime Access</span>
                       </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            Unique Certificate Number
-                          </p>
-                          <p className="text-sm text-slate-600">
-                            Each certificate has a unique verification code for
-                            authenticity
-                          </p>
-                        </div>
+                      <li className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-slate-700">
+                          Unique Verification Code
+                        </span>
                       </li>
                     </ul>
                   </div>
-
-                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200">
-                    <p className="text-sm text-slate-700 mb-2">
-                      <strong>Note:</strong> Certificate will be issued upon
-                      completion of all course modules, assignments, and the
-                      final project.
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <p className="text-xs text-slate-600 mb-3">
+                      <strong>Note:</strong> Certificate issued upon completion
+                      of all modules and final project.
                     </p>
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl">
+                    <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg text-sm">
                       View Sample Certificate
                     </Button>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Related Courses - Compact */}
+            {relatedCourses.length > 0 && (
+              <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 shadow-sm">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                  Related Courses
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {relatedCourses.map((relatedCourse) => (
+                    <CourseCard
+                      key={relatedCourse.id}
+                      title={relatedCourse.title}
+                      description={relatedCourse.description}
+                      duration={relatedCourse.duration}
+                      students={relatedCourse.students}
+                      rating={relatedCourse.rating}
+                      icon={relatedCourse.icon()}
+                      features={relatedCourse.features.slice(0, 4)}
+                      gradient={relatedCourse.gradient}
+                      courseId={relatedCourse.courseId}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Related Courses */}
-      {relatedCourses.length > 0 && (
-        <section className="py-12 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-8">
-              <h2 className="text-4xl font-extrabold text-[#0F172A] mb-4">
-                Related Courses
-              </h2>
-              <p className="text-slate-600 text-lg">
-                Explore more courses to enhance your skills
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {relatedCourses.map((relatedCourse) => (
-                <CourseCard
-                  key={relatedCourse.id}
-                  title={relatedCourse.title}
-                  description={relatedCourse.description}
-                  duration={relatedCourse.duration}
-                  students={relatedCourse.students}
-                  rating={relatedCourse.rating}
-                  icon={relatedCourse.icon()}
-                  features={relatedCourse.features.slice(0, 4)}
-                  gradient={relatedCourse.gradient}
-                  courseId={relatedCourse.courseId}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
+      <LeadCaptureForm
+        open={showLeadForm}
+        onOpenChange={setShowLeadForm}
+        onSuccess={handleLeadFormSubmit}
+        courseName={course?.title}
+      />
       <Footer />
     </div>
   );

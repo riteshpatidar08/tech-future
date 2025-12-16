@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Youtube, ExternalLink } from 'lucide-react';
 import Tablet3D from './Tablet3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,14 +25,13 @@ const YouTubeChannels = () => {
     if (!channels) return;
 
     gsap.fromTo(channels,
-      { y: 80, opacity: 0, scale: 0.8, rotation: (i) => (i % 2 === 0 ? -5 : 5) },
+      { y: 50, opacity: 0, scale: 0.95 },
       {
         y: 0,
         opacity: 1,
         scale: 1,
-        rotation: (i) => (i % 2 === 0 ? -2 : 2),
-        duration: 1,
-        stagger: 0.15,
+        duration: 0.8,
+        stagger: 0.1,
         ease: 'back.out(1.7)',
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -41,15 +41,23 @@ const YouTubeChannels = () => {
       }
     );
 
-    // Floating animation
-    gsap.to('.channel-card', {
-      y: (i) => -8 + (i * 1.5),
-      rotation: (i) => (i % 2 === 0 ? -1 : 1),
-      duration: 3 + Math.random() * 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      stagger: 0.2
+    // Hover animations for cards
+    const cards = document.querySelectorAll('.channel-card');
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          y: -4,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          y: 0,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
     });
   }, []);
 
@@ -93,7 +101,10 @@ const YouTubeChannels = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-white overflow-hidden">
+    <section ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid-dots" opacity={0.025} />
+      
       {/* 3D Tablet Elements */}
       <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
         <Tablet3D className="scale-75" />
@@ -103,19 +114,22 @@ const YouTubeChannels = () => {
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-12 md:mb-16">
-          <div className="flex justify-center mb-6">
+        <div className="text-center mb-8 md:mb-10">
+          <div className="flex justify-center mb-4">
             <Tablet3D className="scale-75" />
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-slate-900">
-            Join The Syntaxim Family, Today!
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <Youtube className="h-6 w-6 text-slate-900" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
+              Join The Syntaxim Family
+            </h2>
+          </div>
+          <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
             Explore our YouTube Channels and subscribe to get access to quality education for free.
           </p>
         </div>
 
-        <div ref={channelsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div ref={channelsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {channels.map((channel, index) => (
             <a
               key={index}
@@ -124,49 +138,43 @@ const YouTubeChannels = () => {
               rel="noopener noreferrer"
               className="channel-card group"
             >
-              <div
-                className={`relative h-full p-6 rounded-3xl border-2 bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105`}
-                style={{ 
-                  transform: `rotate(${index % 3 === 0 ? '-1.5deg' : index % 3 === 1 ? '1.5deg' : '-0.5deg'})`,
-                  borderColor: 'rgba(59, 130, 246, 0.2)'
-                }}
-              >
+              <div className="relative h-full p-6 rounded-xl border-2 border-slate-200 hover:border-slate-900 bg-white shadow-md hover:shadow-lg transition-all duration-300">
                 {/* YouTube icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${channel.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <Youtube className="h-8 w-8 text-white fill-white" />
+                  <div className={`p-3 rounded-xl bg-slate-50 group-hover:bg-slate-900 transition-all duration-300 inline-block group-hover:scale-110`}>
+                    <Youtube className="h-6 w-6 text-slate-700 group-hover:text-white transition-colors" />
                   </div>
-                  <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-slate-900 transition-colors" />
                 </div>
 
                 {/* Channel name */}
-                <h3 className="text-lg font-bold text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors"
-                    className="font-bold">
+                <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors">
                   {channel.name}
                 </h3>
 
                 {/* Subscribers */}
-                <div className="mb-3">
-                  <div className="text-2xl font-bold mb-1" style={{ color: channel.iconColor }}>
+                <div className="mb-4">
+                  <div className="text-2xl md:text-3xl font-bold mb-1 text-slate-900">
                     {channel.subscribers}
                   </div>
-                  <div className="text-xs text-slate-600">Subscribers</div>
+                  <div className="text-sm text-slate-600 font-medium">Subscribers</div>
                 </div>
 
                 {/* Description */}
                 {channel.description && (
-                  <p className="text-slate-600 text-xs mb-4">
+                  <p className="text-sm md:text-base text-slate-600 mb-4 leading-relaxed">
                     {channel.description}
                   </p>
                 )}
 
                 {/* Subscribe button */}
                 <button
-                  className={`w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r ${channel.gradient} hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2`}
-                  className="font-bold text-base"
+                  className="w-full py-3 rounded-lg text-white font-semibold bg-slate-900 hover:bg-slate-800 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                   onClick={(e) => {
                     e.preventDefault();
-                    // Handle subscribe action
+                    if (channel.url) {
+                      window.open(channel.url, '_blank');
+                    }
                   }}
                 >
                   <Youtube className="h-5 w-5" />

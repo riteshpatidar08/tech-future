@@ -1,0 +1,197 @@
+{
+  "id": "python-ds",
+  "title": "Python Data Science",
+  "subtitle": "Complete Data Analysis with Modern Tools",
+  "description": "Dive deep into data science with Python. Learn pandas, NumPy, and advanced statistical analysis techniques to extract insights from complex datasets using modern data science tools.",
+  "duration": "4 months",
+  "students": "35+ students",
+  "rating": "4.8",
+  "price": "₹39,999",
+  "originalPrice": "₹79,999",
+  "discount": "50% OFF",
+  "icon": "Database",
+  "gradient": "from-cyan-600 to-blue-600",
+  "overview": "Master the art of data science with Python. This course covers everything from data manipulation and visualization to advanced statistical analysis and machine learning fundamentals using the latest tools and libraries.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "90+ Hours of Content",
+    "Real-world Projects",
+    "Jupyter Notebooks & JupyterLab",
+    "Modern Data Science Tools",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Python Programming Fundamentals",
+    "Pandas & NumPy for Data Manipulation",
+    "Data Visualization (Matplotlib, Seaborn, Plotly)",
+    "Statistical Analysis & Hypothesis Testing",
+    "Jupyter Notebooks & Data Storytelling",
+    "Web Scraping & Data Collection",
+    "SQL for Data Analysis",
+    "Introduction to Machine Learning",
+    "Time Series Analysis",
+    "Data Cleaning & Preprocessing"
+  ],
+  "modules": [
+    {
+      "title": "Python Programming Basics",
+      "duration": "2 weeks",
+      "topics": [
+        "Python Syntax & Fundamentals",
+        "Data Types & Structures",
+        "Functions & Modules",
+        "Object-Oriented Programming",
+        "Error Handling & Debugging",
+        "File Operations & I/O"
+      ]
+    },
+    {
+      "title": "Data Manipulation with Pandas",
+      "duration": "3 weeks",
+      "topics": [
+        "DataFrames & Series Operations",
+        "Data Cleaning & Preprocessing",
+        "Data Transformation & Wrangling",
+        "Grouping & Aggregation",
+        "Merging & Joining Datasets",
+        "Time Series Data Handling",
+        "Advanced Pandas Techniques"
+      ]
+    },
+    {
+      "title": "Data Visualization",
+      "duration": "3 weeks",
+      "topics": [
+        "Matplotlib Fundamentals",
+        "Seaborn Advanced Visualizations",
+        "Plotly Interactive Charts",
+        "Dashboard Creation",
+        "Data Storytelling",
+        "Visualization Best Practices",
+        "Custom Visualizations"
+      ]
+    },
+    {
+      "title": "Statistical Analysis",
+      "duration": "3 weeks",
+      "topics": [
+        "Descriptive Statistics",
+        "Inferential Statistics",
+        "Hypothesis Testing",
+        "A/B Testing",
+        "Correlation & Regression Analysis",
+        "Statistical Modeling",
+        "Advanced Statistical Methods"
+      ]
+    },
+    {
+      "title": "Data Collection & Web Scraping",
+      "duration": "2 weeks",
+      "topics": [
+        "Web Scraping with BeautifulSoup & Scrapy",
+        "API Integration & Data Collection",
+        "Data Collection Strategies",
+        "Data Storage & Management",
+        "ETL Pipelines",
+        "Data Quality Assurance"
+      ]
+    },
+    {
+      "title": "SQL & Databases",
+      "duration": "2 weeks",
+      "topics": [
+        "SQL Fundamentals",
+        "Advanced SQL Queries",
+        "Database Design",
+        "Data Warehousing Concepts",
+        "SQL with Python (SQLAlchemy)",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "ML Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "Supervised Learning Basics",
+        "Unsupervised Learning",
+        "Model Evaluation Metrics",
+        "Feature Engineering",
+        "Model Selection & Tuning",
+        "Introduction to Scikit-learn",
+        "Cross-validation Techniques"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "2 weeks",
+      "topics": [
+        "Project Planning & Design",
+        "End-to-End Data Analysis",
+        "Report Writing & Documentation",
+        "Presentation Skills",
+        "Code Review & Best Practices",
+        "Portfolio Building"
+      ]
+    }
+  ],
+  "requirements": [
+    "Basic math knowledge",
+    "High school education or equivalent",
+    "Interest in data and analytics",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Dr. Emily Rodriguez",
+      "role": "Senior Data Scientist",
+      "experience": "12+ years",
+      "company": "Ex-Amazon, Netflix"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Feb 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "25 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Feb 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 4 months with 3 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior programming experience?",
+      "answer": "No prior programming experience is required. We start from Python basics."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    },
+    {
+      "question": "What if I miss a class?",
+      "answer": "All classes are recorded and available for lifetime access."
+    },
+    {
+      "question": "Is placement assistance provided?",
+      "answer": "Yes, we provide comprehensive placement assistance."
+    },
+    {
+      "question": "What tools and software do I need?",
+      "answer": "You'll need a computer with internet. All software will be provided during the course."
+    }
+  ]
+}
+

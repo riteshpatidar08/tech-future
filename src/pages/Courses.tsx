@@ -1,15 +1,23 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CourseCard from "@/components/CourseCard";
-import Navigation from "@/components/Navigation";
-import AnimatedBackground from "@/components/AnimatedBackground";
-import Footer from "@/components/Footer";
-import StudyResources from "@/components/StudyResources";
-import Testimonials from "@/components/Testimonials";
-import { Code, Database, Brain, BarChart3 } from "lucide-react";
-import HandDrawnArrow from "@/components/HandDrawnArrow";
-import EducationIllustration from "@/components/EducationIllustration";
+import { Link } from 'react-router-dom';
+import CourseCard from '@/components/CourseCard';
+import Navigation from '@/components/Navigation';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import Footer from '@/components/Footer';
+import StudyResources from '@/components/StudyResources';
+import Testimonials from '@/components/Testimonials';
+import {
+  Code,
+  Database,
+  Brain,
+  BarChart3,
+  Smartphone,
+  Sparkles,
+  ChevronRight,
+} from 'lucide-react';
+import BackgroundPattern from '@/components/BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,13 +27,22 @@ const Courses = () => {
 
   useEffect(() => {
     // Header animation
-    gsap.fromTo(headerRef.current?.children,
+    gsap.fromTo(
+      headerRef.current?.children,
       { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 0.3 }
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+        delay: 0.3,
+      }
     );
 
     // Course cards animation on scroll
-    gsap.fromTo('.course-card',
+    gsap.fromTo(
+      '.course-card',
       { y: 100, opacity: 0, scale: 0.8 },
       {
         y: 0,
@@ -38,161 +55,364 @@ const Courses = () => {
           trigger: coursesRef.current,
           start: 'top 80%',
           end: 'bottom 20%',
-        }
+        },
       }
     );
   }, []);
 
-  const courses = [
+  const courseCategories = [
     {
-      id: "fullstack",
-      title: "Full Stack Development",
-      description: "Master modern web development with React, Node.js, and databases. Build complete web applications from frontend to backend.",
-      duration: "6 months",
-      students: "200+ students",
-      rating: "4.9",
-      icon: <Code className="h-6 w-6" />,
-      gradient: "from-purple-600 to-cyan-600",
-      features: [
-        "React.js & Next.js",
-        "Node.js & Express",
-        "MongoDB & PostgreSQL",
-        "RESTful APIs & GraphQL",
-        "Deployment & DevOps"
-      ]
+      name: 'Python',
+      icon: Database,
+      courses: [
+        {
+          id: 'python-core',
+          title: 'Python Core',
+          description:
+            'Master Python programming from fundamentals to advanced concepts. Learn core Python syntax, data structures, and best practices.',
+          duration: '3 months',
+          students: '180+ students',
+          rating: '4.9',
+          icon: <Database className="h-6 w-6" />,
+          gradient: 'from-slate-600 to-slate-800',
+          features: [
+            'Python Fundamentals',
+            'Data Structures',
+            'OOP',
+            'File Handling',
+            'Testing',
+          ],
+        },
+        {
+          id: 'python-django',
+          title: 'Python with Web Dev Django',
+          description:
+            'Build powerful web applications with Django framework. Learn to create scalable, secure, and maintainable web applications.',
+          duration: '5 months',
+          students: '170+ students',
+          rating: '4.8',
+          icon: <Code className="h-6 w-6" />,
+          gradient: 'from-slate-700 to-slate-900',
+          features: [
+            'Django Framework',
+            'RESTful APIs',
+            'Database ORM',
+            'Authentication',
+            'Deployment',
+          ],
+        },
+        {
+          id: 'genai-llmops',
+          title: 'GenAI LLMOps',
+          description:
+            'Master Generative AI and Large Language Model Operations. Learn to build, deploy, and manage AI applications with LLMs.',
+          duration: '6 months',
+          students: '150+ students',
+          rating: '4.9',
+          icon: <Sparkles className="h-6 w-6" />,
+          gradient: 'from-slate-600 to-blue-600',
+          features: [
+            'Large Language Models',
+            'Prompt Engineering',
+            'Model Fine-tuning',
+            'LLM Deployment',
+            'AI Applications',
+          ],
+        },
+        {
+          id: 'python-ds',
+          title: 'Python Data Science',
+          description:
+            'Dive deep into data science with Python. Learn pandas, NumPy, and advanced statistical analysis techniques.',
+          duration: '4 months',
+          students: '175+ students',
+          rating: '4.8',
+          icon: <Database className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-slate-700',
+          features: [
+            'Python Programming',
+            'Pandas & NumPy',
+            'Data Visualization',
+            'Statistical Analysis',
+            'Jupyter Notebooks',
+          ],
+        },
+        {
+          id: 'ai-python',
+          title: 'AI with Python',
+          description:
+            'Learn artificial intelligence concepts and implementation using Python. Build intelligent systems and AI applications.',
+          duration: '5 months',
+          students: '160+ students',
+          rating: '4.9',
+          icon: <Brain className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-indigo-600',
+          features: [
+            'AI Fundamentals',
+            'Neural Networks',
+            'TensorFlow & PyTorch',
+            'NLP',
+            'Computer Vision',
+          ],
+        },
+      ],
     },
     {
-      id: "python-ds",
-      title: "Python Data Science",
-      description: "Dive deep into data science with Python. Learn pandas, NumPy, and advanced statistical analysis techniques.",
-      duration: "4 months",
-      students: "150+ students",
-      rating: "4.8",
-      icon: <Database className="h-6 w-6" />,
-      gradient: "from-cyan-600 to-blue-600",
-      features: [
-        "Python Programming",
-        "Pandas & NumPy",
-        "Data Visualization",
-        "Statistical Analysis",
-        "Jupyter Notebooks"
-      ]
+      name: 'Web Development',
+      icon: Code,
+      courses: [
+        {
+          id: 'fullstack',
+          title: 'Full Stack Development',
+          description:
+            'Master modern full-stack web development with Next.js 14+, TypeScript, React Server Components, and AI integration.',
+          duration: '6 months',
+          students: '200+ students',
+          rating: '4.9',
+          icon: <Code className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-slate-700',
+          features: [
+            'Next.js 14+ & TypeScript',
+            'React Server Components',
+            'Node.js & Express',
+            'MongoDB & PostgreSQL',
+            'AI Integration',
+          ],
+        },
+        {
+          id: 'frontend',
+          title: 'Frontend Development',
+          description:
+            'Master modern frontend development with React, Next.js, and modern UI frameworks. Build responsive and interactive web applications.',
+          duration: '4 months',
+          students: '190+ students',
+          rating: '4.9',
+          icon: <Code className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-cyan-600',
+          features: [
+            'React.js & Next.js',
+            'TypeScript & JavaScript',
+            'Modern UI Frameworks',
+            'State Management',
+            'Responsive Design',
+          ],
+        },
+        {
+          id: 'backend',
+          title: 'Backend Development',
+          description:
+            'Master server-side development with Node.js, Express, databases, and APIs. Build scalable and secure backend systems.',
+          duration: '5 months',
+          students: '180+ students',
+          rating: '4.8',
+          icon: <Database className="h-6 w-6" />,
+          gradient: 'from-slate-700 to-blue-600',
+          features: [
+            'Node.js & Express',
+            'RESTful APIs',
+            'MongoDB & PostgreSQL',
+            'Authentication',
+            'API Security',
+          ],
+        },
+      ],
     },
     {
-      id: "machine-learning",
-      title: "Machine Learning",
-      description: "Build intelligent systems with ML algorithms. From supervised learning to deep neural networks.",
-      duration: "5 months",
-      students: "100+ students",
-      rating: "4.9",
-      icon: <Brain className="h-6 w-6" />,
-      gradient: "from-blue-600 to-purple-600",
-      features: [
-        "Supervised Learning",
-        "Deep Learning",
-        "TensorFlow & PyTorch",
-        "Model Deployment",
-        "Computer Vision & NLP"
-      ]
+      name: 'Data Science & Analytics',
+      icon: BarChart3,
+      courses: [
+        {
+          id: 'python-ds',
+          title: 'Python Data Science',
+          description:
+            'Dive deep into data science with Python. Learn pandas, NumPy, and advanced statistical analysis techniques.',
+          duration: '4 months',
+          students: '175+ students',
+          rating: '4.8',
+          icon: <Database className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-slate-700',
+          features: [
+            'Python Programming',
+            'Pandas & NumPy',
+            'Data Visualization',
+            'Statistical Analysis',
+            'Jupyter Notebooks',
+          ],
+        },
+        {
+          id: 'data-analytics',
+          title: 'Data Analytics',
+          description:
+            'Transform raw data into actionable insights. Master visualization tools and business intelligence.',
+          duration: '6 months',
+          students: '200+ students',
+          rating: '4.9',
+          icon: <BarChart3 className="h-6 w-6" />,
+          gradient: 'from-slate-600 to-blue-600',
+          features: [
+            'Excel & Power BI',
+            'SQL & Databases',
+            'Tableau Visualization',
+            'Business Intelligence',
+            'Reporting & Dashboards',
+          ],
+        },
+        {
+          id: 'big-data',
+          title: 'Big Data Analytics',
+          description:
+            'Learn to process and analyze massive datasets using Hadoop, Spark, Kafka, and cloud platforms.',
+          duration: '5 months',
+          students: '155+ students',
+          rating: '4.8',
+          icon: <Database className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-indigo-600',
+          features: [
+            'Hadoop Ecosystem',
+            'Apache Spark',
+            'Apache Kafka',
+            'Cloud Platforms',
+            'Data Pipelines',
+          ],
+        },
+        {
+          id: 'bi',
+          title: 'Business Intelligence',
+          description:
+            'Master BI tools & data visualization. Create powerful dashboards using Power BI, Tableau, and QlikView.',
+          duration: '4 months',
+          students: '165+ students',
+          rating: '4.7',
+          icon: <BarChart3 className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-slate-800',
+          features: [
+            'Power BI',
+            'Tableau',
+            'QlikView',
+            'Data Modeling',
+            'Dashboard Design',
+          ],
+        },
+      ],
     },
     {
-      id: "data-analytics",
-      title: "Data Analytics",
-      description: "Transform raw data into actionable insights. Master visualization tools and business intelligence.",
-      duration: "3 months",
-      students: "120+ students",
-      rating: "4.7",
-      icon: <BarChart3 className="h-6 w-6" />,
-      gradient: "from-orange-600 to-red-600",
-      features: [
-        "Excel & Power BI",
-        "SQL & Databases",
-        "Tableau Visualization",
-        "Business Intelligence",
-        "Reporting & Dashboards"
-      ]
-    }
+      name: 'AI & Machine Learning',
+      icon: Brain,
+      courses: [
+        {
+          id: 'machine-learning',
+          title: 'Machine Learning',
+          description:
+            'Build intelligent systems with ML algorithms. From supervised learning to deep neural networks.',
+          duration: '5 months',
+          students: '185+ students',
+          rating: '4.9',
+          icon: <Brain className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-purple-600',
+          features: [
+            'Supervised Learning',
+            'Deep Learning',
+            'TensorFlow & PyTorch',
+            'Model Deployment',
+            'MLOps',
+          ],
+        },
+        {
+          id: 'ai-python',
+          title: 'AI with Python',
+          description:
+            'Learn artificial intelligence concepts and implementation using Python. Build intelligent systems and AI applications.',
+          duration: '5 months',
+          students: '160+ students',
+          rating: '4.9',
+          icon: <Brain className="h-6 w-6" />,
+          gradient: 'from-blue-600 to-indigo-600',
+          features: [
+            'AI Fundamentals',
+            'Neural Networks',
+            'TensorFlow & PyTorch',
+            'NLP',
+            'Computer Vision',
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Mobile Development',
+      icon: Smartphone,
+      courses: [
+        {
+          id: 'react-native',
+          title: 'Mobile App Development with React Native',
+          description:
+            'Build cross-platform mobile applications with React Native. Create native iOS and Android apps with a single codebase.',
+          duration: '5 months',
+          students: '170+ students',
+          rating: '4.8',
+          icon: <Smartphone className="h-6 w-6" />,
+          gradient: 'from-slate-700 to-slate-900',
+          features: [
+            'React Native Fundamentals',
+            'iOS & Android Development',
+            'Native Modules',
+            'State Management',
+            'App Deployment',
+          ],
+        },
+      ],
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <AnimatedBackground />
       <Navigation />
-      
-      <section className="pt-24 pb-20 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-10 left-5 opacity-10 hidden lg:block">
-          <EducationIllustration type="book" size={100} />
-        </div>
-        <div className="absolute bottom-10 right-5 opacity-10 hidden lg:block">
-          <EducationIllustration type="lightbulb" size={120} />
-        </div>
-        <div className="absolute top-1/3 right-10 opacity-10 hidden xl:block transform rotate-12">
-          <EducationIllustration type="coding" size={110} />
-        </div>
-        <div className="absolute bottom-1/4 left-10 opacity-10 hidden xl:block transform -rotate-6">
-          <EducationIllustration type="certificate" size={100} />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div ref={headerRef} className="text-center mb-16 relative">
-            {/* Tech icons behind header */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="absolute -left-20 top-0 opacity-15">
-                <svg width="100" height="100" viewBox="0 0 200 200">
-                  <circle cx="100" cy="100" r="70" fill="#3776AB"/>
-                  <circle cx="150" cy="100" r="70" fill="#FFDE57"/>
-                </svg>
-              </div>
-              <div className="absolute -right-20 top-0 opacity-15">
-                <svg width="100" height="100" viewBox="0 0 200 200">
-                  <circle cx="100" cy="100" r="75" fill="#00D4AA"/>
-                  <circle cx="100" cy="100" r="20" fill="#61DAFB"/>
-                </svg>
-              </div>
-            </div>
-            
-            {/* Arrow pointing to heading */}
-            <div className="absolute -left-16 top-1/2 hidden xl:block animate-float">
-              <HandDrawnArrow direction="right" color="#0DB7ED" className="w-20 h-20" />
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm max-w-4xl mx-auto relative z-10">
-              <h1 className="text-5xl md:text-6xl font-bold text-[#0F172A] mb-6"
-                  style={{ 
-                    fontWeight: 700,
-                    letterSpacing: '0.02em'
-                  }}>
-                Our Training Programs
-              </h1>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Choose from our comprehensive courses designed to take you from beginner to industry-ready professional
-              </p>
-            </div>
+
+      <section className="pt-20 pb-16 md:pb-20 relative overflow-hidden">
+        <BackgroundPattern variant="dots" opacity={0.03} />
+
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div ref={headerRef} className="text-center mt-8 mb-10 md:mb-12">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Our Training Programs
+            </h1>
+            <p className="text-xs md:text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Choose from our comprehensive courses designed to take you from
+              beginner to industry-ready professional
+            </p>
           </div>
-          
-          <div ref={coursesRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto relative">
-            {/* Arrow pointing to courses */}
-            <div className="absolute -right-16 top-1/2 hidden xl:block animate-float" style={{ animationDelay: '0.8s' }}>
-              <HandDrawnArrow direction="left" color="#FF6F61" className="w-16 h-16" />
-            </div>
-            
-            {courses.map((course, index) => (
-              <div key={index} className="course-card relative">
-                {/* Small arrow on hover */}
-                <div className="absolute -top-4 -right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:block">
-                  <HandDrawnArrow direction="diagonal" color="#FFB300" className="w-12 h-12" />
+
+          <div ref={coursesRef} className="space-y-12 md:space-y-16">
+            {courseCategories.map((category, categoryIndex) => {
+              const CategoryIcon = category.icon;
+              return (
+                <div key={categoryIndex} className="course-category">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 rounded-lg bg-slate-900">
+                      <CategoryIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900">
+                      {category.name}
+                    </h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {category.courses.map((course, courseIndex) => (
+                      <div key={courseIndex} className="course-card">
+                        <CourseCard {...course} courseId={course.id} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <CourseCard {...course} courseId={course.id} />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
-      
+
       <StudyResources />
       <Testimonials />
-      
+
       <Footer />
     </div>
   );

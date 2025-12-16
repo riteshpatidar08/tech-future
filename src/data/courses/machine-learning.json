@@ -1,0 +1,217 @@
+{
+  "id": "machine-learning",
+  "title": "Machine Learning",
+  "subtitle": "AI & Deep Learning with Modern Frameworks",
+  "description": "Build intelligent systems with ML algorithms. From supervised learning to deep neural networks, master the technologies powering AI revolution with TensorFlow, PyTorch, and modern ML tools.",
+  "duration": "5 months",
+  "students": "25+ students",
+  "rating": "4.9",
+  "price": "₹59,999",
+  "originalPrice": "₹1,19,999",
+  "discount": "50% OFF",
+  "icon": "Brain",
+  "gradient": "from-blue-600 to-purple-600",
+  "overview": "Dive into the world of artificial intelligence and machine learning. Learn to build intelligent systems that can learn from data and make predictions using the latest ML frameworks and techniques.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "130+ Hours of Content",
+    "Real-world Projects",
+    "TensorFlow & PyTorch",
+    "MLOps & Model Deployment",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Supervised & Unsupervised Learning",
+    "Deep Learning & Neural Networks",
+    "TensorFlow 2.x & PyTorch Frameworks",
+    "Computer Vision Applications",
+    "Natural Language Processing",
+    "Model Deployment & MLOps",
+    "Feature Engineering & Selection",
+    "Model Evaluation & Optimization",
+    "Transfer Learning",
+    "Reinforcement Learning Basics"
+  ],
+  "modules": [
+    {
+      "title": "ML Fundamentals & Math",
+      "duration": "3 weeks",
+      "topics": [
+        "Linear Algebra for ML",
+        "Calculus & Optimization",
+        "Probability & Statistics",
+        "ML Concepts & Terminology",
+        "Mathematical Foundations",
+        "Gradient Descent & Optimization"
+      ]
+    },
+    {
+      "title": "Supervised Learning Algorithms",
+      "duration": "4 weeks",
+      "topics": [
+        "Linear & Logistic Regression",
+        "Decision Trees & Random Forests",
+        "Support Vector Machines (SVM)",
+        "Ensemble Methods",
+        "Gradient Boosting (XGBoost, LightGBM)",
+        "Model Evaluation & Metrics"
+      ]
+    },
+    {
+      "title": "Unsupervised Learning",
+      "duration": "3 weeks",
+      "topics": [
+        "Clustering Algorithms (K-means, Hierarchical)",
+        "Dimensionality Reduction (PCA, t-SNE)",
+        "Anomaly Detection",
+        "Association Rules",
+        "Unsupervised Learning Applications",
+        "Evaluation of Unsupervised Models"
+      ]
+    },
+    {
+      "title": "Deep Learning & Neural Networks",
+      "duration": "4 weeks",
+      "topics": [
+        "Neural Network Fundamentals",
+        "Backpropagation Algorithm",
+        "Convolutional Neural Networks (CNNs)",
+        "Recurrent Neural Networks (RNNs)",
+        "LSTMs & GRUs",
+        "Advanced Architectures"
+      ]
+    },
+    {
+      "title": "TensorFlow & Keras",
+      "duration": "3 weeks",
+      "topics": [
+        "TensorFlow 2.x Fundamentals",
+        "Keras API & Model Building",
+        "Custom Layers & Models",
+        "Transfer Learning",
+        "Model Training & Optimization",
+        "TensorBoard Visualization"
+      ]
+    },
+    {
+      "title": "PyTorch Framework",
+      "duration": "3 weeks",
+      "topics": [
+        "PyTorch Basics & Tensors",
+        "Neural Network Modules",
+        "Training Loops & Optimization",
+        "Data Loading & Preprocessing",
+        "Custom Datasets",
+        "Model Deployment with PyTorch"
+      ]
+    },
+    {
+      "title": "Computer Vision",
+      "duration": "3 weeks",
+      "topics": [
+        "Image Processing & Preprocessing",
+        "Object Detection (YOLO, R-CNN)",
+        "Image Classification",
+        "Transfer Learning for CV",
+        "Advanced CV Techniques",
+        "CV Applications & Projects"
+      ]
+    },
+    {
+      "title": "Natural Language Processing",
+      "duration": "3 weeks",
+      "topics": [
+        "Text Preprocessing & Tokenization",
+        "Word Embeddings (Word2Vec, GloVe)",
+        "Text Classification",
+        "Sentiment Analysis",
+        "Transformer Models (BERT, GPT)",
+        "NLP Applications"
+      ]
+    },
+    {
+      "title": "Model Deployment & MLOps",
+      "duration": "3 weeks",
+      "topics": [
+        "MLOps Fundamentals",
+        "Model Serving & APIs",
+        "Cloud Deployment (AWS, GCP, Azure)",
+        "Containerization (Docker)",
+        "Model Monitoring",
+        "Production Best Practices"
+      ]
+    },
+    {
+      "title": "Advanced Projects",
+      "duration": "3 weeks",
+      "topics": [
+        "End-to-End ML Projects",
+        "Model Optimization & Tuning",
+        "Production Deployment",
+        "Portfolio Building",
+        "Code Review & Best Practices",
+        "Project Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Python programming knowledge",
+    "Basic statistics and linear algebra",
+    "Completed Data Science course or equivalent",
+    "Strong analytical thinking"
+  ],
+  "instructors": [
+    {
+      "name": "Dr. Michael Chen",
+      "role": "ML Research Scientist",
+      "experience": "15+ years",
+      "company": "Ex-Google AI, DeepMind"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "Mar 1, 2025",
+      "schedule": "Mon-Fri, 10 AM - 1 PM",
+      "seats": "20 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Mar 5, 2025",
+      "schedule": "Mon-Fri, 7 PM - 9 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3-4 hours of classes per day."
+    },
+    {
+      "question": "Do I need prior programming experience?",
+      "answer": "Yes, Python programming knowledge is required. We recommend completing our Data Science course first."
+    },
+    {
+      "question": "Will I learn both TensorFlow and PyTorch?",
+      "answer": "Yes! You'll learn both frameworks so you can choose the best tool for your projects."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    },
+    {
+      "question": "What if I miss a class?",
+      "answer": "All classes are recorded and available for lifetime access."
+    },
+    {
+      "question": "Is placement assistance provided?",
+      "answer": "Yes, we provide comprehensive placement assistance."
+    }
+  ]
+}
+

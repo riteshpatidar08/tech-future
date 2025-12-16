@@ -86,16 +86,16 @@ const ExamCategories = () => {
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <div className="flex justify-center mb-6">
             <CodeCube3D className="scale-50" />
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Course Categories
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Syntaxim is preparing students for multiple tech domains. Find the one
-            you are preparing for.
+          <p className="text-xs md:text-sm text-slate-600 max-w-2xl mx-auto">
+            Syntaxim is preparing students for multiple tech domains. Find the
+            one you are preparing for.
           </p>
         </div>
 
@@ -104,11 +104,7 @@ const ExamCategories = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {categories.map((category, index) => (
-            <Link
-              key={index}
-              to={`/course/${category.id}`}
-              className="group"
-            >
+            <Link key={index} to={`/course/${category.id}`} className="group">
               <div className="h-full p-8 border border-slate-200 rounded-lg hover:border-slate-900 hover:shadow-lg transition-all duration-300 bg-white">
                 <div className="mb-6 flex justify-center">
                   <div className="p-4 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
@@ -126,25 +122,28 @@ const ExamCategories = () => {
                   {category.description}
                 </p>
 
-                {category.subCategories && category.subCategories.length > 0 && (
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {category.subCategories.slice(0, 2).map((sub, subIndex) => (
-                        <span
-                          key={subIndex}
-                          className="px-3 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700"
-                        >
-                          {sub}
-                        </span>
-                      ))}
-                      {category.subCategories.length > 2 && (
-                        <span className="px-3 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">
-                          +{category.subCategories.length - 2}
-                        </span>
-                      )}
+                {category.subCategories &&
+                  category.subCategories.length > 0 && (
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {category.subCategories
+                          .slice(0, 2)
+                          .map((sub, subIndex) => (
+                            <span
+                              key={subIndex}
+                              className="px-3 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700"
+                            >
+                              {sub}
+                            </span>
+                          ))}
+                        {category.subCategories.length > 2 && (
+                          <span className="px-3 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">
+                            +{category.subCategories.length - 2}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
                 <div className="flex items-center justify-center gap-2 text-sm font-medium text-slate-900 group-hover:gap-3 transition-all">
                   <span>Explore Category</span>

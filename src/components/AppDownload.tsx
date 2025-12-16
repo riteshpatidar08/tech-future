@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Check, Smartphone, Download } from 'lucide-react';
 import Phone3D from './Phone3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,12 +39,15 @@ const AppDownload = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-24 md:py-32 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section ref={sectionRef} className="relative py-24 md:py-32 bg-white overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="dots" opacity={0.025} />
+      
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
-              Join 10K+ students on the app today!
+              Join 500+ students on the app today!
             </h2>
 
             <div className="space-y-3 mb-8">

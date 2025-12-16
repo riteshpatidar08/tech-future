@@ -1,0 +1,245 @@
+{
+  "id": "ai-python",
+  "title": "AI with Python",
+  "subtitle": "AI, Machine Learning & Deep Learning",
+  "description": "Master Artificial Intelligence with Python. Learn machine learning, deep learning, neural networks, and build AI-powered applications using the latest Python AI libraries.",
+  "duration": "6 months",
+  "students": "30+ students",
+  "rating": "4.9",
+  "price": "₹59,999",
+  "originalPrice": "₹1,19,999",
+  "discount": "50% OFF",
+  "icon": "Brain",
+  "gradient": "from-indigo-600 to-purple-600",
+  "overview": "This comprehensive AI course covers machine learning, deep learning, neural networks, computer vision, NLP, and AI application development. Learn to build intelligent systems with Python.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "130+ Hours of Content",
+    "Real-world AI Projects",
+    "TensorFlow & PyTorch",
+    "AI Application Development",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Machine Learning Fundamentals",
+    "Deep Learning & Neural Networks",
+    "TensorFlow & PyTorch",
+    "Computer Vision",
+    "Natural Language Processing",
+    "Reinforcement Learning",
+    "AI Model Deployment",
+    "Transfer Learning",
+    "AI Ethics & Responsible AI",
+    "Real-world AI Applications"
+  ],
+  "modules": [
+    {
+      "title": "Python for AI",
+      "duration": "2 weeks",
+      "topics": [
+        "Python Fundamentals Review",
+        "NumPy & Array Operations",
+        "Pandas for Data Manipulation",
+        "Matplotlib & Visualization",
+        "Scientific Computing",
+        "Python Best Practices for AI"
+      ]
+    },
+    {
+      "title": "Machine Learning Fundamentals",
+      "duration": "4 weeks",
+      "topics": [
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Regression & Classification",
+        "Scikit-learn Library",
+        "Model Evaluation & Metrics",
+        "Cross-validation",
+        "Feature Engineering",
+        "Hyperparameter Tuning"
+      ]
+    },
+    {
+      "title": "Deep Learning Basics",
+      "duration": "4 weeks",
+      "topics": [
+        "Neural Networks Fundamentals",
+        "Backpropagation",
+        "Activation Functions",
+        "Loss Functions",
+        "Optimization Algorithms",
+        "Regularization Techniques",
+        "Neural Network Architecture"
+      ]
+    },
+    {
+      "title": "TensorFlow & Keras",
+      "duration": "4 weeks",
+      "topics": [
+        "TensorFlow Fundamentals",
+        "Keras API",
+        "Building Neural Networks",
+        "Model Training & Evaluation",
+        "Callbacks & Checkpoints",
+        "TensorBoard Visualization",
+        "Transfer Learning"
+      ]
+    },
+    {
+      "title": "PyTorch Framework",
+      "duration": "4 weeks",
+      "topics": [
+        "PyTorch Basics",
+        "Tensors & Operations",
+        "Autograd & Gradients",
+        "Neural Network Modules",
+        "Training Loops",
+        "Data Loading & Preprocessing",
+        "Model Deployment"
+      ]
+    },
+    {
+      "title": "Convolutional Neural Networks (CNNs)",
+      "duration": "3 weeks",
+      "topics": [
+        "CNN Architecture",
+        "Image Classification",
+        "Transfer Learning",
+        "Object Detection",
+        "Image Segmentation",
+        "CNN Applications",
+        "Advanced CNN Architectures"
+      ]
+    },
+    {
+      "title": "Recurrent Neural Networks (RNNs)",
+      "duration": "3 weeks",
+      "topics": [
+        "RNN Fundamentals",
+        "LSTM & GRU",
+        "Sequence Modeling",
+        "Time Series Prediction",
+        "RNN Applications",
+        "Attention Mechanisms",
+        "Transformer Architecture"
+      ]
+    },
+    {
+      "title": "Natural Language Processing",
+      "duration": "4 weeks",
+      "topics": [
+        "Text Preprocessing",
+        "Word Embeddings",
+        "Text Classification",
+        "Sentiment Analysis",
+        "Named Entity Recognition",
+        "Transformer Models (BERT, GPT)",
+        "NLP Applications"
+      ]
+    },
+    {
+      "title": "Computer Vision",
+      "duration": "3 weeks",
+      "topics": [
+        "Image Processing",
+        "Object Detection (YOLO)",
+        "Image Segmentation",
+        "Face Recognition",
+        "Video Analysis",
+        "Computer Vision Applications",
+        "Advanced CV Techniques"
+      ]
+    },
+    {
+      "title": "Reinforcement Learning",
+      "duration": "3 weeks",
+      "topics": [
+        "RL Fundamentals",
+        "Q-Learning",
+        "Deep Q-Networks (DQN)",
+        "Policy Gradients",
+        "RL Environments (Gym)",
+        "RL Applications",
+        "Advanced RL Algorithms"
+      ]
+    },
+    {
+      "title": "AI Model Deployment",
+      "duration": "3 weeks",
+      "topics": [
+        "Model Serialization",
+        "API Development",
+        "Model Serving",
+        "Cloud Deployment",
+        "Edge Deployment",
+        "Model Optimization",
+        "MLOps Basics"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "4 weeks",
+      "topics": [
+        "End-to-End AI Project",
+        "Model Development",
+        "Training & Evaluation",
+        "Deployment",
+        "Documentation",
+        "Code Review",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Python programming knowledge",
+    "Basic mathematics (linear algebra, calculus)",
+    "High school education or equivalent",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Dr. Michael Chen",
+      "role": "AI Research Scientist",
+      "experience": "15+ years",
+      "company": "Ex-Google AI, DeepMind"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "Jul 1, 2025",
+      "schedule": "Mon-Fri, 10 AM - 1 PM",
+      "seats": "20 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Jul 5, 2025",
+      "schedule": "Mon-Fri, 7 PM - 9 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 6 months with 3-4 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior ML experience?",
+      "answer": "Python knowledge is required. Basic math knowledge (linear algebra, calculus) is helpful but we cover the necessary concepts."
+    },
+    {
+      "question": "Will I learn both TensorFlow and PyTorch?",
+      "answer": "Yes! You'll learn both frameworks so you can choose the best tool for your projects."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    }
+  ]
+}
+

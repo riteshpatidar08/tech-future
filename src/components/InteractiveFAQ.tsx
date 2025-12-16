@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { HelpCircle } from 'lucide-react';
+import BackgroundPattern from './BackgroundPattern';
 import Book3D from './Book3D';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -105,7 +106,10 @@ const InteractiveFAQ = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="dots" opacity={0.025} />
+      
       {/* 3D Book Elements */}
       <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
         <Book3D className="scale-75" />
@@ -115,17 +119,17 @@ const InteractiveFAQ = () => {
       </div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-6">
+        <div className="text-center mb-8">
+          <div className="flex justify-center mb-4">
             <Book3D className="scale-75" />
           </div>
           <div className="inline-flex items-center gap-2 mb-4">
-            <HelpCircle className="h-6 w-6 text-slate-900" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
+            <HelpCircle className="h-5 w-5 text-slate-900" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
             Got questions? We've got answers! Explore our FAQ to learn more
             about Syntaxim.
           </p>
@@ -139,10 +143,10 @@ const InteractiveFAQ = () => {
                 value={`item-${index}`}
                 className="border border-slate-200 rounded-lg bg-white"
               >
-                <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-slate-700 px-6 py-4">
+                <AccordionTrigger className="text-left text-sm md:text-base font-semibold text-slate-900 hover:text-slate-700 px-4 py-3">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-600 leading-relaxed px-6 pb-4">
+                <AccordionContent className="text-sm text-slate-600 leading-relaxed px-4 pb-3">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -151,10 +155,10 @@ const InteractiveFAQ = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-slate-600 mb-4">Still have questions?</p>
+          <p className="text-sm text-slate-600 mb-4">Still have questions?</p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-slate-800 transition-colors"
+            className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors"
           >
             Contact Us
           </a>

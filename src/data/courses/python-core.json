@@ -1,0 +1,217 @@
+{
+  "id": "python-core",
+  "title": "Python Core",
+  "subtitle": "Complete Python Programming",
+  "description": "Master Python programming from fundamentals to advanced concepts. Learn object-oriented programming, data structures, algorithms, and modern Python features.",
+  "duration": "3 months",
+  "students": "50+ students",
+  "rating": "4.8",
+  "price": "₹29,999",
+  "originalPrice": "₹59,999",
+  "discount": "50% OFF",
+  "icon": "Database",
+  "gradient": "from-green-600 to-emerald-600",
+  "overview": "This comprehensive Python course covers everything from basic syntax to advanced programming concepts. Perfect for beginners and those looking to strengthen their Python foundation.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "80+ Hours of Content",
+    "Real-world Projects",
+    "Python 3.12+ Features",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Python 3.12+ Fundamentals",
+    "Object-Oriented Programming",
+    "Data Structures & Algorithms",
+    "File Handling & I/O",
+    "Exception Handling",
+    "Modules & Packages",
+    "Decorators & Generators",
+    "Async Programming",
+    "Testing with pytest",
+    "Code Quality & Best Practices"
+  ],
+  "modules": [
+    {
+      "title": "Python Fundamentals",
+      "duration": "2 weeks",
+      "topics": [
+        "Python Installation & Setup",
+        "Variables & Data Types",
+        "Operators & Expressions",
+        "Control Flow (if/else, loops)",
+        "Functions & Scope",
+        "String Manipulation",
+        "List, Tuple, Dictionary, Set"
+      ]
+    },
+    {
+      "title": "Advanced Data Structures",
+      "duration": "2 weeks",
+      "topics": [
+        "List Comprehensions",
+        "Dictionary Comprehensions",
+        "Set Operations",
+        "Collections Module",
+        "Data Structure Algorithms",
+        "Memory Management",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "Object-Oriented Programming",
+      "duration": "3 weeks",
+      "topics": [
+        "Classes & Objects",
+        "Inheritance & Polymorphism",
+        "Encapsulation & Abstraction",
+        "Magic Methods (Dunder Methods)",
+        "Property Decorators",
+        "Class Methods & Static Methods",
+        "Multiple Inheritance & MRO"
+      ]
+    },
+    {
+      "title": "Functions & Advanced Concepts",
+      "duration": "2 weeks",
+      "topics": [
+        "Lambda Functions",
+        "Decorators",
+        "Generators & Yield",
+        "Iterators & Iterables",
+        "Context Managers",
+        "Function Arguments (*args, **kwargs)",
+        "Closures"
+      ]
+    },
+    {
+      "title": "File Handling & I/O",
+      "duration": "2 weeks",
+      "topics": [
+        "File Reading & Writing",
+        "CSV & JSON Handling",
+        "Working with Paths (pathlib)",
+        "Exception Handling",
+        "Logging",
+        "Configuration Files",
+        "Data Serialization"
+      ]
+    },
+    {
+      "title": "Modules & Packages",
+      "duration": "2 weeks",
+      "topics": [
+        "Creating Modules",
+        "Package Structure",
+        "Import Statements",
+        "Standard Library Modules",
+        "Third-party Packages (pip)",
+        "Virtual Environments",
+        "Package Distribution"
+      ]
+    },
+    {
+      "title": "Async Programming",
+      "duration": "2 weeks",
+      "topics": [
+        "Async/Await Syntax",
+        "Coroutines & Tasks",
+        "asyncio Library",
+        "Concurrent Programming",
+        "Async Context Managers",
+        "Async Generators",
+        "Performance Benefits"
+      ]
+    },
+    {
+      "title": "Testing & Debugging",
+      "duration": "2 weeks",
+      "topics": [
+        "Unit Testing with pytest",
+        "Test Fixtures",
+        "Mocking & Patching",
+        "Debugging Techniques",
+        "Code Profiling",
+        "Error Handling Best Practices",
+        "Test Coverage"
+      ]
+    },
+    {
+      "title": "Python Best Practices",
+      "duration": "2 weeks",
+      "topics": [
+        "PEP 8 Style Guide",
+        "Code Organization",
+        "Documentation (Docstrings)",
+        "Type Hints",
+        "Code Review Practices",
+        "Version Control with Git",
+        "Project Structure"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "2 weeks",
+      "topics": [
+        "Project Planning",
+        "Application Development",
+        "Testing & Quality Assurance",
+        "Documentation",
+        "Code Review",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Basic computer skills",
+    "High school education or equivalent",
+    "Willingness to learn and practice",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Dr. Priya Sharma",
+      "role": "Python Expert",
+      "experience": "8+ years",
+      "company": "Ex-Google, Microsoft"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Mar 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "30 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Mar 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 3 months with 3 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior programming experience?",
+      "answer": "No prior programming experience is required. This course starts from the very basics."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    },
+    {
+      "question": "What if I miss a class?",
+      "answer": "All classes are recorded and available for lifetime access."
+    }
+  ]
+}
+

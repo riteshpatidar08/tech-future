@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Users, BookOpen, Video, FileText } from 'lucide-react';
 import Chart3D from './Chart3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +46,7 @@ const PlatformStats = () => {
           },
           onUpdate: function () {
             numberElement.textContent =
-              Math.floor(obj.value).toLocaleString() + suffix;
+              Math.floor(obj.value).toString() + suffix;
           },
         });
       });
@@ -71,22 +72,22 @@ const PlatformStats = () => {
 
   const stats: Stat[] = [
     {
-      number: '10000+',
+      number: '500+',
       label: 'Happy Students',
       icon: <Users className="h-8 w-8" />,
     },
     {
-      number: '100000+',
+      number: '5000+',
       label: 'Mock Tests',
       icon: <FileText className="h-8 w-8" />,
     },
     {
-      number: '50000+',
+      number: '2000+',
       label: 'Video Lectures',
       icon: <Video className="h-8 w-8" />,
     },
     {
-      number: '50000+',
+      number: '1500+',
       label: 'Practice Papers',
       icon: <BookOpen className="h-8 w-8" />,
     },
@@ -95,8 +96,11 @@ const PlatformStats = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-slate-50 overflow-hidden"
+      className="relative py-16 md:py-20 bg-slate-50 overflow-hidden"
     >
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid" opacity={0.02} />
+
       {/* 3D Chart Elements */}
       <div className="absolute top-10 left-10 opacity-10 hidden lg:block">
         <Chart3D className="scale-75" />
@@ -106,23 +110,20 @@ const PlatformStats = () => {
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <div className="flex justify-center mb-6">
             <Chart3D className="scale-75" />
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             A Platform Trusted by Students
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Syntaxim aims to transform not just through words, but provide results
-            with numbers!
+          <p className="text-xs md:text-sm text-slate-600 max-w-2xl mx-auto">
+            Syntaxim aims to transform not just through words, but provide
+            results with numbers!
           </p>
         </div>
 
-        <div
-          ref={statsRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <div key={index} className="relative">
               <div className="h-full p-8 bg-white border border-slate-200 rounded-lg text-center">
@@ -132,13 +133,13 @@ const PlatformStats = () => {
                   </div>
                 </div>
 
-                <div className="mb-3">
-                  <div className="stat-number text-3xl md:text-4xl font-bold mb-1 text-slate-900">
+                <div className="mb-2">
+                  <div className="stat-number text-lg md:text-xl font-bold mb-1 text-slate-900">
                     {stat.number}
                   </div>
                 </div>
 
-                <div className="text-base font-medium text-slate-600">
+                <div className="text-sm font-medium text-slate-600">
                   {stat.label}
                 </div>
               </div>

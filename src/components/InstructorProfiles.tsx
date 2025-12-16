@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Linkedin, Github, Award, Users, BookOpen, Star } from 'lucide-react';
 import Laptop3D from './Laptop3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,8 +35,12 @@ const instructors: Instructor[] = [
     courses: ['Full Stack Development', 'React Mastery', 'Node.js Advanced'],
     expertise: ['React', 'Node.js', 'AWS', 'Microservices'],
     company: 'Ex-Google, Microsoft',
-    achievements: ['Built 50+ Production Apps', 'Mentored 1000+ Developers', 'Open Source Contributor'],
-    avatar: 'RK'
+    achievements: [
+      'Built 50+ Production Apps',
+      'Mentored 1000+ Developers',
+      'Open Source Contributor',
+    ],
+    avatar: 'RK',
   },
   {
     id: 2,
@@ -47,21 +52,29 @@ const instructors: Instructor[] = [
     courses: ['Python Data Science', 'Machine Learning', 'Deep Learning'],
     expertise: ['Python', 'TensorFlow', 'PyTorch', 'MLOps'],
     company: 'Ex-Amazon, Netflix',
-    achievements: ['Published 20+ Research Papers', 'ML Model Deployed at Scale', 'Kaggle Grandmaster'],
-    avatar: 'PS'
+    achievements: [
+      'Published 20+ Research Papers',
+      'ML Model Deployed at Scale',
+      'Kaggle Grandmaster',
+    ],
+    avatar: 'PS',
   },
   {
     id: 3,
     name: 'Amit Patel',
     role: 'ML Engineer & AI Researcher',
     experience: '8+ Years',
-    students: '10K+',
+    students: '500+',
     rating: 4.9,
     courses: ['Machine Learning', 'Deep Learning', 'NLP'],
     expertise: ['Deep Learning', 'NLP', 'Computer Vision', 'AI Research'],
     company: 'Ex-OpenAI, Meta',
-    achievements: ['AI Models in Production', 'Research Publications', 'Tech Conference Speaker'],
-    avatar: 'AP'
+    achievements: [
+      'AI Models in Production',
+      'Research Publications',
+      'Tech Conference Speaker',
+    ],
+    avatar: 'AP',
   },
   {
     id: 4,
@@ -73,8 +86,12 @@ const instructors: Instructor[] = [
     courses: ['Data Analytics', 'Business Intelligence', 'SQL Mastery'],
     expertise: ['Power BI', 'Tableau', 'SQL', 'Excel Advanced'],
     company: 'Ex-Deloitte, Accenture',
-    achievements: ['Analyzed $100M+ Business Data', 'BI Dashboards for Fortune 500', 'Data Strategy Consultant'],
-    avatar: 'SR'
+    achievements: [
+      'Analyzed $100M+ Business Data',
+      'BI Dashboards for Fortune 500',
+      'Data Strategy Consultant',
+    ],
+    avatar: 'SR',
   },
   {
     id: 5,
@@ -86,8 +103,12 @@ const instructors: Instructor[] = [
     courses: ['Full Stack Development', 'MERN Stack', 'DevOps'],
     expertise: ['MERN Stack', 'Docker', 'Kubernetes', 'CI/CD'],
     company: 'Ex-Uber, Airbnb',
-    achievements: ['Scalable Web Applications', 'DevOps Best Practices', 'System Design Expert'],
-    avatar: 'KM'
+    achievements: [
+      'Scalable Web Applications',
+      'DevOps Best Practices',
+      'System Design Expert',
+    ],
+    avatar: 'KM',
   },
   {
     id: 6,
@@ -99,9 +120,13 @@ const instructors: Instructor[] = [
     courses: ['Python Programming', 'Data Science', 'Pandas & NumPy'],
     expertise: ['Python', 'Pandas', 'NumPy', 'Data Visualization'],
     company: 'Ex-IBM, Oracle',
-    achievements: ['Data Science Projects', 'Python Library Contributor', 'Tech Blogger'],
-    avatar: 'AT'
-  }
+    achievements: [
+      'Data Science Projects',
+      'Python Library Contributor',
+      'Tech Blogger',
+    ],
+    avatar: 'AT',
+  },
 ];
 
 const InstructorProfiles = () => {
@@ -110,7 +135,8 @@ const InstructorProfiles = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      gsap.fromTo(sectionRef.current,
+      gsap.fromTo(
+        sectionRef.current,
         { y: 100, opacity: 0 },
         {
           y: 0,
@@ -120,14 +146,15 @@ const InstructorProfiles = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
+            toggleActions: 'play none none none',
+          },
         }
       );
     }
 
     if (instructorsRef.current) {
-      gsap.fromTo(instructorsRef.current.children,
+      gsap.fromTo(
+        instructorsRef.current.children,
         { y: 80, opacity: 0, scale: 0.9 },
         {
           y: 0,
@@ -139,19 +166,29 @@ const InstructorProfiles = () => {
           scrollTrigger: {
             trigger: instructorsRef.current,
             start: 'top 75%',
-            toggleActions: 'play none none none'
-          }
+            toggleActions: 'play none none none',
+          },
         }
       );
     }
   }, []);
 
   const getInitials = (name: string): string => {
-    return name.split(' ').map(n => n[0]).join('').toUpperCase();
+    return name
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase();
   };
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative py-20 md:py-28 bg-slate-50 overflow-hidden"
+    >
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid-dots" opacity={0.025} />
+
       {/* 3D Laptop Elements */}
       <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
         <Laptop3D className="scale-75" />
@@ -167,21 +204,30 @@ const InstructorProfiles = () => {
           </div>
           <div className="inline-flex items-center gap-2 mb-4">
             <Users className="h-6 w-6 text-blue-600" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F172A]"
-                style={{ 
-                  fontWeight: 700
-                }}>
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F172A]"
+              style={{
+                fontWeight: 700,
+              }}
+            >
               Learn from Industry Experts
             </h2>
           </div>
           <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Our instructors are seasoned professionals from top tech companies. Learn from those who've built real-world applications at scale.
+            Our instructors are seasoned professionals from top tech companies.
+            Learn from those who've built real-world applications at scale.
           </p>
         </div>
 
-        <div ref={instructorsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          ref={instructorsRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {instructors.map((instructor) => (
-            <Card key={instructor.id} className="border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden group">
+            <Card
+              key={instructor.id}
+              className="border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden group"
+            >
               <div className="bg-slate-50 p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <Avatar className="h-20 w-20 border-4 border-white shadow-lg">
@@ -190,20 +236,30 @@ const InstructorProfiles = () => {
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-[#0F172A] mb-1">{instructor.name}</h3>
-                    <p className="text-sm text-blue-600 font-semibold mb-1">{instructor.role}</p>
-                    <p className="text-xs text-slate-600">{instructor.company}</p>
+                    <h3 className="text-xl font-bold text-[#0F172A] mb-1">
+                      {instructor.name}
+                    </h3>
+                    <p className="text-sm text-blue-600 font-semibold mb-1">
+                      {instructor.role}
+                    </p>
+                    <p className="text-xs text-slate-600">
+                      {instructor.company}
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-1">
                     <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm font-semibold">{instructor.rating}</span>
+                    <span className="text-sm font-semibold">
+                      {instructor.rating}
+                    </span>
                   </div>
                   <div className="flex items-center gap-1 text-slate-600">
                     <Users className="h-4 w-4" />
-                    <span className="text-sm">{instructor.students} students</span>
+                    <span className="text-sm">
+                      {instructor.students} students
+                    </span>
                   </div>
                   <div className="flex items-center gap-1 text-slate-600">
                     <Award className="h-4 w-4" />
@@ -220,12 +276,19 @@ const InstructorProfiles = () => {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {instructor.courses.slice(0, 2).map((course, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs border-blue-300 text-blue-700">
+                      <Badge
+                        key={idx}
+                        variant="outline"
+                        className="text-xs border-blue-300 text-blue-700"
+                      >
                         {course}
                       </Badge>
                     ))}
                     {instructor.courses.length > 2 && (
-                      <Badge variant="outline" className="text-xs border-slate-300 text-slate-600">
+                      <Badge
+                        variant="outline"
+                        className="text-xs border-slate-300 text-slate-600"
+                      >
                         +{instructor.courses.length - 2} more
                       </Badge>
                     )}
@@ -233,10 +296,15 @@ const InstructorProfiles = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-slate-700 mb-2">Expertise</h4>
+                  <h4 className="text-sm font-semibold text-slate-700 mb-2">
+                    Expertise
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {instructor.expertise.map((skill, idx) => (
-                      <Badge key={idx} className="text-xs bg-blue-100 text-blue-700 border-0">
+                      <Badge
+                        key={idx}
+                        className="text-xs bg-blue-100 text-blue-700 border-0"
+                      >
                         {skill}
                       </Badge>
                     ))}
@@ -244,10 +312,15 @@ const InstructorProfiles = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-slate-700 mb-2">Key Achievements</h4>
+                  <h4 className="text-sm font-semibold text-slate-700 mb-2">
+                    Key Achievements
+                  </h4>
                   <ul className="space-y-1">
                     {instructor.achievements.map((achievement, idx) => (
-                      <li key={idx} className="text-xs text-slate-600 flex items-start gap-2">
+                      <li
+                        key={idx}
+                        className="text-xs text-slate-600 flex items-start gap-2"
+                      >
                         <span className="text-green-500 mt-1">✓</span>
                         <span>{achievement}</span>
                       </li>
@@ -283,4 +356,3 @@ const InstructorProfiles = () => {
 };
 
 export default InstructorProfiles;
-

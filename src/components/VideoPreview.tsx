@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import BackgroundPattern from './BackgroundPattern';
 import { Card, CardContent } from '@/components/ui/card';
 import { Play, Clock, Users, Star } from 'lucide-react';
 import Tablet3D from './Tablet3D';
@@ -112,6 +113,9 @@ const VideoPreview = () => {
 
   return (
     <section ref={sectionRef} className="relative py-24 md:py-32 bg-white overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid" opacity={0.02} />
+      
       {/* 3D Tablet Elements */}
       <div className="absolute top-20 right-20 opacity-10 hidden lg:block">
         <Tablet3D className="scale-75" />

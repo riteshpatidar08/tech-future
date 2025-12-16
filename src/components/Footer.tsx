@@ -2,8 +2,6 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import Logo from './Logo';
-
 const Footer = () => {
   return (
     <footer className="bg-slate-50 border-t border-gray-200 text-slate-900 py-16">
@@ -12,7 +10,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <Logo className="h-10 w-auto" />
+              <Link to="/" className="inline-block">
+                <span className="text-3xl md:text-4xl font-bold text-slate-900" style={{ fontFamily: 'Geist, sans-serif' }}>
+                  Syntaxim
+                </span>
+              </Link>
             </div>
             <p className="text-slate-600 mb-6 max-w-md text-sm sm:text-base leading-relaxed">
               We understand that every student has unique needs and abilities, that's why our curriculum is designed to adapt to your needs and help you grow!
@@ -54,10 +56,11 @@ const Footer = () => {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-4 text-slate-900 tracking-tight">Popular Courses</h4>
             <ul className="space-y-2">
-              <li><Link to="/courses" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Full Stack Development</Link></li>
-              <li><Link to="/courses" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Data Science</Link></li>
-              <li><Link to="/courses" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Machine Learning</Link></li>
-              <li><Link to="/courses" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Data Analytics</Link></li>
+              <li><Link to="/course/frontend" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Frontend Development</Link></li>
+              <li><Link to="/course/react-native" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Mobile App Development with React Native</Link></li>
+              <li><Link to="/course/python-core" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Python Core</Link></li>
+              <li><Link to="/course/python-django" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">Python with Web Dev Django</Link></li>
+              <li><Link to="/course/genai-llmops" className="text-slate-600 hover:text-blue-600 transition-colors text-sm leading-relaxed">GenAI LLMOps</Link></li>
             </ul>
           </div>
           
@@ -72,7 +75,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="tel:+919876543210" className="text-slate-600 hover:text-blue-600 transition-colors text-sm flex items-center space-x-2">
+                <a href="tel:+918709061231" className="text-slate-600 hover:text-blue-600 transition-colors text-sm flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
                   <span>Talk to Counselor</span>
                 </a>
@@ -80,7 +83,7 @@ const Footer = () => {
               <li>
                 <div className="text-slate-600 text-sm flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
-                  <span>Bangalore, Karnataka</span>
+                  <span>Bhopal, MP</span>
                 </div>
               </li>
             </ul>

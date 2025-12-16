@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Users, BookOpen, Award, Video, Clock } from 'lucide-react';
 import Chart3D from './Chart3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,6 +155,9 @@ const LiveActivityFeed = () => {
 
   return (
     <section ref={sectionRef} className="relative py-24 md:py-32 bg-slate-50 overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="dots" opacity={0.025} />
+      
       {/* 3D Chart Elements */}
       <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
         <Chart3D className="scale-75" />

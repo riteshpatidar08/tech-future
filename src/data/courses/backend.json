@@ -1,0 +1,281 @@
+{
+  "id": "backend",
+  "title": "Backend Development",
+  "subtitle": "Node.js, Python, Cloud & Microservices",
+  "description": "Master modern backend development with Node.js, Python FastAPI, microservices architecture, cloud deployment, and API design. Build scalable, secure, and performant backend systems.",
+  "duration": "5 months",
+  "students": "40+ students",
+  "rating": "4.8",
+  "price": "₹44,999",
+  "originalPrice": "₹89,999",
+  "discount": "50% OFF",
+  "icon": "Database",
+  "gradient": "from-blue-600 to-indigo-600",
+  "overview": "This comprehensive Backend Development course covers Node.js, Python FastAPI, microservices architecture, cloud platforms (AWS, GCP), database design, API development, and DevOps practices. Learn to build enterprise-grade backend systems.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "100+ Hours of Content",
+    "Real-world Projects",
+    "Microservices Architecture",
+    "Cloud Deployment",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Node.js & Express.js Framework",
+    "Python FastAPI & Django",
+    "RESTful APIs & GraphQL",
+    "Microservices Architecture",
+    "Docker & Kubernetes",
+    "AWS & Google Cloud Platform",
+    "PostgreSQL, MongoDB & Redis",
+    "Message Queues (RabbitMQ, Kafka)",
+    "Authentication & Authorization (JWT, OAuth)",
+    "API Security & Rate Limiting",
+    "Testing & CI/CD",
+    "Monitoring & Logging"
+  ],
+  "modules": [
+    {
+      "title": "Node.js Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "Node.js Runtime & Event Loop",
+        "NPM & Package Management",
+        "File System & Streams",
+        "HTTP Module & Web Servers",
+        "Async Programming Patterns",
+        "Error Handling",
+        "Debugging & Profiling"
+      ]
+    },
+    {
+      "title": "Express.js & API Development",
+      "duration": "4 weeks",
+      "topics": [
+        "Express.js Framework",
+        "Middleware & Routing",
+        "RESTful API Design",
+        "Request Validation",
+        "Error Handling Middleware",
+        "API Documentation (Swagger)",
+        "Versioning & Best Practices"
+      ]
+    },
+    {
+      "title": "Python FastAPI & Django",
+      "duration": "4 weeks",
+      "topics": [
+        "FastAPI Framework",
+        "Async/Await in Python",
+        "Pydantic Models & Validation",
+        "Django REST Framework",
+        "ORM & Database Models",
+        "API Authentication",
+        "WebSockets & Real-time"
+      ]
+    },
+    {
+      "title": "Database Design & Management",
+      "duration": "4 weeks",
+      "topics": [
+        "PostgreSQL & Advanced Queries",
+        "MongoDB & Document Design",
+        "Database Indexing & Optimization",
+        "Transactions & ACID Properties",
+        "Redis for Caching",
+        "Database Migrations",
+        "Connection Pooling"
+      ]
+    },
+    {
+      "title": "GraphQL & Advanced APIs",
+      "duration": "3 weeks",
+      "topics": [
+        "GraphQL Schema Design",
+        "Apollo Server & Client",
+        "Resolvers & Data Fetching",
+        "Subscriptions & Real-time",
+        "GraphQL vs REST",
+        "API Federation",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "Microservices Architecture",
+      "duration": "4 weeks",
+      "topics": [
+        "Microservices Design Patterns",
+        "Service Communication (gRPC, REST)",
+        "API Gateway (Kong, AWS API Gateway)",
+        "Service Discovery & Load Balancing",
+        "Distributed Systems Concepts",
+        "Event-Driven Architecture",
+        "Saga Pattern for Transactions"
+      ]
+    },
+    {
+      "title": "Message Queues & Event Streaming",
+      "duration": "3 weeks",
+      "topics": [
+        "RabbitMQ & Message Queues",
+        "Apache Kafka for Event Streaming",
+        "Pub/Sub Patterns",
+        "Event Sourcing",
+        "CQRS (Command Query Responsibility Segregation)",
+        "Dead Letter Queues",
+        "Message Ordering & Delivery"
+      ]
+    },
+    {
+      "title": "Authentication & Security",
+      "duration": "3 weeks",
+      "topics": [
+        "JWT & Token Management",
+        "OAuth 2.0 & OpenID Connect",
+        "Password Hashing & Encryption",
+        "API Security Best Practices",
+        "Rate Limiting & Throttling",
+        "CORS & CSRF Protection",
+        "Security Headers & HTTPS"
+      ]
+    },
+    {
+      "title": "Docker & Containerization",
+      "duration": "3 weeks",
+      "topics": [
+        "Docker Fundamentals",
+        "Dockerfile & Multi-stage Builds",
+        "Docker Compose",
+        "Container Orchestration",
+        "Docker Best Practices",
+        "Container Security",
+        "Image Optimization"
+      ]
+    },
+    {
+      "title": "Kubernetes & Orchestration",
+      "duration": "3 weeks",
+      "topics": [
+        "Kubernetes Architecture",
+        "Pods, Services & Deployments",
+        "ConfigMaps & Secrets",
+        "Ingress & Load Balancing",
+        "Auto-scaling & HPA",
+        "Kubernetes Networking",
+        "Monitoring & Logging"
+      ]
+    },
+    {
+      "title": "Cloud Platforms (AWS & GCP)",
+      "duration": "4 weeks",
+      "topics": [
+        "AWS Services (EC2, Lambda, RDS, S3)",
+        "Google Cloud Platform",
+        "Serverless Architecture",
+        "Cloud Functions & Lambda",
+        "Managed Databases",
+        "Cloud Storage & CDN",
+        "Cost Optimization"
+      ]
+    },
+    {
+      "title": "DevOps & CI/CD",
+      "duration": "3 weeks",
+      "topics": [
+        "CI/CD Pipelines",
+        "GitHub Actions & GitLab CI",
+        "Infrastructure as Code (Terraform)",
+        "Monitoring & Alerting",
+        "Logging & Distributed Tracing",
+        "Performance Monitoring",
+        "Disaster Recovery"
+      ]
+    },
+    {
+      "title": "Testing & Quality Assurance",
+      "duration": "3 weeks",
+      "topics": [
+        "Unit Testing (Jest, pytest)",
+        "Integration Testing",
+        "API Testing (Postman, Supertest)",
+        "Load Testing & Performance",
+        "Test-Driven Development",
+        "Code Coverage",
+        "Quality Metrics"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "4 weeks",
+      "topics": [
+        "Microservices Architecture Design",
+        "Backend System Development",
+        "Cloud Deployment",
+        "Testing & Quality Assurance",
+        "Documentation & API Design",
+        "Code Review & Optimization",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Basic programming knowledge",
+    "Understanding of web concepts",
+    "High school education or equivalent",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "David Kumar",
+      "role": "Senior Backend Architect",
+      "experience": "12+ years",
+      "company": "Ex-Amazon, Netflix"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "Feb 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "25 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Feb 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3-4 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior programming experience?",
+      "answer": "Basic programming knowledge is recommended. We cover both Node.js and Python from fundamentals, but some programming background will be helpful."
+    },
+    {
+      "question": "Will I learn microservices?",
+      "answer": "Yes! Microservices architecture is a core part of this course. You'll learn to design, build, and deploy microservices-based systems."
+    },
+    {
+      "question": "What cloud platforms are covered?",
+      "answer": "We cover both AWS and Google Cloud Platform, including serverless architectures, managed services, and cloud-native development."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    },
+    {
+      "question": "What if I miss a class?",
+      "answer": "All classes are recorded and available for lifetime access."
+    }
+  ]
+}
+

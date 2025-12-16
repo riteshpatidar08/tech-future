@@ -1,0 +1,206 @@
+{
+  "id": "python-django",
+  "title": "Python with Web Dev Django",
+  "subtitle": "Django, FastAPI & Modern Web Development",
+  "description": "Master web development with Python using Django and FastAPI. Build scalable web applications, REST APIs, and learn modern Python web frameworks.",
+  "duration": "4 months",
+  "students": "40+ students",
+  "rating": "4.8",
+  "price": "₹39,999",
+  "originalPrice": "₹79,999",
+  "discount": "50% OFF",
+  "icon": "Code",
+  "gradient": "from-green-600 to-teal-600",
+  "overview": "Learn to build production-ready web applications with Django and FastAPI. This course covers everything from basic web development to advanced API design and deployment.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "90+ Hours of Content",
+    "Real-world Projects",
+    "Django & FastAPI",
+    "REST API Development",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Django Framework & ORM",
+    "FastAPI for Modern APIs",
+    "RESTful API Development",
+    "Database Design & Models",
+    "Authentication & Authorization",
+    "Django REST Framework",
+    "WebSockets & Real-time",
+    "Testing & Deployment",
+    "Docker & Containerization",
+    "Cloud Deployment"
+  ],
+  "modules": [
+    {
+      "title": "Django Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "Django Installation & Setup",
+        "Project Structure & Apps",
+        "URL Routing & Views",
+        "Templates & Template Engine",
+        "Static Files & Media Handling",
+        "Django Admin Panel",
+        "MVC/MVT Architecture"
+      ]
+    },
+    {
+      "title": "Django Models & Database",
+      "duration": "3 weeks",
+      "topics": [
+        "Models & Database Design",
+        "Django ORM & Queries",
+        "Migrations & Schema Changes",
+        "Model Relationships",
+        "Database Optimization",
+        "Raw SQL Queries",
+        "Database Transactions"
+      ]
+    },
+    {
+      "title": "Django Views & Forms",
+      "duration": "3 weeks",
+      "topics": [
+        "Class-Based Views",
+        "Function-Based Views",
+        "Form Handling & Validation",
+        "Model Forms",
+        "File Uploads",
+        "Pagination",
+        "Search & Filtering"
+      ]
+    },
+    {
+      "title": "Django REST Framework",
+      "duration": "4 weeks",
+      "topics": [
+        "REST API Design",
+        "Serializers & Viewsets",
+        "API Authentication",
+        "Permissions & Throttling",
+        "API Documentation",
+        "API Versioning",
+        "Testing APIs"
+      ]
+    },
+    {
+      "title": "FastAPI Framework",
+      "duration": "3 weeks",
+      "topics": [
+        "FastAPI Fundamentals",
+        "Async/Await in FastAPI",
+        "Pydantic Models",
+        "API Routes & Dependencies",
+        "WebSockets & Real-time",
+        "Background Tasks",
+        "API Documentation (Swagger)"
+      ]
+    },
+    {
+      "title": "Authentication & Security",
+      "duration": "2 weeks",
+      "topics": [
+        "User Authentication",
+        "JWT Tokens",
+        "OAuth Integration",
+        "Password Security",
+        "API Security",
+        "CORS & CSRF Protection",
+        "Security Best Practices"
+      ]
+    },
+    {
+      "title": "Testing & Quality",
+      "duration": "2 weeks",
+      "topics": [
+        "Unit Testing",
+        "Integration Testing",
+        "API Testing",
+        "Test Coverage",
+        "Django Test Client",
+        "pytest for FastAPI",
+        "Test-Driven Development"
+      ]
+    },
+    {
+      "title": "Deployment & DevOps",
+      "duration": "3 weeks",
+      "topics": [
+        "Docker & Containerization",
+        "Production Settings",
+        "Database Setup",
+        "Static File Serving",
+        "Cloud Deployment",
+        "CI/CD Pipelines",
+        "Monitoring & Logging"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "3 weeks",
+      "topics": [
+        "Full Stack Web Application",
+        "REST API Development",
+        "Testing & Quality Assurance",
+        "Deployment",
+        "Documentation",
+        "Code Review",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Python programming knowledge",
+    "Basic web concepts understanding",
+    "High school education or equivalent",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Rajesh Patel",
+      "role": "Senior Python Developer",
+      "experience": "10+ years",
+      "company": "Ex-Infosys, TCS"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Apr 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "25 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Apr 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 4 months with 3-4 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior Python experience?",
+      "answer": "Yes, basic Python programming knowledge is required. We recommend completing our Python Core course first."
+    },
+    {
+      "question": "Will I learn both Django and FastAPI?",
+      "answer": "Yes! You'll learn Django for full-stack web development and FastAPI for modern, high-performance APIs."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    }
+  ]
+}
+

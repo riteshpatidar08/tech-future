@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Check, Star, Zap, Crown } from 'lucide-react';
 import Certificate3D from './Certificate3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,6 +130,9 @@ const PricingPlans = () => {
       ref={sectionRef}
       className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
+      {/* Background Pattern */}
+      <BackgroundPattern variant="grid-dots" opacity={0.025} />
+
       {/* 3D Certificate Elements */}
       <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
         <Certificate3D className="scale-75" />

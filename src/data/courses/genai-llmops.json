@@ -1,0 +1,239 @@
+{
+  "id": "genai-llmops",
+  "title": "GenAI LLMOps",
+  "subtitle": "LLM Operations & Production AI Systems",
+  "description": "Master Large Language Model operations, deployment, and production AI systems. Learn to build, deploy, and maintain LLM applications at scale with the latest MLOps practices.",
+  "duration": "4 months",
+  "students": "30+ students",
+  "rating": "4.9",
+  "price": "₹59,999",
+  "originalPrice": "₹1,19,999",
+  "discount": "50% OFF",
+  "icon": "Brain",
+  "gradient": "from-purple-600 to-pink-600",
+  "overview": "This cutting-edge course covers LLM operations, production deployment of AI systems, prompt engineering, fine-tuning, RAG (Retrieval Augmented Generation), and MLOps for AI applications. Learn to build production-ready AI systems.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "100+ Hours of Content",
+    "Real-world AI Projects",
+    "LLM Operations & MLOps",
+    "Production AI Systems",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Large Language Models (GPT-4, Claude, Llama)",
+    "Prompt Engineering & Optimization",
+    "Fine-tuning LLMs",
+    "RAG (Retrieval Augmented Generation)",
+    "Vector Databases (Pinecone, Weaviate)",
+    "LangChain & AI Agents",
+    "LLM Deployment & Serving",
+    "Monitoring & Observability",
+    "Cost Optimization",
+    "AI Safety & Ethics"
+  ],
+  "modules": [
+    {
+      "title": "Introduction to LLMs",
+      "duration": "2 weeks",
+      "topics": [
+        "Large Language Models Overview",
+        "GPT-4, Claude, Llama Models",
+        "Transformer Architecture",
+        "Tokenization & Embeddings",
+        "Model Capabilities & Limitations",
+        "AI Safety & Ethics",
+        "LLM Landscape"
+      ]
+    },
+    {
+      "title": "Prompt Engineering",
+      "duration": "3 weeks",
+      "topics": [
+        "Prompt Design Principles",
+        "Few-shot Learning",
+        "Chain-of-Thought Prompting",
+        "Prompt Optimization Techniques",
+        "Prompt Templates & Patterns",
+        "Prompt Versioning",
+        "Advanced Prompting Strategies"
+      ]
+    },
+    {
+      "title": "LLM APIs & Integration",
+      "duration": "3 weeks",
+      "topics": [
+        "OpenAI API Integration",
+        "Anthropic Claude API",
+        "Open Source LLMs (Llama, Mistral)",
+        "API Rate Limiting & Costs",
+        "Streaming Responses",
+        "Error Handling",
+        "API Best Practices"
+      ]
+    },
+    {
+      "title": "RAG (Retrieval Augmented Generation)",
+      "duration": "4 weeks",
+      "topics": [
+        "RAG Architecture",
+        "Vector Embeddings",
+        "Vector Databases (Pinecone, Weaviate, Qdrant)",
+        "Document Chunking Strategies",
+        "Semantic Search",
+        "Hybrid Search",
+        "RAG Optimization",
+        "Evaluation Metrics"
+      ]
+    },
+    {
+      "title": "LangChain & AI Agents",
+      "duration": "4 weeks",
+      "topics": [
+        "LangChain Framework",
+        "Chains & Agents",
+        "Memory Management",
+        "Tool Integration",
+        "Multi-Agent Systems",
+        "Agent Orchestration",
+        "Custom Agents",
+        "Agent Evaluation"
+      ]
+    },
+    {
+      "title": "Fine-tuning LLMs",
+      "duration": "3 weeks",
+      "topics": [
+        "Fine-tuning Fundamentals",
+        "Dataset Preparation",
+        "LoRA & QLoRA",
+        "Parameter-Efficient Fine-tuning",
+        "Fine-tuning on Cloud",
+        "Model Evaluation",
+        "Fine-tuning Best Practices"
+      ]
+    },
+    {
+      "title": "LLM Deployment & Serving",
+      "duration": "3 weeks",
+      "topics": [
+        "Model Serving (vLLM, TensorRT-LLM)",
+        "API Development",
+        "Containerization (Docker)",
+        "Kubernetes for LLMs",
+        "Load Balancing",
+        "Auto-scaling",
+        "Edge Deployment"
+      ]
+    },
+    {
+      "title": "LLMOps & MLOps",
+      "duration": "4 weeks",
+      "topics": [
+        "MLOps for LLMs",
+        "Version Control (DVC, MLflow)",
+        "Experiment Tracking",
+        "Model Registry",
+        "CI/CD for AI",
+        "A/B Testing LLMs",
+        "Model Monitoring",
+        "Drift Detection"
+      ]
+    },
+    {
+      "title": "Monitoring & Observability",
+      "duration": "2 weeks",
+      "topics": [
+        "LLM Performance Monitoring",
+        "Latency & Throughput",
+        "Cost Tracking",
+        "Quality Metrics",
+        "Logging & Tracing",
+        "Alerting Systems",
+        "Dashboard Creation"
+      ]
+    },
+    {
+      "title": "Cost Optimization",
+      "duration": "2 weeks",
+      "topics": [
+        "Token Usage Optimization",
+        "Caching Strategies",
+        "Model Selection",
+        "Batch Processing",
+        "Cost Analysis",
+        "Budget Management",
+        "ROI Calculation"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "4 weeks",
+      "topics": [
+        "Production AI System Design",
+        "RAG Application Development",
+        "LLM Deployment",
+        "Monitoring & Optimization",
+        "Documentation",
+        "Code Review",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Python programming knowledge",
+    "Basic machine learning concepts",
+    "Understanding of APIs",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Dr. Arjun Mehta",
+      "role": "AI Research Scientist",
+      "experience": "12+ years",
+      "company": "Ex-OpenAI, Google AI"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "May 1, 2025",
+      "schedule": "Mon-Fri, 10 AM - 1 PM",
+      "seats": "20 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "May 5, 2025",
+      "schedule": "Mon-Fri, 7 PM - 9 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 4 months with 3-4 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior AI/ML experience?",
+      "answer": "Basic Python and machine learning knowledge is recommended. We cover LLM fundamentals, but some ML background will be helpful."
+    },
+    {
+      "question": "Will I learn to deploy LLMs in production?",
+      "answer": "Yes! LLM deployment and MLOps are core parts of this course. You'll learn to deploy and maintain production AI systems."
+    },
+    {
+      "question": "What LLMs are covered?",
+      "answer": "We cover GPT-4, Claude, Llama, and other open-source models. You'll learn to work with multiple LLM providers."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    }
+  ]
+}
+

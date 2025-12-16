@@ -1,0 +1,178 @@
+{
+  "id": "bi",
+  "title": "Business Intelligence",
+  "subtitle": "Master BI Tools & Data Visualization",
+  "description": "Learn to create powerful business intelligence dashboards and reports using Power BI, Tableau, QlikView, and other leading BI tools. Transform data into actionable business insights.",
+  "duration": "4 months",
+  "students": "30+ students",
+  "rating": "4.7",
+  "price": "₹39,999",
+  "originalPrice": "₹79,999",
+  "discount": "50% OFF",
+  "icon": "BarChart3",
+  "gradient": "from-green-600 to-teal-600",
+  "overview": "This comprehensive Business Intelligence course covers Power BI, Tableau, QlikView, and data modeling. Learn to create interactive dashboards, perform data analysis, and deliver insights that drive business decisions.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "80+ Hours of Content",
+    "Real-world Projects",
+    "Power BI & Tableau Mastery",
+    "Data Modeling & DAX",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Power BI Desktop & Service",
+    "Tableau Desktop & Server",
+    "QlikView & QlikSense",
+    "Data Modeling & Relationships",
+    "DAX & M Language",
+    "Advanced Visualizations",
+    "Dashboard Design Best Practices",
+    "Data Storytelling",
+    "Performance Optimization",
+    "Enterprise BI Solutions"
+  ],
+  "modules": [
+    {
+      "title": "Power BI Fundamentals",
+      "duration": "4 weeks",
+      "topics": [
+        "Power BI Desktop Setup",
+        "Data Import & Transformation",
+        "Data Modeling & Relationships",
+        "DAX Formulas & Measures",
+        "Basic Visualizations",
+        "Report Design"
+      ]
+    },
+    {
+      "title": "Advanced Power BI",
+      "duration": "3 weeks",
+      "topics": [
+        "Advanced DAX Functions",
+        "Power Query M Language",
+        "Custom Visuals",
+        "Power BI Service",
+        "Row-Level Security",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "Tableau Fundamentals",
+      "duration": "4 weeks",
+      "topics": [
+        "Tableau Desktop Basics",
+        "Data Connection & Preparation",
+        "Calculated Fields & Table Calculations",
+        "Charts & Visualizations",
+        "Dashboards & Stories",
+        "Tableau Server"
+      ]
+    },
+    {
+      "title": "Advanced Tableau",
+      "duration": "3 weeks",
+      "topics": [
+        "Advanced Calculations",
+        "Level of Detail (LOD) Expressions",
+        "Parameters & Actions",
+        "Mapping & Geographic Analysis",
+        "Tableau Prep",
+        "Performance Tuning"
+      ]
+    },
+    {
+      "title": "QlikView & QlikSense",
+      "duration": "3 weeks",
+      "topics": [
+        "QlikView Architecture",
+        "Data Loading & Scripting",
+        "Sheet Objects & Visualizations",
+        "QlikSense Cloud",
+        "Data Modeling in Qlik"
+      ]
+    },
+    {
+      "title": "BI Best Practices & Enterprise Solutions",
+      "duration": "2 weeks",
+      "topics": [
+        "Dashboard Design Principles",
+        "Data Storytelling",
+        "BI Architecture",
+        "Governance & Security",
+        "Enterprise Deployment"
+      ]
+    }
+  ],
+  "careerOutcomes": [
+    "BI Developer",
+    "BI Analyst",
+    "Data Visualization Specialist",
+    "Power BI Developer",
+    "Tableau Developer",
+    "BI Consultant"
+  ],
+  "tools": [
+    "Power BI",
+    "Tableau",
+    "QlikView",
+    "QlikSense",
+    "SQL Server",
+    "Excel",
+    "DAX",
+    "M Language"
+  ],
+  "requirements": [
+    "Basic Excel knowledge",
+    "Understanding of databases (helpful)",
+    "Analytical thinking",
+    "No prior BI experience required"
+  ],
+  "instructors": [
+    {
+      "name": "BI Expert",
+      "role": "Senior BI Consultant",
+      "experience": "10+ years",
+      "company": "Ex-Deloitte, Accenture",
+      "image": "/api/placeholder/100/100"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Apr 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "30 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Apr 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 4 months with 3 hours of classes per day."
+    },
+    {
+      "question": "Do I need prior experience?",
+      "answer": "Basic Excel knowledge is helpful, but no prior BI experience is required."
+    },
+    {
+      "question": "Which BI tools are covered?",
+      "answer": "We cover Power BI, Tableau, and QlikView/QlikSense."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you'll receive a certificate of completion."
+    }
+  ]
+}
+

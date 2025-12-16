@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Card, CardContent } from '@/components/ui/card';
 import { Code, Database, Brain, BarChart3, Cloud, Shield } from 'lucide-react';
 import CodeCube3D from './CodeCube3D';
+import BackgroundPattern from './BackgroundPattern';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,6 +98,9 @@ const TechnologyStack = () => {
 
   return (
     <section ref={sectionRef} className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+      {/* Background Pattern */}
+      <BackgroundPattern variant="dots" opacity={0.025} />
+      
       {/* 3D Code Cube Elements */}
       <div className="absolute top-10 left-10 opacity-10 hidden lg:block">
         <CodeCube3D className="scale-75" />

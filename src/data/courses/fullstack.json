@@ -1,0 +1,261 @@
+{
+  "id": "fullstack",
+  "title": "Full Stack Development",
+  "subtitle": "With Next.js, TypeScript & AI Integration",
+  "description": "Master modern full-stack web development with Next.js 14+, TypeScript, React Server Components, and AI integration. Build production-ready applications with the latest industry standards.",
+  "duration": "6 months",
+  "students": "60+ students",
+  "rating": "4.9",
+  "price": "₹49,999",
+  "originalPrice": "₹99,999",
+  "discount": "50% OFF",
+  "icon": "Code",
+  "gradient": "from-purple-600 to-cyan-600",
+  "overview": "This comprehensive Full Stack Development course covers Next.js 14+ with App Router, TypeScript, React Server Components, AI integration with OpenAI/Anthropic APIs, and modern deployment practices. Learn to build scalable, performant web applications with the latest technologies.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "120+ Hours of Content",
+    "Real-world Projects",
+    "Next.js 14+ & TypeScript",
+    "AI Integration Training",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Next.js 14+ with App Router & Server Components",
+    "TypeScript for Type-Safe Development",
+    "React 19 & Advanced Hooks",
+    "Node.js & Express Backend",
+    "MongoDB & PostgreSQL with Prisma ORM",
+    "RESTful APIs & GraphQL with Apollo",
+    "AI Integration (OpenAI, Anthropic Claude)",
+    "Authentication (NextAuth.js, Clerk)",
+    "Deployment (Vercel, AWS, Docker)",
+    "Testing (Jest, React Testing Library, Playwright)",
+    "CI/CD with GitHub Actions",
+    "Performance Optimization & SEO"
+  ],
+  "modules": [
+    {
+      "title": "HTML5, CSS3 & Modern JavaScript (ES2024)",
+      "duration": "3 weeks",
+      "topics": [
+        "HTML5 Semantic Elements & Accessibility",
+        "CSS3 Advanced (Grid, Flexbox, Custom Properties)",
+        "JavaScript ES2024 Features",
+        "Async/Await & Promises",
+        "DOM Manipulation & Events",
+        "Modern JavaScript Patterns",
+        "TypeScript Fundamentals"
+      ]
+    },
+    {
+      "title": "React 19 & Advanced Patterns",
+      "duration": "4 weeks",
+      "topics": [
+        "React 19 Features & Concurrent Rendering",
+        "Hooks (useState, useEffect, useContext, useReducer)",
+        "Custom Hooks & Hook Patterns",
+        "Context API & State Management",
+        "React Router v6+",
+        "Performance Optimization (Memo, useMemo, useCallback)",
+        "Error Boundaries & Suspense"
+      ]
+    },
+    {
+      "title": "Next.js 14+ with App Router",
+      "duration": "5 weeks",
+      "topics": [
+        "Next.js 14+ App Router Architecture",
+        "Server Components vs Client Components",
+        "Server Actions & Form Handling",
+        "Dynamic Routes & Route Groups",
+        "Middleware & Edge Functions",
+        "Image Optimization & Font Loading",
+        "Metadata API & SEO",
+        "Streaming & Suspense",
+        "Incremental Static Regeneration (ISR)"
+      ]
+    },
+    {
+      "title": "TypeScript for Full Stack",
+      "duration": "3 weeks",
+      "topics": [
+        "TypeScript Fundamentals",
+        "Advanced Types & Generics",
+        "Type Inference & Utility Types",
+        "TypeScript with React & Next.js",
+        "API Type Safety",
+        "TypeScript Best Practices",
+        "TypeScript with Prisma"
+      ]
+    },
+    {
+      "title": "Backend Development with Node.js",
+      "duration": "4 weeks",
+      "topics": [
+        "Node.js & Express.js Framework",
+        "RESTful API Design & Best Practices",
+        "GraphQL with Apollo Server",
+        "Middleware & Authentication",
+        "File Upload & Processing",
+        "Error Handling & Validation",
+        "API Documentation (Swagger/OpenAPI)",
+        "Rate Limiting & Security"
+      ]
+    },
+    {
+      "title": "Database Design & ORM",
+      "duration": "3 weeks",
+      "topics": [
+        "MongoDB & Mongoose ODM",
+        "PostgreSQL & Prisma ORM",
+        "Database Design & Normalization",
+        "Query Optimization & Indexing",
+        "Relationships & Joins",
+        "Migrations & Schema Management",
+        "Database Transactions",
+        "Redis for Caching"
+      ]
+    },
+    {
+      "title": "AI Integration in Web Apps",
+      "duration": "3 weeks",
+      "topics": [
+        "OpenAI API Integration",
+        "Anthropic Claude API",
+        "AI-Powered Features (Chat, Summarization)",
+        "Vector Databases (Pinecone, Weaviate)",
+        "LangChain & AI Agents",
+        "Prompt Engineering",
+        "AI Content Generation",
+        "AI-Powered Search (RAG)"
+      ]
+    },
+    {
+      "title": "Authentication & Security",
+      "duration": "2 weeks",
+      "topics": [
+        "NextAuth.js & Clerk Authentication",
+        "JWT & Session Management",
+        "OAuth Integration (Google, GitHub)",
+        "Password Security & Hashing",
+        "API Security & CORS",
+        "CSRF Protection",
+        "Security Best Practices",
+        "Rate Limiting & DDoS Protection"
+      ]
+    },
+    {
+      "title": "Testing & Quality Assurance",
+      "duration": "3 weeks",
+      "topics": [
+        "Unit Testing with Jest",
+        "React Testing Library",
+        "E2E Testing with Playwright",
+        "API Testing",
+        "Test-Driven Development (TDD)",
+        "Code Coverage & Quality",
+        "Performance Testing",
+        "Accessibility Testing"
+      ]
+    },
+    {
+      "title": "Deployment & DevOps",
+      "duration": "3 weeks",
+      "topics": [
+        "Vercel Deployment",
+        "AWS & Cloud Deployment",
+        "Docker & Containerization",
+        "CI/CD with GitHub Actions",
+        "Environment Management",
+        "Monitoring & Logging",
+        "Performance Monitoring (Vercel Analytics)",
+        "Error Tracking (Sentry)"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "4 weeks",
+      "topics": [
+        "Project Planning & Architecture",
+        "Full Stack Application Development",
+        "AI Features Integration",
+        "Testing & Quality Assurance",
+        "Deployment & Production",
+        "Code Review & Optimization",
+        "Portfolio Presentation",
+        "GitHub Portfolio Setup"
+      ]
+    }
+  ],
+  "requirements": [
+    "Basic computer skills",
+    "High school education or equivalent",
+    "Willingness to learn and practice",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Sarah Johnson",
+      "role": "Senior Full Stack Developer",
+      "experience": "10+ years",
+      "company": "Ex-Google, Microsoft"
+    },
+    {
+      "name": "Mike Chen",
+      "role": "AI Integration Specialist",
+      "experience": "8+ years",
+      "company": "Ex-OpenAI, Meta"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "Jan 15, 2025",
+      "schedule": "Mon-Fri, 10 AM - 1 PM",
+      "seats": "30 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Jan 20, 2025",
+      "schedule": "Mon-Fri, 7 PM - 9 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 6 months with 3-4 hours of classes per day, 5 days a week. This includes live classes, assignments, and project work."
+    },
+    {
+      "question": "Do I need prior programming experience?",
+      "answer": "No prior programming experience is required. The course starts from the basics and gradually builds up to advanced concepts. However, basic computer skills and logical thinking are helpful."
+    },
+    {
+      "question": "Will I learn Next.js and TypeScript?",
+      "answer": "Yes! This course extensively covers Next.js 14+ with App Router, Server Components, and TypeScript for type-safe development. These are the most in-demand skills in 2025."
+    },
+    {
+      "question": "How is AI integrated into the course?",
+      "answer": "You'll learn to integrate AI capabilities using OpenAI and Anthropic APIs, build AI-powered features like chatbots, content generation, and implement RAG (Retrieval Augmented Generation) systems."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion of the course and all assignments, you will receive a certificate of completion that is recognized by industry partners."
+    },
+    {
+      "question": "What if I miss a class?",
+      "answer": "All classes are recorded and available for lifetime access. You can watch the recordings at your convenience and catch up on any missed sessions."
+    },
+    {
+      "question": "Is placement assistance provided?",
+      "answer": "Yes, we provide comprehensive placement assistance including resume building, interview preparation, mock interviews, and connections with our hiring partners."
+    }
+  ]
+}
+

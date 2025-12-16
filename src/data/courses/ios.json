@@ -1,0 +1,197 @@
+{
+  "id": "ios",
+  "title": "iOS Development",
+  "subtitle": "Build Native iOS Apps with Swift & SwiftUI",
+  "description": "Master iOS app development using Swift, SwiftUI, and UIKit. Learn to build native iOS applications and publish them to the App Store. Perfect for aspiring iOS developers.",
+  "duration": "5 months",
+  "students": "30+ students",
+  "rating": "4.8",
+  "price": "₹44,999",
+  "originalPrice": "₹89,999",
+  "discount": "50% OFF",
+  "icon": "Smartphone",
+  "gradient": "from-gray-700 to-gray-900",
+  "overview": "This comprehensive iOS Development course covers Swift programming, SwiftUI, UIKit, Core Data, and App Store deployment. Build native iOS applications with modern Apple technologies and best practices.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "100+ Hours of Content",
+    "Real-world Projects",
+    "Swift & SwiftUI",
+    "UIKit & Core Data",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Swift Programming Language",
+    "SwiftUI Framework",
+    "UIKit & Interface Builder",
+    "Core Data & Persistence",
+    "Networking & APIs",
+    "App Architecture (MVVM, MVC)",
+    "App Store Publishing",
+    "Xcode & Instruments",
+    "Testing & Debugging",
+    "iOS Design Guidelines"
+  ],
+  "modules": [
+    {
+      "title": "Swift Programming Fundamentals",
+      "duration": "4 weeks",
+      "topics": [
+        "Swift Syntax & Basics",
+        "Optionals & Error Handling",
+        "Functions & Closures",
+        "Classes, Structs & Enums",
+        "Protocols & Extensions",
+        "Generics & Collections"
+      ]
+    },
+    {
+      "title": "SwiftUI Basics",
+      "duration": "4 weeks",
+      "topics": [
+        "SwiftUI Views & Modifiers",
+        "State Management (@State, @Binding)",
+        "Lists & Navigation",
+        "Forms & Controls",
+        "Layouts & Stacks",
+        "Custom Views"
+      ]
+    },
+    {
+      "title": "Advanced SwiftUI",
+      "duration": "3 weeks",
+      "topics": [
+        "ObservableObject & @Published",
+        "Combine Framework",
+        "Animations & Transitions",
+        "Custom Modifiers",
+        "Widgets & App Extensions"
+      ]
+    },
+    {
+      "title": "UIKit & Interface Builder",
+      "duration": "3 weeks",
+      "topics": [
+        "UIKit Components",
+        "Storyboards & XIBs",
+        "Auto Layout",
+        "View Controllers",
+        "Navigation Controllers"
+      ]
+    },
+    {
+      "title": "Data Persistence & Core Data",
+      "duration": "3 weeks",
+      "topics": [
+        "UserDefaults",
+        "File System",
+        "Core Data Stack",
+        "Fetch Requests",
+        "Relationships & Migrations"
+      ]
+    },
+    {
+      "title": "Networking & APIs",
+      "duration": "3 weeks",
+      "topics": [
+        "URLSession",
+        "RESTful APIs",
+        "JSON Parsing (Codable)",
+        "Async/Await",
+        "Error Handling"
+      ]
+    },
+    {
+      "title": "App Architecture & Best Practices",
+      "duration": "3 weeks",
+      "topics": [
+        "MVVM Pattern",
+        "Dependency Injection",
+        "Testing (Unit, UI)",
+        "Performance Optimization",
+        "Memory Management"
+      ]
+    },
+    {
+      "title": "App Store Publishing",
+      "duration": "2 weeks",
+      "topics": [
+        "App Store Connect",
+        "App Icons & Screenshots",
+        "App Review Guidelines",
+        "Version Management",
+        "Beta Testing (TestFlight)"
+      ]
+    }
+  ],
+  "careerOutcomes": [
+    "iOS Developer",
+    "Swift Developer",
+    "Mobile App Developer",
+    "iOS UI/UX Developer",
+    "App Developer"
+  ],
+  "tools": [
+    "Xcode",
+    "Swift",
+    "SwiftUI",
+    "UIKit",
+    "Core Data",
+    "Instruments",
+    "TestFlight",
+    "Git"
+  ],
+  "requirements": [
+    "Mac computer (required for iOS development)",
+    "Basic programming knowledge",
+    "Understanding of OOP concepts",
+    "Xcode installed (we'll guide you)"
+  ],
+  "instructors": [
+    {
+      "name": "iOS Expert",
+      "role": "Senior iOS Developer",
+      "experience": "10+ years",
+      "company": "Ex-Apple, Uber",
+      "image": "/api/placeholder/100/100"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Apr 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "25 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Apr 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3 hours of classes per day."
+    },
+    {
+      "question": "Do I need a Mac?",
+      "answer": "Yes, a Mac computer is required for iOS development as Xcode only runs on macOS."
+    },
+    {
+      "question": "Will I learn SwiftUI or UIKit?",
+      "answer": "We cover both SwiftUI (modern) and UIKit (legacy), with focus on SwiftUI."
+    },
+    {
+      "question": "Will I learn App Store publishing?",
+      "answer": "Yes, we cover the complete process of publishing apps to the App Store."
+    }
+  ]
+}
+

@@ -43,7 +43,7 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
       </div>
       
       {/* Content */}
-      <div className="relative p-6 z-10">
+      <div className="relative p-4 z-10">
         <div className="flex items-center mb-4">
           <div className="p-3 rounded-lg bg-slate-100 group-hover:bg-slate-900 transition-colors">
             <div className="text-slate-900 group-hover:text-white transition-colors">
@@ -60,23 +60,23 @@ const CourseCard = ({ title, description, duration, students, rating, icon, feat
           </div>
         </div>
         
-        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+        <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
           {title}
         </h3>
         
-        <div className="bg-slate-50 rounded-lg p-3 mb-3 border border-gray-100">
-          <p className="text-slate-600 text-sm leading-relaxed">
+        <div className="bg-slate-50 rounded-lg p-2 mb-2 border border-gray-100">
+          <p className="text-slate-600 text-xs leading-relaxed">
             {description}
           </p>
         </div>
         
-        <div className="flex items-center mb-4 text-sm text-slate-600 p-3 rounded-lg bg-slate-50">
-          <Clock className="h-4 w-4 mr-2 text-slate-700" />
+        <div className="flex items-center mb-3 text-xs text-slate-600 p-2 rounded-lg bg-slate-50">
+          <Clock className="h-3 w-3 mr-2 text-slate-700" />
           <span className="text-slate-700 font-medium">{duration}</span>
         </div>
         
-        <div className="mb-4">
-          <h4 className="font-semibold text-slate-900 mb-2 text-sm">What you'll learn:</h4>
+        <div className="mb-3">
+          <h4 className="font-semibold text-slate-900 mb-1.5 text-xs">What you'll learn:</h4>
           <ul className="space-y-1">
             {features.map((feature, index) => (
               <li key={index} className="text-xs text-slate-600 flex items-center bg-slate-50 p-1.5 rounded-md">

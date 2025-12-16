@@ -1,0 +1,248 @@
+{
+  "id": "react-native",
+  "title": "Mobile App Development with React Native",
+  "subtitle": "React Native, Expo & Modern Mobile Development",
+  "description": "Master mobile app development with React Native and Expo. Build cross-platform iOS and Android applications with the latest React Native features and best practices.",
+  "duration": "5 months",
+  "students": "35+ students",
+  "rating": "4.9",
+  "price": "₹44,999",
+  "originalPrice": "₹89,999",
+  "discount": "50% OFF",
+  "icon": "Smartphone",
+  "gradient": "from-blue-600 to-cyan-600",
+  "overview": "Learn to build production-ready mobile applications with React Native, Expo, TypeScript, and modern mobile development tools. Create apps for both iOS and Android from a single codebase.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "110+ Hours of Content",
+    "Real-world Mobile Projects",
+    "React Native & Expo",
+    "iOS & Android Development",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "React Native Fundamentals",
+    "Expo Framework",
+    "TypeScript for Mobile",
+    "Navigation (React Navigation)",
+    "State Management (Redux, Zustand)",
+    "Native Modules & APIs",
+    "Push Notifications",
+    "App Store & Play Store Deployment",
+    "Performance Optimization",
+    "Testing & Debugging"
+  ],
+  "modules": [
+    {
+      "title": "React Native Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "React Native Setup & Environment",
+        "Components & JSX",
+        "Styling & Layout",
+        "Flexbox for Mobile",
+        "Touch Handling & Gestures",
+        "Platform-Specific Code",
+        "Debugging Tools"
+      ]
+    },
+    {
+      "title": "Expo Framework",
+      "duration": "3 weeks",
+      "topics": [
+        "Expo CLI & Tools",
+        "Expo SDK & APIs",
+        "Camera & Media",
+        "Location Services",
+        "File System",
+        "Expo Updates",
+        "EAS Build & Submit"
+      ]
+    },
+    {
+      "title": "TypeScript for React Native",
+      "duration": "2 weeks",
+      "topics": [
+        "TypeScript Setup",
+        "Type Definitions",
+        "TypeScript with React Native",
+        "Type Safety Best Practices",
+        "Advanced Types",
+        "TypeScript Patterns"
+      ]
+    },
+    {
+      "title": "Navigation & Routing",
+      "duration": "3 weeks",
+      "topics": [
+        "React Navigation v6",
+        "Stack Navigator",
+        "Tab Navigator",
+        "Drawer Navigator",
+        "Deep Linking",
+        "Navigation State Management",
+        "Custom Navigators"
+      ]
+    },
+    {
+      "title": "State Management",
+      "duration": "3 weeks",
+      "topics": [
+        "React Context API",
+        "Redux Toolkit",
+        "Zustand for Mobile",
+        "Async Storage",
+        "State Persistence",
+        "State Management Patterns",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "Native Modules & APIs",
+      "duration": "3 weeks",
+      "topics": [
+        "Native Module Development",
+        "Bridging Native Code",
+        "Device APIs",
+        "Camera & Image Picker",
+        "Location & Maps",
+        "Push Notifications",
+        "Biometric Authentication"
+      ]
+    },
+    {
+      "title": "UI/UX for Mobile",
+      "duration": "3 weeks",
+      "topics": [
+        "Mobile Design Principles",
+        "Responsive Design",
+        "Animations (Reanimated, Animated API)",
+        "Custom Components",
+        "Accessibility",
+        "Dark Mode",
+        "Platform-Specific UI"
+      ]
+    },
+    {
+      "title": "Networking & APIs",
+      "duration": "2 weeks",
+      "topics": [
+        "HTTP Requests (Fetch, Axios)",
+        "REST API Integration",
+        "GraphQL with Apollo",
+        "Error Handling",
+        "Offline Support",
+        "Caching Strategies",
+        "API Authentication"
+      ]
+    },
+    {
+      "title": "Performance Optimization",
+      "duration": "2 weeks",
+      "topics": [
+        "Performance Profiling",
+        "Code Splitting",
+        "Image Optimization",
+        "List Optimization (FlatList)",
+        "Memory Management",
+        "Bundle Size Optimization",
+        "Performance Best Practices"
+      ]
+    },
+    {
+      "title": "Testing & Quality",
+      "duration": "2 weeks",
+      "topics": [
+        "Unit Testing (Jest)",
+        "Component Testing",
+        "E2E Testing (Detox)",
+        "Snapshot Testing",
+        "Test Coverage",
+        "CI/CD for Mobile",
+        "Quality Assurance"
+      ]
+    },
+    {
+      "title": "App Deployment",
+      "duration": "3 weeks",
+      "topics": [
+        "App Store Guidelines",
+        "Play Store Guidelines",
+        "App Signing & Certificates",
+        "Version Management",
+        "App Store Submission",
+        "Play Store Submission",
+        "App Updates & Maintenance"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "4 weeks",
+      "topics": [
+        "Full Mobile App Development",
+        "Feature Implementation",
+        "Testing & Quality Assurance",
+        "App Store Deployment",
+        "Documentation",
+        "Code Review",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "React.js knowledge",
+    "JavaScript/TypeScript basics",
+    "Basic mobile concepts understanding",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Alex Thompson",
+      "role": "Senior Mobile Developer",
+      "experience": "10+ years",
+      "company": "Ex-Meta, Uber"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "Jun 1, 2025",
+      "schedule": "Mon-Fri, 10 AM - 1 PM",
+      "seats": "30 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Jun 5, 2025",
+      "schedule": "Mon-Fri, 7 PM - 9 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3-4 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior React experience?",
+      "answer": "Yes, React.js knowledge is required. We recommend completing our Frontend Development course first."
+    },
+    {
+      "question": "Will I learn to deploy to app stores?",
+      "answer": "Yes! App Store and Play Store deployment are covered, including guidelines, signing, and submission processes."
+    },
+    {
+      "question": "Do I need a Mac for iOS development?",
+      "answer": "For iOS development, a Mac is recommended. However, you can develop and test Android apps on Windows/Linux. Expo allows cloud builds for iOS."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    }
+  ]
+}
+

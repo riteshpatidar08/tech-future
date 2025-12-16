@@ -1,0 +1,286 @@
+{
+  "id": "frontend",
+  "title": "Frontend Development",
+  "subtitle": "React, Next.js, TypeScript & Modern UI",
+  "description": "Master modern frontend development with React 19, Next.js 14+, TypeScript, Tailwind CSS, and advanced UI/UX patterns. Build beautiful, performant, and accessible web applications.",
+  "duration": "5 months",
+  "students": "45+ students",
+  "rating": "4.9",
+  "price": "₹44,999",
+  "originalPrice": "₹89,999",
+  "discount": "50% OFF",
+  "icon": "Code",
+  "gradient": "from-cyan-600 to-blue-600",
+  "overview": "This comprehensive Frontend Development course covers React 19, Next.js 14+, TypeScript, Tailwind CSS, modern UI libraries, state management, and performance optimization. Learn to build production-ready frontend applications.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "110+ Hours of Content",
+    "Real-world Projects",
+    "React 19 & Next.js 14+",
+    "TypeScript Mastery",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "React 19 & Concurrent Features",
+    "Next.js 14+ with App Router",
+    "TypeScript for Type Safety",
+    "Tailwind CSS & Modern Styling",
+    "State Management (Zustand, Redux Toolkit)",
+    "UI Component Libraries (shadcn/ui)",
+    "Performance Optimization",
+    "Accessibility (a11y) Best Practices",
+    "Testing (Jest, React Testing Library)",
+    "Animation & Interactions (Framer Motion)",
+    "Progressive Web Apps (PWA)",
+    "SEO & Core Web Vitals"
+  ],
+  "modules": [
+    {
+      "title": "HTML5, CSS3 & Modern JavaScript",
+      "duration": "3 weeks",
+      "topics": [
+        "HTML5 Semantic Elements",
+        "CSS3 Advanced (Grid, Flexbox)",
+        "CSS Custom Properties & Variables",
+        "JavaScript ES2024 Features",
+        "Async/Await & Promises",
+        "DOM Manipulation",
+        "Modern JavaScript Patterns"
+      ]
+    },
+    {
+      "title": "React 19 Fundamentals",
+      "duration": "4 weeks",
+      "topics": [
+        "React 19 Features & Updates",
+        "Components & JSX",
+        "Props & State Management",
+        "Hooks (useState, useEffect, useContext)",
+        "Custom Hooks",
+        "Context API",
+        "React Router v6+",
+        "Forms & Controlled Components"
+      ]
+    },
+    {
+      "title": "Advanced React Patterns",
+      "duration": "4 weeks",
+      "topics": [
+        "Advanced Hooks (useReducer, useMemo, useCallback)",
+        "Performance Optimization",
+        "Code Splitting & Lazy Loading",
+        "Error Boundaries & Suspense",
+        "Concurrent Rendering",
+        "Server Components",
+        "React Patterns & Best Practices",
+        "Component Composition"
+      ]
+    },
+    {
+      "title": "Next.js 14+ with App Router",
+      "duration": "5 weeks",
+      "topics": [
+        "Next.js 14+ App Router",
+        "Server Components vs Client Components",
+        "Server Actions & Form Handling",
+        "Dynamic Routes & Route Groups",
+        "Middleware & Edge Functions",
+        "Image & Font Optimization",
+        "Metadata API & SEO",
+        "Streaming & Suspense",
+        "Incremental Static Regeneration"
+      ]
+    },
+    {
+      "title": "TypeScript for Frontend",
+      "duration": "3 weeks",
+      "topics": [
+        "TypeScript Fundamentals",
+        "Types & Interfaces",
+        "Generics & Utility Types",
+        "TypeScript with React",
+        "TypeScript with Next.js",
+        "Type Safety Best Practices",
+        "Advanced TypeScript Patterns"
+      ]
+    },
+    {
+      "title": "Tailwind CSS & Styling",
+      "duration": "3 weeks",
+      "topics": [
+        "Tailwind CSS Fundamentals",
+        "Utility-First CSS",
+        "Custom Configuration",
+        "Responsive Design",
+        "Dark Mode Implementation",
+        "CSS-in-JS Alternatives",
+        "Animation & Transitions",
+        "Design System Creation"
+      ]
+    },
+    {
+      "title": "State Management",
+      "duration": "3 weeks",
+      "topics": [
+        "Zustand State Management",
+        "Redux Toolkit",
+        "Context API Patterns",
+        "Server State (React Query/TanStack Query)",
+        "State Management Best Practices",
+        "Global vs Local State",
+        "State Persistence"
+      ]
+    },
+    {
+      "title": "UI Component Libraries",
+      "duration": "3 weeks",
+      "topics": [
+        "shadcn/ui Components",
+        "Radix UI Primitives",
+        "Building Custom Components",
+        "Component Composition",
+        "Accessibility in Components",
+        "Design Tokens & Theming",
+        "Component Documentation"
+      ]
+    },
+    {
+      "title": "Animation & Interactions",
+      "duration": "2 weeks",
+      "topics": [
+        "Framer Motion",
+        "Page Transitions",
+        "Micro-interactions",
+        "Scroll Animations",
+        "Gesture Handling",
+        "Performance Optimization",
+        "Animation Best Practices"
+      ]
+    },
+    {
+      "title": "Performance Optimization",
+      "duration": "3 weeks",
+      "topics": [
+        "Core Web Vitals",
+        "Code Splitting & Lazy Loading",
+        "Image Optimization",
+        "Bundle Size Optimization",
+        "Caching Strategies",
+        "Performance Monitoring",
+        "Lighthouse & Performance Audits"
+      ]
+    },
+    {
+      "title": "Accessibility & SEO",
+      "duration": "2 weeks",
+      "topics": [
+        "WCAG Guidelines",
+        "Semantic HTML",
+        "ARIA Attributes",
+        "Keyboard Navigation",
+        "Screen Reader Support",
+        "SEO Best Practices",
+        "Meta Tags & Structured Data"
+      ]
+    },
+    {
+      "title": "Testing & Quality",
+      "duration": "3 weeks",
+      "topics": [
+        "Jest & React Testing Library",
+        "Unit Testing Components",
+        "Integration Testing",
+        "E2E Testing (Playwright)",
+        "Accessibility Testing",
+        "Visual Regression Testing",
+        "Test Coverage & Quality"
+      ]
+    },
+    {
+      "title": "Progressive Web Apps",
+      "duration": "2 weeks",
+      "topics": [
+        "PWA Fundamentals",
+        "Service Workers",
+        "Offline Functionality",
+        "Push Notifications",
+        "App Manifest",
+        "Install Prompts",
+        "PWA Best Practices"
+      ]
+    },
+    {
+      "title": "Capstone Project",
+      "duration": "4 weeks",
+      "topics": [
+        "Project Planning & Design",
+        "Frontend Application Development",
+        "Performance Optimization",
+        "Testing & Quality Assurance",
+        "Deployment & Production",
+        "Code Review & Optimization",
+        "Portfolio Presentation"
+      ]
+    }
+  ],
+  "requirements": [
+    "Basic computer skills",
+    "High school education or equivalent",
+    "Interest in web design and development",
+    "Access to a computer with internet"
+  ],
+  "instructors": [
+    {
+      "name": "Emily Rodriguez",
+      "role": "Senior Frontend Engineer",
+      "experience": "10+ years",
+      "company": "Ex-Meta, Airbnb"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bangalore",
+      "startDate": "Feb 15, 2025",
+      "schedule": "Mon-Fri, 10 AM - 1 PM",
+      "seats": "30 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Feb 20, 2025",
+      "schedule": "Mon-Fri, 7 PM - 9 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3-4 hours of classes per day, 5 days a week."
+    },
+    {
+      "question": "Do I need prior programming experience?",
+      "answer": "No prior programming experience is required. The course starts from HTML/CSS/JavaScript basics and builds up to advanced React and Next.js concepts."
+    },
+    {
+      "question": "Will I learn TypeScript?",
+      "answer": "Yes! TypeScript is a core part of this course. You'll learn to write type-safe React and Next.js applications."
+    },
+    {
+      "question": "What UI libraries are covered?",
+      "answer": "We cover shadcn/ui, Radix UI, and teach you to build custom components. You'll also learn Tailwind CSS for styling."
+    },
+    {
+      "question": "Will I get a certificate?",
+      "answer": "Yes, upon successful completion, you will receive a certificate of completion."
+    },
+    {
+      "question": "What if I miss a class?",
+      "answer": "All classes are recorded and available for lifetime access."
+    }
+  ]
+}
+

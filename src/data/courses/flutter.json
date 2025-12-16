@@ -1,0 +1,197 @@
+{
+  "id": "flutter",
+  "title": "Flutter Development",
+  "subtitle": "Build Cross-Platform Mobile Apps",
+  "description": "Master Flutter framework to build beautiful, high-performance mobile applications for iOS and Android from a single codebase. Learn Dart programming and modern app development.",
+  "duration": "5 months",
+  "students": "35+ students",
+  "rating": "4.8",
+  "price": "₹44,999",
+  "originalPrice": "₹89,999",
+  "discount": "50% OFF",
+  "icon": "Smartphone",
+  "gradient": "from-blue-500 to-cyan-500",
+  "overview": "This comprehensive Flutter course covers Dart programming, Flutter widgets, state management, API integration, and app deployment. Build production-ready mobile apps for both iOS and Android platforms.",
+  "highlights": [
+    "Live & Recorded Classes",
+    "Industry Expert Mentors",
+    "100+ Hours of Content",
+    "Real-world Projects",
+    "iOS & Android Development",
+    "State Management (Provider, Bloc)",
+    "Placement Assistance",
+    "Lifetime Access",
+    "Certificate of Completion"
+  ],
+  "features": [
+    "Dart Programming Language",
+    "Flutter Widgets & Layouts",
+    "State Management (Provider, Bloc, Riverpod)",
+    "Navigation & Routing",
+    "API Integration & HTTP",
+    "Local Storage (SQLite, Hive)",
+    "Firebase Integration",
+    "App Publishing (Play Store & App Store)",
+    "Animations & Custom Widgets",
+    "Testing & Debugging"
+  ],
+  "modules": [
+    {
+      "title": "Dart Programming Fundamentals",
+      "duration": "3 weeks",
+      "topics": [
+        "Dart Syntax & Variables",
+        "Functions & Classes",
+        "Async Programming",
+        "Collections & Generics",
+        "Error Handling",
+        "Dart Packages"
+      ]
+    },
+    {
+      "title": "Flutter Basics & Widgets",
+      "duration": "4 weeks",
+      "topics": [
+        "Flutter Architecture",
+        "Stateless & Stateful Widgets",
+        "Layout Widgets (Row, Column, Stack)",
+        "Material & Cupertino Widgets",
+        "Theming & Styling",
+        "Responsive Design"
+      ]
+    },
+    {
+      "title": "State Management",
+      "duration": "4 weeks",
+      "topics": [
+        "setState & StatefulWidget",
+        "Provider Pattern",
+        "Bloc Pattern",
+        "Riverpod",
+        "State Management Best Practices"
+      ]
+    },
+    {
+      "title": "Navigation & Routing",
+      "duration": "2 weeks",
+      "topics": [
+        "Navigator & Routes",
+        "Named Routes",
+        "GoRouter",
+        "Deep Linking",
+        "Navigation Patterns"
+      ]
+    },
+    {
+      "title": "API Integration & Data",
+      "duration": "3 weeks",
+      "topics": [
+        "HTTP & REST APIs",
+        "JSON Serialization",
+        "Local Storage (SQLite, Hive)",
+        "Caching Strategies",
+        "Error Handling"
+      ]
+    },
+    {
+      "title": "Firebase Integration",
+      "duration": "3 weeks",
+      "topics": [
+        "Firebase Authentication",
+        "Cloud Firestore",
+        "Firebase Storage",
+        "Push Notifications",
+        "Analytics"
+      ]
+    },
+    {
+      "title": "Advanced Flutter",
+      "duration": "3 weeks",
+      "topics": [
+        "Custom Animations",
+        "Platform Channels",
+        "Native Modules",
+        "Performance Optimization",
+        "Testing (Unit, Widget, Integration)"
+      ]
+    },
+    {
+      "title": "App Deployment",
+      "duration": "2 weeks",
+      "topics": [
+        "Build Configuration",
+        "App Signing",
+        "Play Store Publishing",
+        "App Store Publishing",
+        "CI/CD Setup"
+      ]
+    }
+  ],
+  "careerOutcomes": [
+    "Flutter Developer",
+    "Mobile App Developer",
+    "Cross-Platform Developer",
+    "Mobile UI/UX Developer",
+    "App Developer"
+  ],
+  "tools": [
+    "Flutter",
+    "Dart",
+    "Android Studio",
+    "VS Code",
+    "Firebase",
+    "Provider",
+    "Bloc",
+    "Git"
+  ],
+  "requirements": [
+    "Basic programming knowledge",
+    "Understanding of OOP concepts",
+    "No prior mobile development experience required",
+    "Mac recommended for iOS development"
+  ],
+  "instructors": [
+    {
+      "name": "Flutter Expert",
+      "role": "Senior Mobile Developer",
+      "experience": "8+ years",
+      "company": "Ex-Google, Microsoft",
+      "image": "/api/placeholder/100/100"
+    }
+  ],
+  "batches": [
+    {
+      "type": "Offline",
+      "location": "Bhopal",
+      "startDate": "Apr 1, 2025",
+      "schedule": "Mon-Fri, 2 PM - 5 PM",
+      "seats": "30 seats available"
+    },
+    {
+      "type": "Online",
+      "location": "Live Classes",
+      "startDate": "Apr 5, 2025",
+      "schedule": "Mon-Fri, 8 PM - 10 PM",
+      "seats": "Unlimited seats"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the course duration?",
+      "answer": "The course duration is 5 months with 3 hours of classes per day."
+    },
+    {
+      "question": "Do I need prior mobile development experience?",
+      "answer": "No, but basic programming knowledge is recommended."
+    },
+    {
+      "question": "Can I build apps for both iOS and Android?",
+      "answer": "Yes, Flutter allows you to build apps for both platforms from a single codebase."
+    },
+    {
+      "question": "Will I learn app publishing?",
+      "answer": "Yes, we cover publishing to both Google Play Store and Apple App Store."
+    }
+  ]
+}
+

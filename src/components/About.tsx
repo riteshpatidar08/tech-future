@@ -186,14 +186,9 @@ const About = () => {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         {/* Header Section */}
         <div ref={headerRef} className="text-center mb-10 md:mb-12">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="p-3 rounded-lg bg-slate-900">
-              <VectorIllustrations type="laptop-code" size={40} />
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
-              About Syntaxim
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            About Syntaxim
+          </h2>
           <p className="text-xs md:text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Syntaxim is India's most trusted and affordable tech education
             platform. We are committed to transforming careers through

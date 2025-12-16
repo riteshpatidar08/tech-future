@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   CheckCircle2,
@@ -288,9 +290,11 @@ const LearningPath = () => {
 
         <div className="text-center mt-12">
           <p className="text-slate-600 mb-4">Ready to start your journey?</p>
-          <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300">
-            Explore All Learning Paths
-          </button>
+          <Link to="/learning-paths">
+            <Button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+              Explore All Learning Paths
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import LearningPaths from './pages/LearningPaths';
 import AdminLogin from './pages/admin/Login';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminLeads from './pages/admin/Leads';
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/course/:courseId" element={<CourseDetails />} />
+          <Route path="/learning-paths" element={<LearningPaths />} />
           <Route path="/about" element={<About />} />
           {/* <Route path="/blog" element={<Blog />} /> */}
           {/* <Route path="/resources" element={<Resources />} /> */}

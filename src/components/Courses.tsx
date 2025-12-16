@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CourseCard from './CourseCard';
+import LeadCaptureForm from './LeadCaptureForm';
 import {
   Code,
   Database,
@@ -17,6 +18,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Courses = () => {
   const coursesRef = useRef<HTMLDivElement>(null);
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<string>('');
+
+  const handleEnroll = (courseTitle: string) => {
+    setSelectedCourse(courseTitle);
+    setShowLeadForm(true);
+  };
 
   useEffect(() => {
     gsap.fromTo(
@@ -253,11 +261,21 @@ const Courses = () => {
         <div className="courses-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto relative">
           {courses.map((course, index) => (
             <div key={index} className="course-card relative">
-              <CourseCard {...course} courseId={course.id} />
+              <CourseCard
+                {...course}
+                courseId={course.id}
+                onEnroll={handleEnroll}
+              />
             </div>
           ))}
         </div>
       </div>
+
+      <LeadCaptureForm
+        open={showLeadForm}
+        onOpenChange={setShowLeadForm}
+        courseName={selectedCourse}
+      />
     </section>
   );
 };

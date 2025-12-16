@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import { Users, BookOpen, Video, FileText } from 'lucide-react';
 import Chart3D from './Chart3D';
 import BackgroundPattern from './BackgroundPattern';
@@ -148,9 +149,11 @@ const PlatformStats = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-slate-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-slate-800 transition-colors">
-            Get Started
-          </button>
+          <Link to="/contact">
+            <button className="bg-slate-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-slate-800 transition-colors">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import {
   Accordion,
   AccordionContent,
@@ -106,10 +107,13 @@ const InteractiveFAQ = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative py-16 md:py-24 bg-white overflow-hidden"
+    >
       {/* Background Pattern */}
       <BackgroundPattern variant="dots" opacity={0.025} />
-      
+
       {/* 3D Book Elements */}
       <div className="absolute top-10 right-10 opacity-10 hidden lg:block">
         <Book3D className="scale-75" />
@@ -156,12 +160,12 @@ const InteractiveFAQ = () => {
 
         <div className="text-center mt-12">
           <p className="text-sm text-slate-600 mb-4">Still have questions?</p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </section>

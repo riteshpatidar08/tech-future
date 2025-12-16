@@ -84,6 +84,7 @@ const CourseDetails = () => {
   );
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [leadSubmitted, setLeadSubmitted] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<string>('');
 
   useEffect(() => {
     // Check if lead form has been submitted (stored in localStorage)
@@ -903,6 +904,10 @@ const CourseDetails = () => {
                       features={relatedCourse.features.slice(0, 4)}
                       gradient={relatedCourse.gradient}
                       courseId={relatedCourse.courseId}
+                      onEnroll={(courseTitle) => {
+                        setSelectedCourse(courseTitle);
+                        setShowLeadForm(true);
+                      }}
                     />
                   ))}
                 </div>
@@ -916,7 +921,7 @@ const CourseDetails = () => {
         open={showLeadForm}
         onOpenChange={setShowLeadForm}
         onSuccess={handleLeadFormSubmit}
-        courseName={course?.title}
+        courseName={selectedCourse || course?.title}
       />
       <Footer />
     </div>

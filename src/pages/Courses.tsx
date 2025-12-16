@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import AnimatedBackground from '@/components/AnimatedBackground';
 import Footer from '@/components/Footer';
 import StudyResources from '@/components/StudyResources';
 import Testimonials from '@/components/Testimonials';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 import {
   Code,
   Database,
@@ -24,6 +25,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Courses = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const coursesRef = useRef<HTMLDivElement>(null);
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<string>('');
+
+  const handleEnroll = (courseTitle: string) => {
+    setSelectedCourse(courseTitle);
+    setShowLeadForm(true);
+  };
 
   useEffect(() => {
     // Header animation
@@ -399,7 +407,11 @@ const Courses = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {category.courses.map((course, courseIndex) => (
                       <div key={courseIndex} className="course-card">
-                        <CourseCard {...course} courseId={course.id} />
+                        <CourseCard
+                          {...course}
+                          courseId={course.id}
+                          onEnroll={handleEnroll}
+                        />
                       </div>
                     ))}
                   </div>
@@ -412,6 +424,12 @@ const Courses = () => {
 
       <StudyResources />
       <Testimonials />
+
+      <LeadCaptureForm
+        open={showLeadForm}
+        onOpenChange={setShowLeadForm}
+        courseName={selectedCourse}
+      />
 
       <Footer />
     </div>

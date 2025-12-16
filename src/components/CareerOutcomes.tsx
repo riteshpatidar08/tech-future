@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Briefcase,
@@ -253,9 +254,11 @@ const CareerOutcomes = () => {
             Join thousands of students who have successfully transitioned into
             tech careers. Start your journey today!
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-3xl font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Start Your Career Transformation
-          </button>
+          <Link to="/contact">
+            <button className="bg-white text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Start Your Career Transformation
+            </button>
+          </Link>
         </div>
       </div>
     </section>
